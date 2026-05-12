@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Förberedelsverktyg inför SBSC-certifiering enligt SSF 1101 Cybersäkerhet Basnivå.">
-<title>SBSC — SSF 1101 Cybersäkerhet Basnivå</title>
+<title>SBSC — Cybersäkerhet Bas</title>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -528,8 +528,8 @@ function GatePage({onSuccess}){
         <img src={LOGO} alt="SBSC" className="gate-logo"/>
         {!sent?(
           <>
-            <h1 className="gate-title">Är er organisation redo för SSF 1101?</h1>
-            <p className="gate-sub">Fyll i era kontaktuppgifter för att få tillgång till vår kostnadsfria GAP-analys inför certifiering enligt SSF 1101 Cybersäkerhet Basnivå.</p>
+            <h1 className="gate-title">Är er organisation redo för certifiering av Cybersäkerhet Bas?</h1>
+            <p className="gate-sub">Fyll i era kontaktuppgifter för att få tillgång till vår kostnadsfria GAP-analys inför certifiering av Cybersäkerhet Bas.</p>
             <div className="gate-facts">
               <div className="gate-fact"><div className="gate-fact-n">{TOTAL_Q}</div><div className="gate-fact-l">krav</div></div>
               <div className="gate-fact"><div className="gate-fact-n">~20 min</div><div className="gate-fact-l">tid</div></div>
@@ -648,7 +648,7 @@ function ReportPage({answers,company,restart,back}){
 
   useEffect(()=>{
     document.title=(company||"Er organisation")+" — SSF 1101 GAP-analys";
-    return()=>{document.title="SBSC — SSF 1101 Cybersäkerhet Basnivå";};
+    return()=>{document.title="SBSC — Cybersäkerhet Bas";};
   },[company]);
 
   const gaps=[];
@@ -718,7 +718,7 @@ function ReportPage({answers,company,restart,back}){
       {/* Certifieringsinfo i rapporten */}
       <div className="report-info-box">
         <h4>ℹ️ Bra resultat = inte certifierad</h4>
-        <p>En hög uppfyllnadsgrad i den här GAP-analysen innebär inte att er organisation är certifierad eller nästan certifierad. Certifiering enligt SSF 1101 kräver tre separata steg:</p>
+        <p>En hög uppfyllnadsgrad i den här GAP-analysen innebär inte att er organisation är certifierad eller nästan certifierad. Certifiering kräver sex steg:</p>
         <ol className="report-info-steps">
           <li><span className="step-num">1</span><span>Ansökan hos SBSC</span></li>
           <li><span className="step-num">2</span><span>Ifyllnad av SBSC:s utförligare digitala egendeklaration</span></li>
@@ -840,9 +840,9 @@ function StartPage({company,setCompany,agreed,setAgreed,attempted,goStart}){
   return(
     <>
       <div className="page-intro">
-        <div className="chip">SSF 1101 Cybersäkerhet Basnivå</div>
+        <div className="chip">Cybersäkerhet Bas</div>
         <h1>Kartlägg er beredskap inför certifiering</h1>
-        <p>Gå igenom standardens {TOTAL_Q} krav och få en GAP-analys med bedömning av hur redo er organisation är.</p>
+        <p>Gå igenom normens {TOTAL_Q} krav och få en GAP-analys med bedömning av hur redo er organisation är.</p>
       </div>
 
       {/* INFORMATIONSRUTA */}
@@ -852,7 +852,7 @@ function StartPage({company,setCompany,agreed,setAgreed,attempted,goStart}){
           Vad är det här verktyget?
         </div>
         <div className="info-box-body">
-          Det här är ett <strong>förberedelseverktyg</strong> som hjälper er att bedöma hur redo organisationen är för certifiering mot SSF 1101 Cybersäkerhet BAS. Ni svarar på {TOTAL_Q} krav och får en GAP-analys med bedömningen <strong>Nära</strong>, <strong>En bit på väg</strong> eller <strong>Lång kvar</strong>. Bedömningen väger in hur arbetsintensiva kvarvarande krav är — utbildning av all personal och leverantörsavtal väger tyngre än tekniska punktinställningar.
+          Det här är ett <strong>förberedelseverktyg</strong> som hjälper er att bedöma hur redo organisationen är för certifiering mot SSF 1101 Cybersäkerhet BAS. Ni svarar på {TOTAL_Q} krav och får en GAP-analys med bedömningen <strong>Nära</strong>, <strong>En bit på väg</strong> eller <strong>lång kvar</strong>. Bedömningen väger in hur arbetsintensiva kvarvarande krav är — utbildning av all personal och leverantörsavtal väger tyngre än tekniska punktinställningar.
         </div>
         <div className="info-warn-head">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A3800" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -866,7 +866,7 @@ function StartPage({company,setCompany,agreed,setAgreed,attempted,goStart}){
           <li><span className="step-num">5</span><span>Svar på eventuella avvikelser</span></li>
           <li><span className="step-num">6</span><span>Utfärdande av certifikat</span></li>
         </ul>
-        <div className="info-note">Det här verktyget ersätter inte de tre stegen ovan — det ger er en bild av var ni befinner er och vad som återstår att göra.</div>
+        <div className="info-note">Det här verktyget ersätter inte de sex stegen ovan — det ger er en bild av var ni befinner er och vad som återstår att göra.</div>
 
       </div>
 
@@ -948,7 +948,7 @@ function App(){
       <header className="site-header no-print">
         <div className="hdr-inner">
           <img src={LOGO} alt="SBSC" className="hdr-logo"/>
-          <span className="hdr-label">SSF 1101 Cybersäkerhet Basnivå</span>
+          <span className="hdr-label">Cybersäkerhet Bas</span>
         </div>
       </header>
       <main className="shell">

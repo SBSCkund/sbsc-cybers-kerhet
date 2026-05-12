@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Kartlägg er beredskap inför SBSC-certifiering enligt SSF 1101 Cybersäkerhet Basnivå.">
+<meta name="description" content="Förberedelsverktyg inför SBSC-certifiering enligt SSF 1101 Cybersäkerhet Basnivå.">
 <title>SBSC — SSF 1101 Cybersäkerhet Basnivå</title>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -28,19 +28,36 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .hdr-logo{height:56px;width:auto;}
 .hdr-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;}
 
-.shell{max-width:860px;margin:0 auto;padding:48px 24px 80px;}
+.shell{max-width:860px;margin:0 auto;padding:40px 24px 80px;}
 .card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);padding:28px;margin-bottom:14px;box-shadow:var(--shadow-sm);}
 
-.page-intro{text-align:center;padding:0 0 36px;}
+.page-intro{text-align:center;padding:0 0 28px;}
 .chip{display:inline-block;background:var(--amber);color:var(--black);font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:16px;}
-.page-intro h1{font-size:30px;font-weight:800;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px;}
+.page-intro h1{font-size:28px;font-weight:800;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px;}
 .page-intro p{font-size:15px;color:var(--muted);max-width:500px;margin:0 auto;}
+
+/* SSF DOWNLOAD BOX */
+.ssf-download-box{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:var(--r);padding:18px 22px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:var(--shadow-sm);}
+.ssf-download-text{}
+.ssf-download-title{font-size:14px;font-weight:800;color:var(--black);margin-bottom:4px;}
+.ssf-download-body{font-size:12px;color:var(--muted);line-height:1.6;max-width:440px;}
+.ssf-download-btn{display:inline-flex;align-items:center;gap:7px;background:var(--amber);color:var(--black);padding:10px 18px;font-size:12px;font-weight:800;border-radius:4px;white-space:nowrap;font-family:inherit;text-decoration:none;transition:background .12s;flex-shrink:0;}
+.ssf-download-btn:hover{background:#E89300;}
+
+/* INFO BOX — startsida */
+.info-box{background:#F0F7FF;border:1.5px solid #C8DCF0;border-radius:var(--r);padding:22px 24px;margin-bottom:20px;}
+.info-box-title{font-size:14px;font-weight:800;color:var(--black);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.info-box-body{font-size:13px;color:#1a3a5c;line-height:1.7;margin-bottom:14px;}
+.info-warn-head{font-size:13px;font-weight:800;color:#7A3800;margin-bottom:8px;display:flex;align-items:center;gap:7px;padding-top:12px;border-top:1px solid #C8DCF0;}
+.steps-list{list-style:none;padding:0;margin:0 0 10px;}
+.steps-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#1a3a5c;margin-bottom:7px;line-height:1.5;}
+.step-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--amber);color:var(--black);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.info-note{font-size:12px;color:#4a6080;border-top:1px solid #C8DCF0;padding-top:10px;margin-top:10px;line-height:1.6;}
 
 .field-label{font-size:13px;font-weight:700;color:var(--black);margin-bottom:8px;}
 .req-star{color:var(--red);font-size:16px;line-height:1;}
 .text-input{width:100%;padding:12px 15px;font-size:15px;font-weight:600;font-family:inherit;border:1.5px solid var(--border);border-radius:6px;outline:none;transition:border-color .15s,box-shadow .15s;}
 .text-input:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(255,163,0,.14);}
-.field-error{font-size:12px;color:var(--red);font-weight:600;margin-top:5px;}
 
 .privacy-note{display:flex;align-items:flex-start;gap:10px;background:#EEF4FB;border:1px solid #C8DCF0;border-radius:6px;padding:12px 14px;margin-top:14px;}
 .privacy-note p{font-size:12px;color:var(--blue);font-weight:500;line-height:1.55;}
@@ -66,14 +83,17 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .btn-ghost{font-size:13px;font-weight:600;color:var(--muted);background:none;border:none;cursor:pointer;font-family:inherit;}
 .btn-ghost:hover:not(:disabled){color:var(--black);}
 
-.progress-bar{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:14px 20px;margin-bottom:16px;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.progress-bar{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:14px 20px;margin-bottom:12px;position:sticky;top:72px;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.06);}
 .progress-top{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;}
 .progress-label{font-weight:700;}
 .progress-count{color:var(--muted);}
 .progress-track{height:4px;background:var(--faint);border-radius:2px;overflow:hidden;}
 .progress-fill{height:100%;background:var(--amber);border-radius:2px;transition:width .3s ease;}
 
-.section-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+/* NAV HELP */
+.nav-help{font-size:11px;color:var(--muted);background:var(--faint);padding:6px 12px;border-radius:4px;margin-bottom:10px;text-align:center;}
+
+.section-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
 .section-tab{padding:5px 12px;background:var(--white);border:1.5px solid var(--border);border-radius:20px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .1s;display:flex;align-items:center;gap:5px;}
 .section-tab.active{background:var(--black);color:var(--white);border-color:var(--black);}
 .section-tab.done{border-color:var(--green);color:var(--green);}
@@ -81,12 +101,18 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .section-tab.active .tab-dot{background:var(--amber);}
 .section-tab.done .tab-dot{background:var(--green);}
 
+/* ANSWER LEGEND */
+.ans-legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;padding:9px 14px;background:var(--faint);border-radius:6px;}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);font-weight:600;}
+.legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+
 .q-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:10px;}
 .q-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;}
 .q-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--faint);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--muted);margin-top:1px;}
 .q-num.answered{background:var(--amber);border-color:var(--amber);color:var(--black);}
 .q-text{font-size:13px;font-weight:700;line-height:1.5;flex:1;}
 .q-ref{font-size:10px;color:var(--muted);font-weight:600;margin-top:4px;}
+.q-note{font-size:10px;color:var(--amber);font-weight:700;margin-top:2px;}
 .ans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
 .ans-btn{padding:9px 4px;border:1.5px solid var(--border);border-radius:4px;font-size:11px;font-weight:700;text-align:center;background:var(--white);color:var(--muted);cursor:pointer;transition:all .1s;line-height:1.3;font-family:inherit;}
 .ans-btn:hover{border-color:var(--black);color:var(--black);}
@@ -95,20 +121,36 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .ans-red{background:var(--red)!important;color:#fff!important;border-color:var(--red)!important;}
 .ans-blue{background:var(--blue)!important;color:#fff!important;border-color:var(--blue)!important;}
 
+/* RAPPORT */
 .report-banner{border-radius:var(--r);padding:24px 28px;margin-bottom:14px;background:var(--black);color:var(--white);border-left:5px solid var(--amber);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;}
 .banner-label{font-size:10px;color:var(--amber);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;}
 .banner-company{font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:4px;}
 .banner-meta{font-size:12px;color:#8A8B91;display:flex;gap:14px;flex-wrap:wrap;margin-top:4px;}
-.banner-score-label{font-size:10px;color:#8A8B91;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;text-align:right;}
+.banner-score-wrap{text-align:right;}
+.banner-score-label{font-size:10px;color:#8A8B91;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;}
 .banner-score{font-size:52px;font-weight:800;line-height:1;letter-spacing:-2px;}
 .banner-score em{color:var(--amber);font-style:normal;}
+.banner-readiness{margin-top:6px;}
+
+/* READINESS BADGES */
+.readiness-badge{display:inline-block;padding:4px 12px;border-radius:3px;font-size:13px;font-weight:800;letter-spacing:.3px;}
+.r-nara{background:#E8F5EE;color:var(--green);}
+.r-bit{background:#FFF3DC;color:#7A4800;}
+.r-lang{background:#FAEAEA;color:var(--red);}
+.r-na{background:var(--faint);color:var(--muted);}
 
 .kpi-row{display:flex;background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:14px;overflow:hidden;}
 .kpi-cell{flex:1;padding:16px 20px;border-right:1px solid var(--faint);}
 .kpi-cell:last-child{border-right:none;}
 .kpi-label{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:700;margin-bottom:5px;}
 .kpi-value{font-size:15px;font-weight:700;line-height:1.3;}
-.kpi-amber{color:var(--amber);}
+
+/* RAPPORT INFO-RUTA */
+.report-info-box{background:#EEF4FB;border:1.5px solid #C8DCF0;border-radius:var(--r);padding:18px 22px;margin-bottom:14px;}
+.report-info-box h4{font-size:13px;font-weight:800;color:var(--blue);margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.report-info-box p{font-size:12px;color:#1a3a5c;line-height:1.65;margin-bottom:6px;}
+.report-info-steps{list-style:none;padding:0;margin:6px 0 0;}
+.report-info-steps li{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#1a3a5c;margin-bottom:5px;line-height:1.5;}
 
 .cert-section{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px;overflow:hidden;}
 .cert-head{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-left:4px solid var(--amber);background:#FFFBF0;}
@@ -116,13 +158,18 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .cert-head-reg{font-size:11px;color:var(--muted);}
 .cert-head-score{font-size:28px;font-weight:800;letter-spacing:-1px;}
 .cert-body{padding:20px;}
-.spider-wrap{display:flex;justify-content:center;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--faint);}
+.spider-wrap{display:flex;justify-content:center;margin-bottom:6px;}
+.spider-caption{text-align:center;font-size:11px;color:var(--muted);font-weight:600;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--faint);}
 .bar-row{display:flex;align-items:center;gap:10px;padding:5px 0;}
 .bar-label{width:200px;font-size:12px;font-weight:600;flex-shrink:0;}
 .bar-track{flex:1;height:7px;background:var(--faint);border-radius:3px;overflow:hidden;}
 .bar-fill{height:100%;border-radius:3px;}
 .bar-pct{width:38px;text-align:right;font-size:12px;font-weight:700;}
 .bar-section{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--faint);}
+
+/* BEDÖMNING FÖRKLARING */
+.readiness-explain{background:var(--faint);border-radius:6px;padding:12px 16px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.65;}
+.readiness-explain strong{color:var(--black);font-weight:700;}
 
 .gap-section h4{font-size:13px;font-weight:800;margin-bottom:12px;}
 .gap-row{display:flex;align-items:flex-start;gap:10px;padding:11px 0;border-top:1px solid var(--faint);}
@@ -136,6 +183,18 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .gap-meta{font-size:11px;color:var(--muted);}
 .gap-none{text-align:center;padding:12px;font-size:13px;font-weight:700;color:var(--green);}
 
+/* NÄSTA STEG */
+.next-steps{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:14px;overflow:hidden;}
+.next-steps-head{padding:14px 20px;background:#FFFBF0;border-left:4px solid var(--amber);}
+.next-steps-head h3{font-size:15px;font-weight:800;}
+.next-step-item{display:flex;align-items:flex-start;gap:13px;padding:14px 20px;border-top:1px solid var(--faint);}
+.next-step-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
+.next-step-body{flex:1;}
+.next-step-title{font-size:13px;font-weight:800;margin-bottom:3px;display:flex;align-items:center;gap:8px;}
+.next-step-text{font-size:12px;color:var(--muted);line-height:1.65;}
+.pri-hog{display:inline-block;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border-radius:2px;background:#FAEAEA;color:var(--red);}
+.pri-medel{display:inline-block;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border-radius:2px;background:#FFF3DC;color:#7A4800;}
+
 .summary-box{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;margin-bottom:14px;border-left:4px solid var(--amber);}
 .summary-box-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--amber);margin-bottom:8px;}
 .summary-box-text{font-size:14px;line-height:1.75;color:var(--black);}
@@ -148,6 +207,7 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .cta-block p{font-size:13px;color:var(--muted);}
 .cta-link{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--black);padding:13px 24px;font-size:13px;font-weight:800;border-radius:4px;white-space:nowrap;border:2px solid var(--amber);font-family:inherit;transition:all .12s;text-decoration:none;}
 .cta-link:hover{background:#E89300;border-color:#E89300;}
+.print-url{display:none;font-size:10px;color:var(--muted);margin-top:6px;word-break:break-all;}
 
 .gate-wrap{min-height:100vh;background:var(--page);display:flex;align-items:center;justify-content:center;padding:32px 16px;}
 .gate-box{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.08);padding:40px 36px;max-width:480px;width:100%;}
@@ -162,6 +222,7 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .gate-btn{background:var(--amber);color:var(--black);border:none;border-radius:4px;padding:13px;font-size:14px;font-weight:800;font-family:inherit;cursor:pointer;margin-top:4px;transition:background .12s;}
 .gate-btn:hover{background:#E89300;}
 .gate-btn:disabled{opacity:.5;cursor:not-allowed;}
+.gate-error{font-size:12px;color:var(--red);font-weight:600;background:#FAEAEA;padding:10px 14px;border-radius:6px;border:1px solid #f0c0c0;}
 .gate-privacy{font-size:11px;color:var(--muted);line-height:1.6;margin-top:10px;padding-top:14px;border-top:1px solid var(--faint);}
 .gate-facts{display:flex;gap:8px;margin-bottom:20px;}
 .gate-fact{flex:1;background:var(--faint);border-radius:6px;padding:10px 12px;text-align:center;}
@@ -179,7 +240,7 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 
 .modal-overlay{position:fixed;inset:0;background:rgba(16,24,32,.55);display:flex;align-items:center;justify-content:center;z-index:1000;padding:24px;}
 .modal-box{background:var(--white);border-radius:var(--r);padding:32px;max-width:420px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,.18);}
-.modal-icon{width:48px;height:48px;border-radius:50%;background:#FEF3E2;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.modal-icon{font-size:28px;margin-bottom:14px;}
 .modal-box h3{font-size:18px;font-weight:800;margin-bottom:8px;}
 .modal-box p{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.6;}
 .modal-btns{display:flex;gap:10px;justify-content:flex-end;}
@@ -190,29 +251,28 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .print-header-title{font-size:15px;font-weight:800;color:var(--black);display:block;margin-bottom:3px;}
 .print-header-sub{font-size:11px;color:var(--muted);}
 
-.ans-btn:focus-visible{outline:2.5px solid var(--amber);outline-offset:2px;}
-.btn:focus-visible,.section-tab:focus-visible{outline:2.5px solid var(--amber);outline-offset:2px;}
-
 @page{size:A4 portrait;margin:14mm 18mm;}
 @media print{
-*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
-.no-print{display:none!important;}
-.site-header{display:none!important;}
-.shell{padding:0!important;margin:0!important;max-width:100%!important;}
-.print-header{display:flex!important;}
-.cert-section,.kpi-row,.summary-box,.cta-block,.report-banner{break-inside:avoid;page-break-inside:avoid;}
-.gap-row{break-inside:avoid;}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+  .no-print{display:none!important;}
+  .site-header{display:none!important;}
+  .shell{padding:0!important;margin:0!important;max-width:100%!important;}
+  .print-header{display:flex!important;}
+  .print-url{display:block!important;}
+  .cert-section,.kpi-row,.summary-box,.cta-block,.report-banner,.next-steps{break-inside:avoid;page-break-inside:avoid;}
+  .gap-row,.next-step-item{break-inside:avoid;}
 }
 @media(max-width:640px){
-.shell{padding:24px 14px 60px;}
-.page-intro h1{font-size:24px;}
-.ans-grid{grid-template-columns:repeat(2,1fr);}
-.report-banner{flex-direction:column;}
-.kpi-row{flex-direction:column;}
-.kpi-cell{border-right:none;border-bottom:1px solid var(--faint);}
-.kpi-cell:last-child{border-bottom:none;}
-.cta-block{flex-direction:column;text-align:center;}
-.bar-label{width:140px;font-size:11px;}
+  .shell{padding:24px 14px 60px;}
+  .page-intro h1{font-size:22px;}
+  .ans-grid{grid-template-columns:repeat(2,1fr);}
+  .report-banner{flex-direction:column;}
+  .kpi-row{flex-direction:column;}
+  .kpi-cell{border-right:none;border-bottom:1px solid var(--faint);}
+  .kpi-cell:last-child{border-bottom:none;}
+  .cta-block{flex-direction:column;text-align:center;}
+  .bar-label{width:140px;font-size:11px;}
+  .ans-legend{gap:10px;}
 }
 </style>
 </head>
@@ -222,6 +282,29 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 const {useState,useEffect}=React;
 
 const LOGO="data:image/png;base64,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";
+
+const CERT_URL="https://www.sbsc.se/certifikat/ssf-1101-cybersakerhet-bas/";
+
+// Viktning: 3=tungt (veckor–månader), 2=medel (dagar–veckor), 1=lätt (timmar–dagar, default)
+const WEIGHTS={
+  // TUNGT (3) — Utbildning
+  q46_1:3,
+  // TUNGT (3) — Leverantörsavtal
+  q44_1:3,q44_2:3,q44_3:3,q44_4:3,q44_5:3,q44_6:3,
+  // TUNGT (3) — MFA
+  q453_2:3,
+  // TUNGT (3) — Säkerhetskopiering
+  q412_1:3,q412_2:3,q412_3:3,
+  // MEDEL (2) — Lösenordspolicy
+  q411_1:2,q411_2:2,q411_3:2,q411_4:2,q411_5:2,
+  // MEDEL (2) — DNSSEC
+  q433_3:2,
+  // MEDEL (2) — Säkerhetsuppdateringar
+  q422_1:2,q422_2:2,
+  // MEDEL (2) — Kontogranskning & lösenordsrutiner
+  q451_1:2,q451_2:2,q451_3:2,q451_4:2,q451_5:2,
+  q453_1:2,q453_3:2,q453_4:2,q453_5:2,
+};
 
 const ANSWERS=[
   {key:"uppfyllt",label:"Uppfyllt",   score:1.0,cls:"ans-green"},
@@ -235,17 +318,18 @@ const SECTIONS=[
     {id:"q411_1",ref:"§4.1.1",text:"Standardlösenord för alla användarkonton till datorer, mobila enheter och onlinekonton är ändrade till starka lösenord (min. 12 tecken) som inte återanvänds."},
     {id:"q411_2",ref:"§4.1.1",text:"Inga lösenord återanvänds — varken tidigare använda lösenord eller samma lösenord på olika enheter/system."},
     {id:"q411_3",ref:"§4.1.1",text:"Lösenord som använts i organisationen används inte privat, och vice versa."},
-    {id:"q411_4",ref:"§4.1.1",text:"Starka lösenord (min. 12 tecken, kombination av teckentyper, ej ordlisteord) är definierade i ett formellt beslut av organisationen."},
+    {id:"q411_4",ref:"§4.1.1",text:"Starka lösenord (min. 12 tecken, kombination av teckentyper, ej ordlisteord) är definierade i ett beslut av organisationen."},
     {id:"q411_5",ref:"§4.1.1",text:"Kryptering av lagringsutrymme är aktiverat på datorer, mobila enheter och digitala lagringsytor där det är möjligt."},
     {id:"q412_1",ref:"§4.1.2",text:"Information säkerhetskopieras i den omfattning som verksamheten har beslutat."},
     {id:"q412_2",ref:"§4.1.2",text:"Minst en säkerhetskopia är tillgänglig enbart för personer med administrativ systembehörighet."},
+    {id:"q412_3",ref:"§4.1.2",text:"Säkerhetskopiorna kontrolleras regelbundet genom stickprovskontroller för att säkerställa att återställning fungerar.",note:"Anm."},
     {id:"q413_1",ref:"§4.1.3",text:"Programvara mot skadlig kod är installerad på alla datorer och, där möjligt, på mobila enheter som ansluter till externa nätverk."},
     {id:"q413_2",ref:"§4.1.3",text:"Programvara mot skadlig kod uppdateras automatiskt eller via en definierad rutin."},
     {id:"q413_3",ref:"§4.1.3",text:"Programvaran är konfigurerad för automatisk genomsökning vid filåtkomst — inklusive vid hämtning och öppning av filer från nätverksenheter och flyttbara media."},
     {id:"q413_4",ref:"§4.1.3",text:"Programvaran varnar eller blockerar på datorer om en webbplats innehåller skadlig kod."},
     {id:"q413_5",ref:"§4.1.3",text:"Programvaran är konfigurerad för att genomföra regelbundna skanningar efter skadlig kod."},
-    {id:"q414_1",ref:"§4.1.4",text:"Det finns ett formellt beslut om huruvida och i vilken omfattning organisationens resurser (datorer, nätverk, tjänster) får användas för privat bruk."},
-    {id:"q415_1",ref:"§4.1.5",text:"Det finns ett formellt beslut om huruvida och i vilken omfattning privat utrustning får användas i organisationens verksamhet."},
+    {id:"q414_1",ref:"§4.1.4",text:"Det finns ett beslut om huruvida och i vilken omfattning organisationens resurser (datorer, nätverk, tjänster) får användas för privat bruk."},
+    {id:"q415_1",ref:"§4.1.5",text:"Det finns ett beslut om huruvida och i vilken omfattning privat utrustning får användas i organisationens verksamhet."},
     {id:"q415_2",ref:"§4.1.5",text:"Privat utrustning som används i organisationen omfattas av samma säkerhetskrav som organisationens övriga utrustning."},
   ]},
   {id:"s42",name:"Mjukvaror & applikationer",ref:"SSF 1101 §4.2",questions:[
@@ -254,15 +338,15 @@ const SECTIONS=[
     {id:"q421_3",ref:"§4.2.1",text:"Applikationer till mobila enheter laddas enbart ned från betrodda källor (t.ex. AppStore, Google Play eller organisationens interna appkatalog)."},
     {id:"q421_4",ref:"§4.2.1",text:"Mjukvaror och applikationer som inte längre används avinstalleras snarast möjligt."},
     {id:"q422_1",ref:"§4.2.2",text:"Säkerhetsuppdateringar installeras automatiskt för operativsystem, programvaror och applikationer på datorer, nätverksenheter och mobila enheter — där det är tekniskt möjligt."},
-    {id:"q422_2",ref:"§4.2.2",text:"Operativsystem, programvaror och enheter som inte längre säkerhetsuppdateras är borttagna eller isolerade i logiskt/fysiskt separerat segment med särskilda regler."},
-    {id:"q423_1",ref:"§4.2.3",text:"Automatisk programstart är begränsad till applikationer som organisationen formellt beslutat är nödvändiga att starta automatiskt."},
+    {id:"q422_2",ref:"§4.2.2",text:"Operativsystem, programvaror och enheter som inte längre säkerhetsuppdateras är borttagna eller isolerade i logiskt/fysiskt separerat segment där de hanteras utifrån särskilda regler."},
+    {id:"q423_1",ref:"§4.2.3",text:"Automatisk programstart är begränsad till applikationer som organisationen beslutat är nödvändiga att starta automatiskt."},
     {id:"q423_2",ref:"§4.2.3",text:"Automatisk uppspelning är avstängt för alla filer från portabla lagringsmedier (USB-minnen, externa hårddiskar m.m.)."},
   ]},
   {id:"s43",name:"Nätverk",ref:"SSF 1101 §4.3",questions:[
     {id:"q431_1",ref:"§4.3.1",text:"En eller flera nätverksenheter med brandväggsfunktionalitet är installerade mellan organisationens interna nätverk och externa nätverk (t.ex. internet)."},
     {id:"q431_2",ref:"§4.3.1",text:"Standardlösenord ändras till starka lösenord som inte återanvänds innan en nätverksenhet installeras — där det är tekniskt möjligt."},
     {id:"q431_3",ref:"§4.3.1",text:"Lösenordsändringar för administrativa konton (inkl. servicekonton) i nätverksenheter sker enligt av organisationen beslutade intervall."},
-    {id:"q431_4",ref:"§4.3.1",text:"Alla öppna anslutningar (tillåtna portar och tjänster) på brandväggen är formellt beslutade av organisationen."},
+    {id:"q431_4",ref:"§4.3.1",text:"Alla öppna anslutningar (tillåtna portar och tjänster) på brandväggen är beslutade av organisationen."},
     {id:"q431_5",ref:"§4.3.1",text:"Brandväggsregler som inte längre behövs tas bort eller inaktiveras."},
     {id:"q431_6",ref:"§4.3.1",text:"Enheter som inte behöver internetåtkomst är förhindrade från att initiera anslutningar till internet."},
     {id:"q431_7",ref:"§4.3.1",text:"Brandväggens administrativa gränssnitt är inte åtkomligt från externa nätverk (t.ex. internet)."},
@@ -276,12 +360,12 @@ const SECTIONS=[
     {id:"q44_1",ref:"§4.4",text:"Organisationen har identifierat de leverantörer vars IT-tjänster är kritiska för verksamheten."},
     {id:"q44_2",ref:"§4.4",text:"De identifierade kritiska leverantörernas grundläggande cybersäkerhet är säkerställd — via egendeklaration, ackreditering, intyg, certifikat eller motsvarande."},
     {id:"q44_3",ref:"§4.4",text:"Det finns ett juridiskt bindande avtal med varje identifierad leverantör av kritiska IT-tjänster."},
-    {id:"q44_4",ref:"§4.4.1",text:"Avtalet täcker: servicenivå, incidenthantering och rapportering, säkerhetskopiering och återställning, kryptering av information, samt åtgärder och ansvar vid avtalets upphörande."},
+    {id:"q44_4",ref:"§4.4.1",text:"Avtalet täcker normalt: servicenivå, incidenthantering och rapportering, säkerhetskopiering och återställning, kryptering av information, samt åtgärder och ansvar vid avtalets upphörande."},
     {id:"q44_5",ref:"§4.4.2",text:"Leverantörer som behandlar eller lagrar personuppgifter intygar att de uppfyller GDPR-kraven."},
     {id:"q44_6",ref:"§4.4.2",text:"Personuppgiftsbiträdesavtal (DPA) finns med leverantören där det krävs enligt GDPR."},
   ]},
   {id:"s45",name:"Behörigheter",ref:"SSF 1101 §4.5",questions:[
-    {id:"q451_1",ref:"§4.5.1",text:"Skapande av användarkonton sker efter formellt beslut av organisationen."},
+    {id:"q451_1",ref:"§4.5.1",text:"Skapande av användarkonton sker efter beslut av organisationen."},
     {id:"q451_2",ref:"§4.5.1",text:"Systemadministratörsbehörighet tilldelas och används enbart av personer som utför systemadministrativa tjänster."},
     {id:"q451_3",ref:"§4.5.1",text:"Administrativa konton används enbart för tillåtna administrativa aktiviteter (t.ex. systemunderhåll) — inte för vanligt dagligt arbete."},
     {id:"q451_4",ref:"§4.5.1",text:"Varje användarkonto är tilldelat en enskild namngiven medarbetare — inga delade konton."},
@@ -295,49 +379,67 @@ const SECTIONS=[
     {id:"q453_5",ref:"§4.5.3",text:"Lösenord byts i den omfattning och med den regelbundenhet som verksamheten kräver och som organisationen beslutat."},
   ]},
   {id:"s46",name:"Utbildning i cybersäkerhet",ref:"SSF 1101 §4.6",questions:[
-    {id:"q46_1",ref:"§4.6",text:"Samtliga medarbetare har genomfört grundläggande utbildning i cybersäkerhet."},
-    {id:"q46_2",ref:"§4.6",text:"Utbildningen täcker: hot, risker och säkert beteende i det dagliga arbetet."},
-    {id:"q46_3",ref:"§4.6",text:"Utbildningen inkluderar samtliga av följande områden: lösenordshantering, säkerhetskopiering, molntjänster, e-post, sociala medier, skadlig kod, distansarbete, hantering av incidenter och hantering av mobila enheter."},
+    {id:"q46_1",ref:"§4.6",text:"Samtliga medarbetare har genomfört grundläggande utbildning i cybersäkerhet som täcker hot, risker och säkert beteende — inklusive lösenordshantering, säkerhetskopiering, molntjänster, e-post, sociala medier, skadlig kod, distansarbete, hantering av incidenter och hantering av mobila enheter."},
   ]},
 ];
 
+const TOTAL_Q=SECTIONS.reduce((n,s)=>n+s.questions.length,0);
+
+// Viktad poängberäkning per avsnitt
 const secPct=(sec,ans)=>{
-  let s=0,t=0;
+  let s=0,maxS=0;
   sec.questions.forEach(q=>{
     const a=ans[q.id];if(!a||a==="vet_ej")return;
-    const d=ANSWERS.find(x=>x.key===a);if(d&&d.score!==null){s+=d.score;t++;}
+    const d=ANSWERS.find(x=>x.key===a);
+    const w=WEIGHTS[q.id]||1;
+    if(d&&d.score!==null){s+=d.score*w;maxS+=w;}
   });
-  return{pct:t>0?Math.round(s/t*100):null,done:sec.questions.filter(q=>ans[q.id]).length,total:sec.questions.length};
+  return{pct:maxS>0?Math.round(s/maxS*100):null,done:sec.questions.filter(q=>ans[q.id]).length,total:sec.questions.length};
 };
 
+// Viktad totalsumma
 const allPct=(ans)=>{
-  let s=0,t=0;
+  let s=0,maxS=0;
   SECTIONS.forEach(sec=>sec.questions.forEach(q=>{
     const a=ans[q.id];if(!a||a==="vet_ej")return;
-    const d=ANSWERS.find(x=>x.key===a);if(d&&d.score!==null){s+=d.score;t++;}
+    const d=ANSWERS.find(x=>x.key===a);
+    const w=WEIGHTS[q.id]||1;
+    if(d&&d.score!==null){s+=d.score*w;maxS+=w;}
   }));
-  return t?Math.round(s/t*100):null;
+  return maxS?Math.round(s/maxS*100):null;
 };
 
-const barColor=p=>p===null?"#E8E9EC":p>=80?"#1B6B3F":p>=50?"#FFA300":"#C03535";
-
-const timeUntil=p=>{
-  if(p===null)return"Otillräckligt underlag";
-  if(p>=85)return"1–3 månader";
-  if(p>=65)return"3–6 månader";
-  if(p>=40)return"6–9 månader";
-  return"9–12 månader";
-};
+const barColor=p=>p===null?"#E8E9EC":p>=75?"#1B6B3F":p>=45?"#FFA300":"#C03535";
 
 const readiness=p=>{
   if(p===null)return"Otillräckligt underlag";
-  if(p>=85)return"Mycket god beredskap";
-  if(p>=65)return"God beredskap — luckor finns";
-  if(p>=40)return"Delvis förberedd";
-  return"Grundarbete återstår";
+  if(p>=75)return"Nära";
+  if(p>=45)return"En bit på väg";
+  return"Lång kvar";
+};
+
+const readinessCls=p=>{
+  if(p===null)return"r-na";
+  if(p>=75)return"r-nara";
+  if(p>=45)return"r-bit";
+  return"r-lang";
 };
 
 const today=()=>new Date().toLocaleDateString("sv-SE",{day:"numeric",month:"long",year:"numeric"});
+
+// Generera prioriterade nästa steg baserat på svar
+const getNextSteps=(answers)=>{
+  const steps=[];
+  const hasGap=ids=>ids.some(id=>answers[id]==="ej"||answers[id]==="pagar");
+  if(hasGap(["q46_1"]))steps.push({priority:"hög",icon:"🎓",title:"Genomför cybersäkerhetsutbildning för all personal",text:"Utbildning av samtliga medarbetare är ett av de mest tidskrävande kraven. Utbildningen ska täcka lösenord, säkerhetskopiering, e-post, skadlig kod, distansarbete och incidenthantering. Börja planera och genomföra detta tidigt i processen."});
+  if(hasGap(["q44_1","q44_2","q44_3","q44_4","q44_5","q44_6"]))steps.push({priority:"hög",icon:"📋",title:"Identifiera kritiska IT-leverantörer och upprätta avtal",text:"Kartlägg vilka leverantörer som är kritiska för er verksamhet och säkerställ deras cybersäkerhet. Upprätta juridiskt bindande avtal och, där GDPR kräver det, personuppgiftsbiträdesavtal (DPA). Förhandling och undertecknande tar ofta tid."});
+  if(answers["q453_2"]==="ej"||answers["q453_2"]==="pagar")steps.push({priority:"hög",icon:"🔐",title:"Aktivera multifaktorsautentisering (MFA)",text:"MFA ska aktiveras på alla system där det är tekniskt möjligt — prioritera e-post, administrativa konton och VPN. Kräver teknisk implementation och ofta utbildning av användare."});
+  if(hasGap(["q412_1","q412_2","q412_3"]))steps.push({priority:"hög",icon:"💾",title:"Säkerställ säkerhetskopieringsrutin",text:"Se till att information säkerhetskopieras enligt ett dokumenterat beslut, att minst en kopia enbart är åtkomlig för administratörer, och att kopiorna kontrolleras regelbundet med stickprov."});
+  if(hasGap(["q411_1","q411_2","q411_3","q411_4","q411_5"]))steps.push({priority:"medel",icon:"🔑",title:"Dokumentera lösenordspolicy och byt standardlösenord",text:"Upprätta ett beslut om lösenordskrav (min. 12 tecken, inga ordlisteord, ingen återanvändning). Säkerställ att alla standardlösenord är bytta på datorer, mobila enheter och nätverksutrustning."});
+  if(answers["q433_3"]==="ej"||answers["q433_3"]==="pagar")steps.push({priority:"medel",icon:"🌐",title:"Konfigurera DNSSEC för organisationens domän",text:"DNSSEC skyddar ert domännamn mot manipulation av DNS-svar. Kontakta er DNS-leverantör eller IT-ansvarig — kräver ofta extern hjälp men är en viktig teknisk skyddsnivå."});
+  if(hasGap(["q422_1","q422_2"]))steps.push({priority:"medel",icon:"🔄",title:"Säkerställ rutin för säkerhetsuppdateringar",text:"Automatiska säkerhetsuppdateringar ska vara aktiverade för operativsystem, programvaror och nätverksenheter. Enheter som inte längre uppdateras ska tas bort eller isoleras."});
+  return steps;
+};
 
 function Spider({sections,answers,size=220}){
   const [tooltip,setTooltip]=useState(null);
@@ -346,15 +448,15 @@ function Spider({sections,answers,size=220}){
   const ang=i=>(i*2*Math.PI/n)-Math.PI/2;
   const pt=(i,r)=>({x:cx+r*Math.cos(ang(i)),y:cy+r*Math.sin(ang(i))});
   const vals=sections.map((s,i)=>{const{pct}=secPct(s,answers);return{name:s.name,v:pct!=null?pct/100:0,i,pct};});
-  const dpts=vals.map(({v,i})=>{const p=pt(i,v*R);return`${p.x},${p.y}`;}).join(" ");
+  const dpts=vals.map(({v,i})=>{const p=pt(i,v*R);return p.x+","+p.y;}).join(" ");
   const lR=R*1.42;
   return(
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{overflow:"visible"}}>
+    <svg width={size} height={size} viewBox={"0 0 "+size+" "+size} style={{overflow:"visible"}}>
       {[.25,.5,.75,1].map((lv,j)=>{
-        const ps=sections.map((_,i)=>{const p=pt(i,lv*R);return`${p.x},${p.y}`;}).join(" ");
-        return<polygon key={j} points={ps} fill="none" stroke="#E8E9EC" strokeWidth={j===3?1.5:1}/>;
+        const ps=sections.map((_,i)=>{const p=pt(i,lv*R);return p.x+","+p.y;}).join(" ");
+        return <polygon key={j} points={ps} fill="none" stroke="#E8E9EC" strokeWidth={j===3?1.5:1}/>;
       })}
-      {vals.map(({i})=>{const e=pt(i,R);return<line key={i} x1={cx} y1={cy} x2={e.x} y2={e.y} stroke="#E8E9EC" strokeWidth="1"/>;})}
+      {vals.map(({i})=>{const e=pt(i,R);return<line key={i} x1={cx} y1={cy} x2={e.x} y2={e.y} stroke="#E8E9EC" strokeWidth="1"/>;})};
       <polygon points={dpts} fill="#FFA300" fillOpacity=".16" stroke="#FFA300" strokeWidth="2" strokeLinejoin="round"/>
       {vals.map(({v,i,name,pct})=>{
         const p=pt(i,v*R);
@@ -383,7 +485,7 @@ function Spider({sections,answers,size=220}){
         <g>
           <rect x={tooltip.x-58} y={tooltip.y-38} width="116" height="32" rx="4" fill="#101820" opacity=".93"/>
           <text x={tooltip.x} y={tooltip.y-26} textAnchor="middle" fontSize="10" fontWeight="700" fill="white" fontFamily="Open Sans,sans-serif">{tooltip.name.length>18?tooltip.name.slice(0,16)+"…":tooltip.name}</text>
-          <text x={tooltip.x} y={tooltip.y-13} textAnchor="middle" fontSize="11" fontWeight="800" fill="#FFA300" fontFamily="Open Sans,sans-serif">{tooltip.pct!==null?`${tooltip.pct}%`:"Vet ej"}</text>
+          <text x={tooltip.x} y={tooltip.y-13} textAnchor="middle" fontSize="11" fontWeight="800" fill="#FFA300" fontFamily="Open Sans,sans-serif">{tooltip.pct!==null?tooltip.pct+"%":"Vet ej"}</text>
         </g>
       )}
     </svg>
@@ -393,13 +495,14 @@ function Spider({sections,answers,size=220}){
 function GatePage({onSuccess}){
   const [sent,setSent]=useState(false);
   const [loading,setLoading]=useState(false);
+  const [error,setError]=useState("");
   const [name,setName]=useState("");
   const [company,setCompany]=useState("");
   const [email,setEmail]=useState("");
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
-    setLoading(true);
+    setLoading(true);setError("");
     try{
       const res=await fetch("https://api.web3forms.com/submit",{
         method:"POST",
@@ -414,8 +517,8 @@ function GatePage({onSuccess}){
         })
       });
       if(res.ok)setSent(true);
-      else alert("Något gick fel. Försök igen eller kontakta kund@sbsc.se.");
-    }catch(err){alert("Något gick fel. Kontrollera din internetanslutning.");}
+      else setError("Något gick fel vid inskick. Försök igen eller kontakta kund@sbsc.se.");
+    }catch(err){setError("Kunde inte ansluta. Kontrollera din internetanslutning och försök igen.");}
     setLoading(false);
   };
 
@@ -426,9 +529,9 @@ function GatePage({onSuccess}){
         {!sent?(
           <>
             <h1 className="gate-title">Är er organisation redo för SSF 1101?</h1>
-            <p className="gate-sub">Fyll i era kontaktuppgifter för att få tillgång till vår kostnadsfria kartläggning av er beredskap mot SSF 1101 Cybersäkerhet Basnivå.</p>
+            <p className="gate-sub">Fyll i era kontaktuppgifter för att få tillgång till vår kostnadsfria GAP-analys inför certifiering enligt SSF 1101 Cybersäkerhet Basnivå.</p>
             <div className="gate-facts">
-              <div className="gate-fact"><div className="gate-fact-n">56</div><div className="gate-fact-l">krav</div></div>
+              <div className="gate-fact"><div className="gate-fact-n">{TOTAL_Q}</div><div className="gate-fact-l">krav</div></div>
               <div className="gate-fact"><div className="gate-fact-n">~20 min</div><div className="gate-fact-l">tid</div></div>
               <div className="gate-fact"><div className="gate-fact-n">0%</div><div className="gate-fact-l">data lagras</div></div>
             </div>
@@ -445,6 +548,7 @@ function GatePage({onSuccess}){
                 <label className="gate-label">E-postadress *</label>
                 <input className="gate-input" type="email" required placeholder="namn@foretag.se" value={email} onChange={e=>setEmail(e.target.value)}/>
               </div>
+              {error&&<div className="gate-error">{error}</div>}
               <button className="gate-btn" type="submit" disabled={loading}>{loading?"Skickar…":"Starta kartläggningen →"}</button>
               <p className="gate-privacy">SBSC behandlar dina uppgifter enligt GDPR. Uppgifterna används enbart för uppföljning av din intresseanmälan. Självskattningens svar lagras aldrig — de stannar i din webbläsare.</p>
             </form>
@@ -462,20 +566,20 @@ function GatePage({onSuccess}){
   );
 }
 
-function QCard({q,index,answers,answer}){
+function QCard({q,index,answers,answer,secName}){
   const val=answers[q.id];
   return(
     <div className="q-card">
       <div className="q-header">
-        <div className={`q-num${val?" answered":""}`}>{val?"✓":index+1}</div>
-        <div>
+        <div className={"q-num"+(val?" answered":"")}>{val?"✓":index+1}</div>
+        <div style={{flex:1}}>
           <div className="q-text">{q.text}</div>
-          <div className="q-ref">{q.ref}</div>
+          <div className="q-ref">{secName} · {q.ref}{q.note&&<span className="q-note"> — Anm.</span>}</div>
         </div>
       </div>
       <div className="ans-grid">
         {ANSWERS.map(a=>(
-          <button key={a.key} className={`ans-btn${val===a.key?" "+a.cls:""}`} onClick={()=>answer(q.id,a.key)}>{a.label}</button>
+          <button key={a.key} className={"ans-btn"+(val===a.key?" "+a.cls:"")} onClick={()=>answer(q.id,a.key)}>{a.label}</button>
         ))}
       </div>
     </div>
@@ -484,16 +588,12 @@ function QCard({q,index,answers,answer}){
 
 function QPage({answers,answer,secIdx,setSecIdx,setView}){
   const sec=SECTIONS[secIdx];
-  const totalQ=SECTIONS.reduce((n,s)=>n+s.questions.length,0);
   const doneQ=SECTIONS.reduce((n,s)=>n+s.questions.filter(q=>answers[q.id]).length,0);
-  const prog=Math.round(doneQ/totalQ*100);
+  const prog=Math.round(doneQ/TOTAL_Q*100);
   const secDone=sec.questions.every(q=>answers[q.id]);
   const isLast=secIdx===SECTIONS.length-1;
 
-  const goNext=()=>{
-    if(!isLast){setSecIdx(secIdx+1);window.scrollTo(0,0);}
-    else setView("results");
-  };
+  const goNext=()=>{if(!isLast){setSecIdx(secIdx+1);window.scrollTo(0,0);}else setView("results");};
   const goPrev=()=>{if(secIdx>0){setSecIdx(secIdx-1);window.scrollTo(0,0);}};
 
   return(
@@ -501,30 +601,37 @@ function QPage({answers,answer,secIdx,setSecIdx,setView}){
       <div className="progress-bar no-print">
         <div className="progress-top">
           <span className="progress-label">{sec.name}</span>
-          <span className="progress-count">{doneQ}/{totalQ} svar · {prog}%</span>
+          <span className="progress-count">{doneQ}/{TOTAL_Q} svar · {prog}%</span>
         </div>
-        <div className="progress-track"><div className="progress-fill" style={{width:`${prog}%`}}/></div>
+        <div className="progress-track"><div className="progress-fill" style={{width:prog+"%"}}/></div>
       </div>
+      <div className="nav-help no-print">Du kan hoppa fritt mellan avsnitt med hjälp av flikarna nedan — dina svar sparas automatiskt.</div>
       <div className="section-tabs no-print">
         {SECTIONS.map((s,i)=>{
           const{done,total}=secPct(s,answers);
           const isAct=i===secIdx,isDone=done===total;
           return(
-            <button key={s.id} className={`section-tab${isAct?" active":""}${isDone&&!isAct?" done":""}`} onClick={()=>{setSecIdx(i);window.scrollTo(0,0);}}>
+            <button key={s.id} className={"section-tab"+(isAct?" active":"")+(isDone&&!isAct?" done":"")} onClick={()=>{setSecIdx(i);window.scrollTo(0,0);}}>
               <span className="tab-dot"/>{s.name}
             </button>
           );
         })}
       </div>
-      <div style={{marginBottom:20}}>
+      <div style={{marginBottom:16}}>
         <div style={{fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:"1px",color:"var(--muted)",marginBottom:4}}>{sec.ref}</div>
         <h2 style={{fontSize:20,fontWeight:800,marginBottom:6}}>{sec.name}</h2>
         <p style={{fontSize:13,color:"var(--muted)"}}>Ange hur er organisation uppfyller varje krav i SSF 1101.</p>
       </div>
-      {sec.questions.map((q,i)=><QCard key={q.id} q={q} index={i} answers={answers} answer={answer}/>)}
+      <div className="ans-legend no-print">
+        <div className="legend-item"><div className="legend-dot" style={{background:"var(--green)"}}/><span>Uppfyllt</span></div>
+        <div className="legend-item"><div className="legend-dot" style={{background:"var(--amber)"}}/><span>Pågår — påbörjat men ej klart</span></div>
+        <div className="legend-item"><div className="legend-dot" style={{background:"var(--red)"}}/><span>Ej påbörjat</span></div>
+        <div className="legend-item"><div className="legend-dot" style={{background:"var(--blue)"}}/><span>Vet ej — räknas ej i poängen</span></div>
+      </div>
+      {sec.questions.map((q,i)=><QCard key={q.id} q={q} index={i} answers={answers} answer={answer} secName={sec.name}/>)}
       <div className="btn-row no-print">
         <button className="btn-ghost" onClick={goPrev} disabled={secIdx===0}>← Föregående</button>
-        <button className="btn btn-primary" onClick={goNext} disabled={!secDone}>{isLast?"Visa rapport →":"Nästa →"}</button>
+        <button className="btn btn-primary" onClick={goNext} disabled={!secDone}>{isLast?"Visa GAP-analys →":"Nästa avsnitt →"}</button>
       </div>
       {!secDone&&<p style={{textAlign:"right",fontSize:11,color:"var(--muted)",marginTop:8}}>Besvara alla frågor för att gå vidare.</p>}
     </>
@@ -537,8 +644,13 @@ function ReportPage({answers,company,restart,back}){
   const miG=SECTIONS.reduce((n,s)=>n+s.questions.filter(q=>answers[q.id]==="pagar").length,0);
   const vetEjG=SECTIONS.reduce((n,s)=>n+s.questions.filter(q=>answers[q.id]==="vet_ej").length,0);
   const ds=today();
+  const steps=getNextSteps(answers);
 
-  // Bygg gap-lista
+  useEffect(()=>{
+    document.title=(company||"Er organisation")+" — SSF 1101 GAP-analys";
+    return()=>{document.title="SBSC — SSF 1101 Cybersäkerhet Basnivå";};
+  },[company]);
+
   const gaps=[];
   SECTIONS.forEach(sec=>sec.questions.forEach(q=>{
     const a=answers[q.id];
@@ -548,14 +660,13 @@ function ReportPage({answers,company,restart,back}){
   }));
   gaps.sort((a,b)=>({hi:0,mi:1,uk:2}[a.pri]-{hi:0,mi:1,uk:2}[b.pri]));
 
-  // Sammanfattning
+  const nm=company||"Er organisation";
+  const rl=readiness(overall);
   const summary=(()=>{
-    const name=company||"Er organisation";
-    if(overall===null)return`Självskattningen för ${name} ger en övergripande bild av beredskapen mot SSF 1101 Cybersäkerhet Basnivå. Flera frågor besvarades med "Vet ej" — dessa behöver utredas internt för en fullständig bild.`;
-    if(overall>=85)return`${name} visar en mycket god beredskap mot SSF 1101 med ${overall}% uppfyllnadsgrad. De grundläggande kraven är i stort sett på plats. Med fokus på de resterande ${hiG+miG} åtgärdspunkterna bör certifiering vara möjlig inom ${timeUntil(overall).toLowerCase()}.`;
-    if(overall>=65)return`${name} har en god grund med ${overall}% uppfyllnadsgrad men kartläggningen identifierar ${hiG} krav som ännu inte påbörjats och ${miG} som är på gång. Med ett strukturerat åtgärdsarbete är certifiering realistisk inom ${timeUntil(overall).toLowerCase()}.`;
-    if(overall>=40)return`Kartläggningen visar att ${name} är delvis förberedd med ${overall}% uppfyllnadsgrad. Det kvarstår ${hiG} opåbörjade krav och ${miG} som pågår. Räkna med ${timeUntil(overall).toLowerCase()} för att nå certifieringsnivå med fokuserat arbete.`;
-    return`${name} befinner sig i ett tidigt skede av cybersäkerhetsarbetet med ${overall}% uppfyllnadsgrad. Kartläggningen identifierar ${hiG} opåbörjade krav. Det är ett bra läge att starta det strukturerade arbetet — uppskattad tid till certifiering är ${timeUntil(overall).toLowerCase()}.`;
+    if(overall===null)return nm+" — Självskattningen ger en övergripande bild av beredskapen mot SSF 1101. Flera frågor besvarades med \"Vet ej\" — dessa behöver utredas internt för en fullständig bild.";
+    if(overall>=75)return nm+" är nära certifieringsnivå med en viktad uppfyllnadsgrad på "+overall+"%. De flesta krav är på plats. Fokusera på de "+( hiG+miG)+" kvarstående åtgärdspunkterna och ta kontakt med SBSC för att inleda certifieringsprocessen.";
+    if(overall>=45)return nm+" är en bit på väg med "+overall+"% viktad uppfyllnadsgrad. Kartläggningen identifierar "+hiG+" krav som ännu inte påbörjats och "+miG+" som pågår. Med ett strukturerat åtgärdsarbete — med fokus på utbildning och leverantörsstyrning — är certifiering möjlig.";
+    return nm+" har lång kvar till certifieringsnivå med "+overall+"% viktad uppfyllnadsgrad. Kartläggningen identifierar "+hiG+" opåbörjade krav. Det är ett bra läge att starta det strukturerade arbetet utifrån prioriteringarna i nästa steg nedan.";
   })();
 
   return(
@@ -563,7 +674,7 @@ function ReportPage({answers,company,restart,back}){
       <div className="print-header">
         <img src={LOGO} alt="SBSC" className="print-header-logo"/>
         <div className="print-header-right">
-          <span className="print-header-title">SSF 1101 Cybersäkerhet Basnivå — Beredskapsanalys</span>
+          <span className="print-header-title">SSF 1101 Cybersäkerhet Basnivå — GAP-analys</span>
           <span className="print-header-sub">{ds} · SBSC ackrediterat av SWEDAC (nr 1631)</span>
         </div>
       </div>
@@ -574,25 +685,28 @@ function ReportPage({answers,company,restart,back}){
           <div className="banner-company">{company||"Er organisation"}</div>
           <div className="banner-meta">
             <span>📅 {ds}</span>
-            <span>56 krav · 6 avsnitt</span>
+            <span>{TOTAL_Q} krav · 6 avsnitt</span>
           </div>
         </div>
-        <div>
-          <div className="banner-score-label">Uppfyllnadsgrad</div>
+        <div className="banner-score-wrap">
+          <div className="banner-score-label">Viktad uppfyllnadsgrad</div>
           <div className="banner-score">{overall!=null?<>{overall}<em>%</em></>:"—"}</div>
+          <div className="banner-readiness">
+            <span className={"readiness-badge "+readinessCls(overall)}>{rl}</span>
+          </div>
         </div>
       </div>
 
       <div className="kpi-row">
-        <div className="kpi-cell"><div className="kpi-label">Bedömning</div><div className="kpi-value">{readiness(overall)}</div></div>
-        <div className="kpi-cell"><div className="kpi-label">Uppskattad tid till certifiering</div><div className="kpi-value kpi-amber">{timeUntil(overall)}</div></div>
+        <div className="kpi-cell"><div className="kpi-label">Bedömning</div><div className="kpi-value"><span className={"readiness-badge "+readinessCls(overall)}>{rl}</span></div></div>
         <div className="kpi-cell"><div className="kpi-label">Krav att åtgärda</div><div className="kpi-value">{hiG} ej påbörjat · {miG} pågår</div></div>
+        <div className="kpi-cell"><div className="kpi-label">Vet ej (utreds internt)</div><div className="kpi-value">{vetEjG} krav</div></div>
       </div>
 
-      {vetEjG>=5&&(
+      {vetEjG>=3&&(
         <div style={{display:"flex",alignItems:"flex-start",gap:10,padding:"12px 16px",marginBottom:14,background:"#FEF9EC",border:"1.5px solid #FFD580",borderRadius:6,fontSize:13}}>
           <span style={{flexShrink:0,color:"#8A5500",marginTop:1}}>⚠</span>
-          <div><strong style={{display:"block",marginBottom:3,color:"#7A4800"}}>{vetEjG} krav besvarades med "Vet ej"</strong><span style={{color:"#8A5500"}}>Dessa behöver utredas internt — resultatet kan vara missvisande.</span></div>
+          <div><strong style={{display:"block",marginBottom:3,color:"#7A4800"}}>{vetEjG} krav besvarades med "Vet ej"</strong><span style={{color:"#8A5500"}}>Dessa exkluderas från poängen och behöver utredas internt — resultatet kan vara missvisande.</span></div>
         </div>
       )}
 
@@ -601,20 +715,35 @@ function ReportPage({answers,company,restart,back}){
         <div className="summary-box-text">{summary}</div>
       </div>
 
+      {/* Certifieringsinfo i rapporten */}
+      <div className="report-info-box">
+        <h4>ℹ️ Bra resultat = inte certifierad</h4>
+        <p>En hög uppfyllnadsgrad i den här GAP-analysen innebär inte att er organisation är certifierad eller nästan certifierad. Certifiering enligt SSF 1101 kräver tre separata steg:</p>
+        <ol className="report-info-steps">
+          <li><span className="step-num">1</span><span>Ansökan hos SBSC</span></li>
+          <li><span className="step-num">2</span><span>Ifyllnad av SBSC:s utförligare digitala egendeklaration</span></li>
+          <li><span className="step-num">3</span><span>Inlämning av bevis på att kraven i SSF 1101 faktiskt uppfylls</span></li>
+        </ol>
+      </div>
+
       {/* Spindelnät + staplar */}
       <div className="cert-section">
         <div className="cert-head">
-          <div><h3>SSF 1101 Cybersäkerhet Basnivå</h3><div className="cert-head-reg">SS-EN ISO/IEC 17021 · SS-EN ISO/IEC 17024</div></div>
-          <div className="cert-head-score">{overall!=null?`${overall}%`:"—"}</div>
+          <div><h3>SSF 1101 Cybersäkerhet Basnivå</h3></div>
+          <div className="cert-head-score">{overall!=null?overall+"%":"—"}</div>
         </div>
         <div className="cert-body">
           <div className="spider-wrap"><Spider sections={SECTIONS} answers={answers}/></div>
+          <div className="spider-caption">Viktad täckningsgrad per avsnitt</div>
+          <div className="readiness-explain">
+            <strong>Om bedömningen: </strong>Resultatet "Nära / En bit på väg / Lång kvar" baseras inte enbart på hur många krav som är uppfyllda — utan också på hur arbetsintensiva de kvarvarande kraven bedöms vara. Krav inom utbildning, leverantörsstyrning och MFA väger tyngre än tekniska punktinställningar, eftersom de tar längre tid att genomföra i praktiken.
+          </div>
           <div className="bar-section">
             {SECTIONS.map(s=>{const{pct}=secPct(s,answers);return(
               <div className="bar-row" key={s.id}>
                 <div className="bar-label">{s.name}</div>
-                <div className="bar-track"><div className="bar-fill" style={{width:`${pct||0}%`,background:barColor(pct)}}/></div>
-                <div className="bar-pct">{pct!=null?`${pct}%`:"—"}</div>
+                <div className="bar-track"><div className="bar-fill" style={{width:(pct||0)+"%",background:barColor(pct)}}/></div>
+                <div className="bar-pct">{pct!=null?pct+"%":"—"}</div>
               </div>
             );})}
           </div>
@@ -624,7 +753,7 @@ function ReportPage({answers,company,restart,back}){
                 <h4>Identifierade gap — {gaps.length} krav att hantera</h4>
                 {gaps.map((g,i)=>(
                   <div className="gap-row" key={i}>
-                    <span className={`gap-badge ${g.cls}`}>{g.lbl}</span>
+                    <span className={"gap-badge "+g.cls}>{g.lbl}</span>
                     <div className="gap-body">
                       <div className="gap-title">{g.text}</div>
                       <div className="gap-meta">{g.sec} · {g.ref}</div>
@@ -639,9 +768,40 @@ function ReportPage({answers,company,restart,back}){
         </div>
       </div>
 
+      {/* Nästa steg */}
+      {steps.length>0&&(
+        <div className="next-steps">
+          <div className="next-steps-head">
+            <h3>Rekommenderade nästa steg</h3>
+          </div>
+          {steps.map((st,i)=>(
+            <div className="next-step-item" key={i}>
+                            <div className="next-step-body">
+                <div className="next-step-title">
+                  {st.title}
+                  <span className={st.priority==="hög"?"pri-hog":"pri-medel"}>{st.priority} prioritet</span>
+                </div>
+                <div className="next-step-text">{st.text}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {steps.length===0&&gaps.length===0&&(
+        <div className="next-steps">
+          <div className="next-steps-head"><h3>Rekommenderade nästa steg</h3></div>
+          <div className="next-step-item">
+                        <div className="next-step-body">
+              <div className="next-step-title">Ansök om certifiering hos SBSC</div>
+              <div className="next-step-text">Er GAP-analys visar att samtliga krav är uppfyllda. Nästa steg är att ansöka om certifiering hos SBSC, fylla i den utförligare egendeklarationen och lämna in bevis på att kraven uppfylls.</div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="disclaimer">
         <strong>Viktig information</strong>
-        Denna kartläggning är en självskattning och ger en indikativ bild av er beredskap mot SSF 1101 Cybersäkerhet Basnivå. Resultaten speglar hur ni tolkar och besvarar frågorna och kan avvika från en faktisk certifieringsbedömning. En hög uppfyllnadsgrad garanterar inte att certifiering utfärdas utan föregående granskning av SBSC. Certifikat utfärdas då samtliga krav är uppfyllda och verifierade av SBSC. Giltighetstid är längst 3 år. SBSC är ackrediterat av SWEDAC (ackrediteringsnummer 1631).
+        Denna GAP-analys är en självskattning och ger en indikativ bild av er beredskap mot SSF 1101 Cybersäkerhet Basnivå. Resultaten speglar hur ni tolkar och besvarar frågorna. En hög uppfyllnadsgrad garanterar inte att certifiering utfärdas — certifikat utfärdas då samtliga krav är verifierade av SBSC. Giltighetstid är längst 3 år. SBSC är ackrediterat av SWEDAC (ackrediteringsnummer 1631).
       </div>
 
       <div className="cta-block">
@@ -649,10 +809,13 @@ function ReportPage({answers,company,restart,back}){
           <h3>Ansök om SSF 1101-certifiering</h3>
           <p>Läs mer om certifieringsprocessen och ansök direkt på SBSC:s webbplats.</p>
         </div>
-        <a className="cta-link" href="https://www.sbsc.se/ssf-1101" target="_blank" rel="noopener noreferrer">
-          Till SBSC:s SSF 1101-sida
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <div style={{textAlign:"center"}}>
+          <a className="cta-link" href={CERT_URL} target="_blank" rel="noopener noreferrer">
+            Ansök om certifiering
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <div className="print-url">{CERT_URL}</div>
+        </div>
       </div>
 
       <div className="btn-row no-print" style={{marginTop:20}}>
@@ -676,32 +839,66 @@ function StartPage({company,setCompany,agreed,setAgreed,attempted,goStart}){
       <div className="page-intro">
         <div className="chip">SSF 1101 Cybersäkerhet Basnivå</div>
         <h1>Kartlägg er beredskap inför certifiering</h1>
-        <p>Gå igenom alla 56 krav i SSF 1101 och se exakt var er organisation står — med gap-analys och uppskattad tid till certifiering.</p>
+        <p>Gå igenom standardens {TOTAL_Q} krav och få en GAP-analys med bedömning av hur redo er organisation är.</p>
       </div>
+
+      {/* INFORMATIONSRUTA */}
+      <div className="info-box">
+        <div className="info-box-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A5A8C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Vad är det här verktyget?
+        </div>
+        <div className="info-box-body">
+          Det här är ett <strong>förberedelseverktyg</strong> som hjälper er att bedöma hur redo organisationen är för certifiering mot SSF 1101 Cybersäkerhet BAS. Ni svarar på {TOTAL_Q} krav och får en GAP-analys med bedömningen <strong>Nära</strong>, <strong>En bit på väg</strong> eller <strong>Lång kvar</strong>. Bedömningen väger in hur arbetsintensiva kvarvarande krav är — utbildning av all personal och leverantörsavtal väger tyngre än tekniska punktinställningar.
+        </div>
+        <div className="info-warn-head">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A3800" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Viktigt: En bra GAP-analys innebär inte att ni är certifierade
+        </div>
+        <ul className="steps-list">
+          <li><span className="step-num">1</span><span>Ansökan hos SBSC</span></li>
+          <li><span className="step-num">2</span><span>Ifyllnad av SBSC:s utförligare digitala egendeklaration (tillgänglig efter ansökan)</span></li>
+          <li><span className="step-num">3</span><span>Inlämning av bevis på att kraven i SSF 1101 faktiskt uppfylls och verifiering av SBSC</span></li>
+        </ul>
+        <div className="info-note">Det här verktyget ersätter inte de tre stegen ovan — det ger er en bild av var ni befinner er och vad som återstår att göra.</div>
+
+      </div>
+
+      {/* SSF DOWNLOAD BOX */}
+      <div className="ssf-download-box">
+        <div className="ssf-download-text">
+          <div className="ssf-download-title">Läs standarden innan du börjar</div>
+          <div className="ssf-download-body">SSF 1101 är kostnadsfri att ladda ner. Vi rekommenderar att du läser den för att bättre förstå vad certifieringen kräver.</div>
+        </div>
+        <a className="ssf-download-btn" href="https://www.stoldskyddsforeningen.se/butik/foretag/ssf-normer/cybersakerhet/ssf-1101-utg-2-ssf-cybersakerhet-basniva-grundlaggande-it-sakerhet/" target="_blank" rel="noopener noreferrer">
+          Ladda ner SSF 1101 kostnadsfritt
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+
       <div className="card">
         <div className="field-label">Organisationens namn <span className="req-star">*</span></div>
-        <input className={`text-input${attempted&&missingName?" invalid":""}`} type="text" placeholder="T.ex. Andersson AB" value={company} onChange={e=>setCompany(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")goStart();}}/>
-        {attempted&&missingName&&<div className="field-error">Ange organisationens namn för att fortsätta.</div>}
+        <input className="text-input" type="text" placeholder="T.ex. Andersson AB" value={company} onChange={e=>setCompany(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")goStart();}}/>
         <div className="privacy-note">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <p>Ingen data sparas. Alla svar stannar i din webbläsare och raderas när du stänger sidan.</p>
         </div>
         <div className="disc-check-wrap" onClick={()=>setAgreed(a=>!a)}>
-          <div className={`disc-checkbox${agreed?" disc-checked":""}`}>{agreed?"✓":""}</div>
+          <div className={"disc-checkbox"+(agreed?" disc-checked":"")}>{agreed?"✓":""}</div>
           <div className="disc-check-text">
-            <strong>Jag förstår att detta är en självskattning</strong>
-            Resultaten är ett stöd för eget förbättringsarbete — inte ett certifieringsbesked. En hög uppfyllnadsgrad garanterar inte att certifikat utfärdas utan SBSC:s granskning.
+            <strong>Jag förstår att detta är en GAP-analys — inte ett certifieringsbesked</strong>
+            Resultaten är ett stöd för eget förbättringsarbete. En hög uppfyllnadsgrad garanterar inte att certifikat utfärdas utan genomgång av SBSC:s fullständiga certifieringsprocess.
           </div>
         </div>
         {hasError&&(
           <div className="validation-box">
             <div className="validation-title">Följande måste fyllas i:</div>
             {missingName&&<div className="validation-item"><span className="v-num">1</span>Ange organisationens namn</div>}
-            {missingAgreed&&<div className="validation-item"><span className="v-num">{missingName?"2":"1"}</span>Bekräfta att du förstår hur rapporten ska användas</div>}
+            {missingAgreed&&<div className="validation-item"><span className="v-num">{missingName?"2":"1"}</span>Bekräfta att du förstår hur GAP-analysen ska användas</div>}
           </div>
         )}
         <div className="stat-row">
-          <div className="stat"><div className="stat-n">56</div><div className="stat-l">krav</div></div>
+          <div className="stat"><div className="stat-n">{TOTAL_Q}</div><div className="stat-l">krav</div></div>
           <div className="stat"><div className="stat-n">6</div><div className="stat-l">avsnitt</div></div>
           <div className="stat"><div className="stat-n">~20 min</div><div className="stat-l">beräknad tid</div></div>
         </div>

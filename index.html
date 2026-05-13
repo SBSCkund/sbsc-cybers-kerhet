@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Förberedelsverktyg inför SBSC-certifiering enligt SSF 1101 Cybersäkerhet Basnivå.">
-<title>SBSC — Cybersäkerhet Bas</title>
+<title>SBSC – Cybersäkerhet Bas</title>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -44,7 +44,7 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .ssf-download-btn{display:inline-flex;align-items:center;gap:7px;background:var(--amber);color:var(--black);padding:10px 18px;font-size:12px;font-weight:800;border-radius:4px;white-space:nowrap;font-family:inherit;text-decoration:none;transition:background .12s;flex-shrink:0;}
 .ssf-download-btn:hover{background:#E89300;}
 
-/* INFO BOX — startsida */
+/* INFO BOX – startsida */
 .info-box{background:#F0F7FF;border:1.5px solid #C8DCF0;border-radius:var(--r);padding:22px 24px;margin-bottom:20px;}
 .info-box-title{font-size:14px;font-weight:800;color:var(--black);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
 .info-box-body{font-size:13px;color:#1a3a5c;line-height:1.7;margin-bottom:14px;}
@@ -112,7 +112,6 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .q-num.answered{background:var(--amber);border-color:var(--amber);color:var(--black);}
 .q-text{font-size:13px;font-weight:700;line-height:1.5;flex:1;}
 .q-ref{font-size:10px;color:var(--muted);font-weight:600;margin-top:4px;}
-.q-note{font-size:10px;color:var(--amber);font-weight:700;margin-top:2px;}
 .ans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
 .ans-btn{padding:9px 4px;border:1.5px solid var(--border);border-radius:4px;font-size:11px;font-weight:700;text-align:center;background:var(--white);color:var(--muted);cursor:pointer;transition:all .1s;line-height:1.3;font-family:inherit;}
 .ans-btn:hover{border-color:var(--black);color:var(--black);}
@@ -287,21 +286,21 @@ const CERT_URL="https://www.sbsc.se/certifikat/ssf-1101-cybersakerhet-bas/";
 
 // Viktning: 3=tungt (veckor–månader), 2=medel (dagar–veckor), 1=lätt (timmar–dagar, default)
 const WEIGHTS={
-  // TUNGT (3) — Utbildning
+  // TUNGT (3) – Utbildning
   q46_1:3,
-  // TUNGT (3) — Leverantörsavtal
+  // TUNGT (3) – Leverantörsavtal
   q44_1:3,q44_2:3,q44_3:3,q44_4:3,q44_5:3,q44_6:3,
-  // TUNGT (3) — MFA
+  // TUNGT (3) – MFA
   q453_2:3,
-  // TUNGT (3) — Säkerhetskopiering
+  // TUNGT (3) – Säkerhetskopiering
   q412_1:3,q412_2:3,q412_3:3,
-  // MEDEL (2) — Lösenordspolicy
+  // MEDEL (2) – Lösenordspolicy
   q411_1:2,q411_2:2,q411_3:2,q411_4:2,q411_5:2,
-  // MEDEL (2) — DNSSEC
+  // MEDEL (2) – DNSSEC
   q433_3:2,
-  // MEDEL (2) — Säkerhetsuppdateringar
+  // MEDEL (2) – Säkerhetsuppdateringar
   q422_1:2,q422_2:2,
-  // MEDEL (2) — Kontogranskning & lösenordsrutiner
+  // MEDEL (2) – Kontogranskning & lösenordsrutiner
   q451_1:2,q451_2:2,q451_3:2,q451_4:2,q451_5:2,
   q453_1:2,q453_3:2,q453_4:2,q453_5:2,
 };
@@ -316,16 +315,16 @@ const ANSWERS=[
 const SECTIONS=[
   {id:"s41",name:"Datorer & mobila enheter",ref:"SSF 1101 §4.1",questions:[
     {id:"q411_1",ref:"§4.1.1",text:"Standardlösenord för alla användarkonton till datorer, mobila enheter och onlinekonton är ändrade till starka lösenord (min. 12 tecken) som inte återanvänds."},
-    {id:"q411_2",ref:"§4.1.1",text:"Inga lösenord återanvänds — varken tidigare använda lösenord eller samma lösenord på olika enheter/system."},
+    {id:"q411_2",ref:"§4.1.1",text:"Inga lösenord återanvänds – varken tidigare använda lösenord eller samma lösenord på olika enheter/system."},
     {id:"q411_3",ref:"§4.1.1",text:"Lösenord som använts i organisationen används inte privat, och vice versa."},
     {id:"q411_4",ref:"§4.1.1",text:"Starka lösenord (min. 12 tecken, kombination av teckentyper, ej ordlisteord) är definierade i ett beslut av organisationen."},
     {id:"q411_5",ref:"§4.1.1",text:"Kryptering av lagringsutrymme är aktiverat på datorer, mobila enheter och digitala lagringsytor där det är möjligt."},
     {id:"q412_1",ref:"§4.1.2",text:"Information säkerhetskopieras i den omfattning som verksamheten har beslutat."},
     {id:"q412_2",ref:"§4.1.2",text:"Minst en säkerhetskopia är tillgänglig enbart för personer med administrativ systembehörighet."},
-    {id:"q412_3",ref:"§4.1.2",text:"Säkerhetskopiorna kontrolleras regelbundet genom stickprovskontroller för att säkerställa att återställning fungerar.",note:"Anm."},
+    {id:"q412_3",ref:"§4.1.2",text:"Säkerhetskopiorna kontrolleras regelbundet genom stickprovskontroller för att säkerställa att återställning fungerar."},
     {id:"q413_1",ref:"§4.1.3",text:"Programvara mot skadlig kod är installerad på alla datorer och, där möjligt, på mobila enheter som ansluter till externa nätverk."},
     {id:"q413_2",ref:"§4.1.3",text:"Programvara mot skadlig kod uppdateras automatiskt eller via en definierad rutin."},
-    {id:"q413_3",ref:"§4.1.3",text:"Programvaran är konfigurerad för automatisk genomsökning vid filåtkomst — inklusive vid hämtning och öppning av filer från nätverksenheter och flyttbara media."},
+    {id:"q413_3",ref:"§4.1.3",text:"Programvaran är konfigurerad för automatisk genomsökning vid filåtkomst – inklusive vid hämtning och öppning av filer från nätverksenheter och flyttbara medier."},
     {id:"q413_4",ref:"§4.1.3",text:"Programvaran varnar eller blockerar på datorer om en webbplats innehåller skadlig kod."},
     {id:"q413_5",ref:"§4.1.3",text:"Programvaran är konfigurerad för att genomföra regelbundna skanningar efter skadlig kod."},
     {id:"q414_1",ref:"§4.1.4",text:"Det finns ett beslut om huruvida och i vilken omfattning organisationens resurser (datorer, nätverk, tjänster) får användas för privat bruk."},
@@ -337,14 +336,14 @@ const SECTIONS=[
     {id:"q421_2",ref:"§4.2.1",text:"Mjukvara laddas om möjligt ned från den officiella distributörens hemsida eller annan verifierbar källa."},
     {id:"q421_3",ref:"§4.2.1",text:"Applikationer till mobila enheter laddas enbart ned från betrodda källor (t.ex. AppStore, Google Play eller organisationens interna appkatalog)."},
     {id:"q421_4",ref:"§4.2.1",text:"Mjukvaror och applikationer som inte längre används avinstalleras snarast möjligt."},
-    {id:"q422_1",ref:"§4.2.2",text:"Säkerhetsuppdateringar installeras automatiskt för operativsystem, programvaror och applikationer på datorer, nätverksenheter och mobila enheter — där det är tekniskt möjligt."},
+    {id:"q422_1",ref:"§4.2.2",text:"Säkerhetsuppdateringar installeras automatiskt för operativsystem, programvaror och applikationer på datorer, nätverksenheter och mobila enheter – där det är tekniskt möjligt."},
     {id:"q422_2",ref:"§4.2.2",text:"Operativsystem, programvaror och enheter som inte längre säkerhetsuppdateras är borttagna eller isolerade i logiskt/fysiskt separerat segment där de hanteras utifrån särskilda regler."},
     {id:"q423_1",ref:"§4.2.3",text:"Automatisk programstart är begränsad till applikationer som organisationen beslutat är nödvändiga att starta automatiskt."},
     {id:"q423_2",ref:"§4.2.3",text:"Automatisk uppspelning är avstängt för alla filer från portabla lagringsmedier (USB-minnen, externa hårddiskar m.m.)."},
   ]},
   {id:"s43",name:"Nätverk",ref:"SSF 1101 §4.3",questions:[
     {id:"q431_1",ref:"§4.3.1",text:"En eller flera nätverksenheter med brandväggsfunktionalitet är installerade mellan organisationens interna nätverk och externa nätverk (t.ex. internet)."},
-    {id:"q431_2",ref:"§4.3.1",text:"Standardlösenord ändras till starka lösenord som inte återanvänds innan en nätverksenhet installeras — där det är tekniskt möjligt."},
+    {id:"q431_2",ref:"§4.3.1",text:"Standardlösenord ändras till starka lösenord som inte återanvänds innan en nätverksenhet installeras – där det är tekniskt möjligt."},
     {id:"q431_3",ref:"§4.3.1",text:"Lösenordsändringar för administrativa konton (inkl. servicekonton) i nätverksenheter sker enligt av organisationen beslutade intervall."},
     {id:"q431_4",ref:"§4.3.1",text:"Alla öppna anslutningar (tillåtna portar och tjänster) på brandväggen är beslutade av organisationen."},
     {id:"q431_5",ref:"§4.3.1",text:"Brandväggsregler som inte längre behövs tas bort eller inaktiveras."},
@@ -358,7 +357,7 @@ const SECTIONS=[
   ]},
   {id:"s44",name:"IT-tjänster & leverantörer",ref:"SSF 1101 §4.4",questions:[
     {id:"q44_1",ref:"§4.4",text:"Organisationen har identifierat de leverantörer vars IT-tjänster är kritiska för verksamheten."},
-    {id:"q44_2",ref:"§4.4",text:"De identifierade kritiska leverantörernas grundläggande cybersäkerhet är säkerställd — via egendeklaration, ackreditering, intyg, certifikat eller motsvarande."},
+    {id:"q44_2",ref:"§4.4",text:"De identifierade kritiska leverantörernas grundläggande cybersäkerhet är säkerställd – via egendeklaration, ackreditering, intyg, certifikat eller motsvarande."},
     {id:"q44_3",ref:"§4.4",text:"Det finns ett juridiskt bindande avtal med varje identifierad leverantör av kritiska IT-tjänster."},
     {id:"q44_4",ref:"§4.4.1",text:"Avtalet täcker normalt: servicenivå, incidenthantering och rapportering, säkerhetskopiering och återställning, kryptering av information, samt åtgärder och ansvar vid avtalets upphörande."},
     {id:"q44_5",ref:"§4.4.2",text:"Leverantörer som behandlar eller lagrar personuppgifter intygar att de uppfyller GDPR-kraven."},
@@ -367,9 +366,9 @@ const SECTIONS=[
   {id:"s45",name:"Behörigheter",ref:"SSF 1101 §4.5",questions:[
     {id:"q451_1",ref:"§4.5.1",text:"Skapande av användarkonton sker efter beslut av organisationen."},
     {id:"q451_2",ref:"§4.5.1",text:"Systemadministratörsbehörighet tilldelas och används enbart av personer som utför systemadministrativa tjänster."},
-    {id:"q451_3",ref:"§4.5.1",text:"Administrativa konton används enbart för tillåtna administrativa aktiviteter (t.ex. systemunderhåll) — inte för vanligt dagligt arbete."},
-    {id:"q451_4",ref:"§4.5.1",text:"Varje användarkonto är tilldelat en enskild namngiven medarbetare — inga delade konton."},
-    {id:"q451_5",ref:"§4.5.1",text:"Användarkonton tas bort eller inaktiveras när de inte längre behövs — t.ex. när en medarbetare byter roll eller lämnar organisationen."},
+    {id:"q451_3",ref:"§4.5.1",text:"Administrativa konton används enbart för tillåtna administrativa aktiviteter (t.ex. systemunderhåll) – inte för vanligt dagligt arbete."},
+    {id:"q451_4",ref:"§4.5.1",text:"Varje användarkonto är tilldelat en enskild namngiven medarbetare – inga delade konton."},
+    {id:"q451_5",ref:"§4.5.1",text:"Användarkonton tas bort eller inaktiveras när de inte längre behövs – t.ex. när en medarbetare byter roll eller lämnar organisationen."},
     {id:"q452_1",ref:"§4.5.2",text:"Enskilda medarbetare har enbart åtkomst till de system som deras arbetsuppgifter kräver (principen om lägsta möjliga behörighet)."},
     {id:"q452_2",ref:"§4.5.2",text:"Delade lagringsytor är konfigurerade så att enskilda medarbetare enbart har åtkomst till den information deras arbetsuppgifter kräver."},
     {id:"q453_1",ref:"§4.5.3",text:"Användare autentiseras med starka lösenord som inte återanvänds innan åtkomst beviljas till program och datorer."},
@@ -379,7 +378,7 @@ const SECTIONS=[
     {id:"q453_5",ref:"§4.5.3",text:"Lösenord byts i den omfattning och med den regelbundenhet som verksamheten kräver och som organisationen beslutat."},
   ]},
   {id:"s46",name:"Utbildning i cybersäkerhet",ref:"SSF 1101 §4.6",questions:[
-    {id:"q46_1",ref:"§4.6",text:"Samtliga medarbetare har genomfört grundläggande utbildning i cybersäkerhet som täcker hot, risker och säkert beteende — inklusive lösenordshantering, säkerhetskopiering, molntjänster, e-post, sociala medier, skadlig kod, distansarbete, hantering av incidenter och hantering av mobila enheter."},
+    {id:"q46_1",ref:"§4.6",text:"Samtliga medarbetare har genomfört grundläggande utbildning i cybersäkerhet som täcker hot, risker och säkert beteende – inklusive lösenordshantering, säkerhetskopiering, molntjänster, e-post, sociala medier, skadlig kod, distansarbete, hantering av incidenter och hantering av mobila enheter."},
   ]},
 ];
 
@@ -415,7 +414,7 @@ const readiness=p=>{
   if(p===null)return"Otillräckligt underlag";
   if(p>=75)return"Nära";
   if(p>=45)return"En bit på väg";
-  return"Lång kvar";
+  return"Långt kvar";
 };
 
 const readinessCls=p=>{
@@ -433,10 +432,10 @@ const getNextSteps=(answers)=>{
   const hasGap=ids=>ids.some(id=>answers[id]==="ej"||answers[id]==="pagar");
   if(hasGap(["q46_1"]))steps.push({priority:"hög",icon:"🎓",title:"Genomför cybersäkerhetsutbildning för all personal",text:"Utbildning av samtliga medarbetare är ett av de mest tidskrävande kraven. Utbildningen ska täcka lösenord, säkerhetskopiering, e-post, skadlig kod, distansarbete och incidenthantering. Börja planera och genomföra detta tidigt i processen."});
   if(hasGap(["q44_1","q44_2","q44_3","q44_4","q44_5","q44_6"]))steps.push({priority:"hög",icon:"📋",title:"Identifiera kritiska IT-leverantörer och upprätta avtal",text:"Kartlägg vilka leverantörer som är kritiska för er verksamhet och säkerställ deras cybersäkerhet. Upprätta juridiskt bindande avtal och, där GDPR kräver det, personuppgiftsbiträdesavtal (DPA). Förhandling och undertecknande tar ofta tid."});
-  if(answers["q453_2"]==="ej"||answers["q453_2"]==="pagar")steps.push({priority:"hög",icon:"🔐",title:"Aktivera multifaktorsautentisering (MFA)",text:"MFA ska aktiveras på alla system där det är tekniskt möjligt — prioritera e-post, administrativa konton och VPN. Kräver teknisk implementation och ofta utbildning av användare."});
+  if(answers["q453_2"]==="ej"||answers["q453_2"]==="pagar")steps.push({priority:"hög",icon:"🔐",title:"Aktivera multifaktorsautentisering (MFA)",text:"MFA ska aktiveras på alla system där det är tekniskt möjligt – prioritera e-post, administrativa konton och VPN. Kräver teknisk implementation och ofta utbildning av användare."});
   if(hasGap(["q412_1","q412_2","q412_3"]))steps.push({priority:"hög",icon:"💾",title:"Säkerställ säkerhetskopieringsrutin",text:"Se till att information säkerhetskopieras enligt ett dokumenterat beslut, att minst en kopia enbart är åtkomlig för administratörer, och att kopiorna kontrolleras regelbundet med stickprov."});
   if(hasGap(["q411_1","q411_2","q411_3","q411_4","q411_5"]))steps.push({priority:"medel",icon:"🔑",title:"Dokumentera lösenordspolicy och byt standardlösenord",text:"Upprätta ett beslut om lösenordskrav (min. 12 tecken, inga ordlisteord, ingen återanvändning). Säkerställ att alla standardlösenord är bytta på datorer, mobila enheter och nätverksutrustning."});
-  if(answers["q433_3"]==="ej"||answers["q433_3"]==="pagar")steps.push({priority:"medel",icon:"🌐",title:"Konfigurera DNSSEC för organisationens domän",text:"DNSSEC skyddar ert domännamn mot manipulation av DNS-svar. Kontakta er DNS-leverantör eller IT-ansvarig — kräver ofta extern hjälp men är en viktig teknisk skyddsnivå."});
+  if(answers["q433_3"]==="ej"||answers["q433_3"]==="pagar")steps.push({priority:"medel",icon:"🌐",title:"Konfigurera DNSSEC för organisationens domän",text:"DNSSEC skyddar ert domännamn mot manipulation av DNS-svar. Kontakta er DNS-leverantör eller IT-ansvarig – kräver ofta extern hjälp men är en viktig teknisk skyddsnivå."});
   if(hasGap(["q422_1","q422_2"]))steps.push({priority:"medel",icon:"🔄",title:"Säkerställ rutin för säkerhetsuppdateringar",text:"Automatiska säkerhetsuppdateringar ska vara aktiverade för operativsystem, programvaror och nätverksenheter. Enheter som inte längre uppdateras ska tas bort eller isoleras."});
   return steps;
 };
@@ -509,7 +508,7 @@ function GatePage({onSuccess}){
         headers:{"Content-Type":"application/json","Accept":"application/json"},
         body:JSON.stringify({
           access_key:"4ff231c7-8ece-4e89-9a4c-6996ff3a147b",
-          subject:"SSF 1101 Cybersäkerhet — "+company,
+          subject:"SSF 1101 Cybersäkerhet – "+company,
           from_name:"SBSC SSF 1101 Beredskapsverktyg",
           namn:name,foretag:company,epost:email,
           certifiering:"SSF 1101 Cybersäkerhet Basnivå",
@@ -550,7 +549,7 @@ function GatePage({onSuccess}){
               </div>
               {error&&<div className="gate-error">{error}</div>}
               <button className="gate-btn" type="submit" disabled={loading}>{loading?"Skickar…":"Starta kartläggningen →"}</button>
-              <p className="gate-privacy">SBSC behandlar dina uppgifter enligt GDPR. Uppgifterna används enbart för uppföljning av din intresseanmälan. Självskattningens svar lagras aldrig — de stannar i din webbläsare.</p>
+              <p className="gate-privacy">SBSC behandlar dina uppgifter enligt GDPR. Uppgifterna används enbart för uppföljning av din intresseanmälan. Självskattningens svar lagras aldrig – de stannar i din webbläsare.</p>
             </form>
           </>
         ):(
@@ -574,7 +573,7 @@ function QCard({q,index,answers,answer,secName}){
         <div className={"q-num"+(val?" answered":"")}>{val?"✓":index+1}</div>
         <div style={{flex:1}}>
           <div className="q-text">{q.text}</div>
-          <div className="q-ref">{secName} · {q.ref}{q.note&&<span className="q-note"> — Anm.</span>}</div>
+          <div className="q-ref">{secName} · {q.ref}</div>
         </div>
       </div>
       <div className="ans-grid">
@@ -605,7 +604,7 @@ function QPage({answers,answer,secIdx,setSecIdx,setView}){
         </div>
         <div className="progress-track"><div className="progress-fill" style={{width:prog+"%"}}/></div>
       </div>
-      <div className="nav-help no-print">Du kan hoppa fritt mellan avsnitt med hjälp av flikarna nedan — dina svar sparas automatiskt.</div>
+      <div className="nav-help no-print">Du kan hoppa fritt mellan avsnitt med hjälp av flikarna nedan – dina svar sparas automatiskt.</div>
       <div className="section-tabs no-print">
         {SECTIONS.map((s,i)=>{
           const{done,total}=secPct(s,answers);
@@ -624,9 +623,9 @@ function QPage({answers,answer,secIdx,setSecIdx,setView}){
       </div>
       <div className="ans-legend no-print">
         <div className="legend-item"><div className="legend-dot" style={{background:"var(--green)"}}/><span>Uppfyllt</span></div>
-        <div className="legend-item"><div className="legend-dot" style={{background:"var(--amber)"}}/><span>Pågår — påbörjat men ej klart</span></div>
+        <div className="legend-item"><div className="legend-dot" style={{background:"var(--amber)"}}/><span>Pågår – påbörjat men ej klart</span></div>
         <div className="legend-item"><div className="legend-dot" style={{background:"var(--red)"}}/><span>Ej påbörjat</span></div>
-        <div className="legend-item"><div className="legend-dot" style={{background:"var(--blue)"}}/><span>Vet ej — räknas ej i poängen</span></div>
+        <div className="legend-item"><div className="legend-dot" style={{background:"var(--blue)"}}/><span>Vet ej – räknas ej i poängen</span></div>
       </div>
       {sec.questions.map((q,i)=><QCard key={q.id} q={q} index={i} answers={answers} answer={answer} secName={sec.name}/>)}
       <div className="btn-row no-print">
@@ -647,8 +646,8 @@ function ReportPage({answers,company,restart,back}){
   const steps=getNextSteps(answers);
 
   useEffect(()=>{
-    document.title=(company||"Er organisation")+" — SSF 1101 GAP-analys";
-    return()=>{document.title="SBSC — Cybersäkerhet Bas";};
+    document.title=(company||"Er organisation")+" – SSF 1101 GAP-analys";
+    return()=>{document.title="SBSC – Cybersäkerhet Bas";};
   },[company]);
 
   const gaps=[];
@@ -663,10 +662,10 @@ function ReportPage({answers,company,restart,back}){
   const nm=company||"Er organisation";
   const rl=readiness(overall);
   const summary=(()=>{
-    if(overall===null)return nm+" — Självskattningen ger en övergripande bild av beredskapen mot SSF 1101. Flera frågor besvarades med \"Vet ej\" — dessa behöver utredas internt för en fullständig bild.";
+    if(overall===null)return nm+" – GAP-analysen ger en övergripande bild av beredskapen. Flera frågor besvarades med \"Vet ej\" – dessa behöver utredas internt för en fullständig bild.";
     if(overall>=75)return nm+" är nära certifieringsnivå med en viktad uppfyllnadsgrad på "+overall+"%. De flesta krav är på plats. Fokusera på de "+( hiG+miG)+" kvarstående åtgärdspunkterna och ta kontakt med SBSC för att inleda certifieringsprocessen.";
-    if(overall>=45)return nm+" är en bit på väg med "+overall+"% viktad uppfyllnadsgrad. Kartläggningen identifierar "+hiG+" krav som ännu inte påbörjats och "+miG+" som pågår. Med ett strukturerat åtgärdsarbete — med fokus på utbildning och leverantörsstyrning — är certifiering möjlig.";
-    return nm+" har lång kvar till certifieringsnivå med "+overall+"% viktad uppfyllnadsgrad. Kartläggningen identifierar "+hiG+" opåbörjade krav. Det är ett bra läge att starta det strukturerade arbetet utifrån prioriteringarna i nästa steg nedan.";
+    if(overall>=45)return nm+" är en bit på väg med "+overall+"% viktad uppfyllnadsgrad. Kartläggningen identifierar "+hiG+" krav som ännu inte påbörjats och "+miG+" som pågår. Med ett strukturerat åtgärdsarbete – med fokus på utbildning och leverantörsstyrning – är certifiering möjlig.";
+    return nm+" har långt kvar till certifieringsnivå med "+overall+"% viktad uppfyllnadsgrad. Kartläggningen identifierar "+hiG+" opåbörjade krav. Det är ett bra läge att starta det strukturerade arbetet utifrån prioriteringarna i nästa steg nedan.";
   })();
 
   return(
@@ -674,7 +673,7 @@ function ReportPage({answers,company,restart,back}){
       <div className="print-header">
         <img src={LOGO} alt="SBSC" className="print-header-logo"/>
         <div className="print-header-right">
-          <span className="print-header-title">SSF 1101 Cybersäkerhet Basnivå — GAP-analys</span>
+          <span className="print-header-title">SSF 1101 Cybersäkerhet Basnivå – GAP-analys</span>
           <span className="print-header-sub">{ds} · SBSC ackrediterat av SWEDAC (nr 1631)</span>
         </div>
       </div>
@@ -706,7 +705,7 @@ function ReportPage({answers,company,restart,back}){
       {vetEjG>=3&&(
         <div style={{display:"flex",alignItems:"flex-start",gap:10,padding:"12px 16px",marginBottom:14,background:"#FEF9EC",border:"1.5px solid #FFD580",borderRadius:6,fontSize:13}}>
           <span style={{flexShrink:0,color:"#8A5500",marginTop:1}}>⚠</span>
-          <div><strong style={{display:"block",marginBottom:3,color:"#7A4800"}}>{vetEjG} krav besvarades med "Vet ej"</strong><span style={{color:"#8A5500"}}>Dessa exkluderas från poängen och behöver utredas internt — resultatet kan vara missvisande.</span></div>
+          <div><strong style={{display:"block",marginBottom:3,color:"#7A4800"}}>{vetEjG} krav besvarades med "Vet ej"</strong><span style={{color:"#8A5500"}}>Dessa exkluderas från poängen och behöver utredas internt – resultatet kan vara missvisande.</span></div>
         </div>
       )}
 
@@ -739,7 +738,7 @@ function ReportPage({answers,company,restart,back}){
           <div className="spider-wrap"><Spider sections={SECTIONS} answers={answers}/></div>
           <div className="spider-caption">Viktad täckningsgrad per avsnitt</div>
           <div className="readiness-explain">
-            <strong>Om bedömningen: </strong>Resultatet "Nära / En bit på väg / Lång kvar" baseras inte enbart på hur många krav som är uppfyllda — utan också på hur arbetsintensiva de kvarvarande kraven bedöms vara. Krav inom utbildning, leverantörsstyrning och MFA väger tyngre än tekniska punktinställningar, eftersom de tar längre tid att genomföra i praktiken.
+            <strong>Om bedömningen: </strong>Resultatet "Nära / En bit på väg / Långt kvar" baseras inte enbart på hur många krav som är uppfyllda – utan också på hur arbetsintensiva de kvarvarande kraven bedöms vara. Krav inom utbildning, leverantörsstyrning och MFA väger tyngre än tekniska punktinställningar, eftersom de tar längre tid att genomföra i praktiken.
           </div>
           <div className="bar-section">
             {SECTIONS.map(s=>{const{pct}=secPct(s,answers);return(
@@ -753,7 +752,7 @@ function ReportPage({answers,company,restart,back}){
           <div className="gap-section">
             {gaps.length>0?(
               <>
-                <h4>Identifierade gap — {gaps.length} krav att hantera</h4>
+                <h4>Identifierade gap – {gaps.length} krav att hantera</h4>
                 {gaps.map((g,i)=>(
                   <div className="gap-row" key={i}>
                     <span className={"gap-badge "+g.cls}>{g.lbl}</span>
@@ -765,7 +764,7 @@ function ReportPage({answers,company,restart,back}){
                 ))}
               </>
             ):(
-              <div className="gap-none">✓ Inga identifierade gap — samtliga krav är uppfyllda</div>
+              <div className="gap-none">✓ Inga identifierade gap – samtliga krav är uppfyllda</div>
             )}
           </div>
         </div>
@@ -804,12 +803,12 @@ function ReportPage({answers,company,restart,back}){
 
       <div className="disclaimer">
         <strong>Viktig information</strong>
-        Denna GAP-analys är en självskattning och ger en indikativ bild av er beredskap mot SSF 1101 Cybersäkerhet Basnivå. Resultaten speglar hur ni tolkar och besvarar frågorna. En hög uppfyllnadsgrad garanterar inte att certifiering utfärdas — certifikat utfärdas då samtliga krav är verifierade av SBSC. Giltighetstid är längst 3 år. SBSC är ackrediterat av SWEDAC (ackrediteringsnummer 1631).
+        Resultaten speglar hur ni tolkar och besvarar frågorna och kan avvika från en faktisk certifieringsbedömning. Certifikat utfärdas då samtliga krav är verifierade av SBSC. Giltighetstid är längst 3 år. SBSC är ackrediterat av SWEDAC (nr 1631).
       </div>
 
       <div className="cta-block">
         <div>
-          <h3>Ansök om SSF 1101-certifiering</h3>
+          <h3>Ansök om certifiering av Cybersäkerhet Bas</h3>
           <p>Läs mer om certifieringsprocessen och ansök direkt på SBSC:s webbplats.</p>
         </div>
         <div style={{textAlign:"center"}}>
@@ -852,7 +851,7 @@ function StartPage({company,setCompany,agreed,setAgreed,attempted,goStart}){
           Vad är det här verktyget?
         </div>
         <div className="info-box-body">
-          Det här är ett <strong>förberedelseverktyg</strong> som hjälper er att bedöma hur redo organisationen är för certifiering mot SSF 1101 Cybersäkerhet BAS. Ni svarar på {TOTAL_Q} krav och får en GAP-analys med bedömningen <strong>Nära</strong>, <strong>En bit på väg</strong> eller <strong>lång kvar</strong>. Bedömningen väger in hur arbetsintensiva kvarvarande krav är — utbildning av all personal och leverantörsavtal väger tyngre än tekniska punktinställningar.
+          Det här är ett <strong>förberedelseverktyg</strong> som hjälper er att bedöma hur redo organisationen är för certifiering mot SSF 1101 Cybersäkerhet BAS. Ni svarar på {TOTAL_Q} krav och får en GAP-analys med bedömningen <strong>Nära</strong>, <strong>En bit på väg</strong> eller <strong>Långt kvar</strong>. Bedömningen väger in hur arbetsintensiva kvarvarande krav är – utbildning av all personal och leverantörsavtal väger tyngre än tekniska punktinställningar.
         </div>
         <div className="info-warn-head">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A3800" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -866,7 +865,7 @@ function StartPage({company,setCompany,agreed,setAgreed,attempted,goStart}){
           <li><span className="step-num">5</span><span>Svar på eventuella avvikelser</span></li>
           <li><span className="step-num">6</span><span>Utfärdande av certifikat</span></li>
         </ul>
-        <div className="info-note">Det här verktyget ersätter inte de sex stegen ovan — det ger er en bild av var ni befinner er och vad som återstår att göra.</div>
+        <div className="info-note">Det här verktyget ersätter inte de sex stegen ovan – det ger er en bild av var ni befinner er och vad som återstår att göra.</div>
 
       </div>
 
@@ -892,8 +891,8 @@ function StartPage({company,setCompany,agreed,setAgreed,attempted,goStart}){
         <div className="disc-check-wrap" onClick={()=>setAgreed(a=>!a)}>
           <div className={"disc-checkbox"+(agreed?" disc-checked":"")}>{agreed?"✓":""}</div>
           <div className="disc-check-text">
-            <strong>Jag förstår att detta är en GAP-analys — inte ett certifieringsbesked</strong>
-            Resultaten är ett stöd för eget förbättringsarbete. En hög uppfyllnadsgrad garanterar inte att certifikat utfärdas utan genomgång av SBSC:s fullständiga certifieringsprocess.
+            <strong>Jag förstår att detta är en GAP-analys – inte ett certifieringsbesked</strong>
+            Resultaten är ett stöd för förbättringsarbete och ersätter inte SBSC:s certifieringsprocess.
           </div>
         </div>
         {hasError&&(

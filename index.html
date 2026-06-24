@@ -4,47 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="GAP-analys inför certifiering av Cybersäkerhet Bas. 18 frågor, ~5 minuter.">
-<title>SBSC – Cybersäkerhet Bas</title>
+<meta name="description" content="GAP-analys inför certifiering av Cybersäkerhet Bas. 18 frågor, ca 5 minuter.">
+<title>SBSC — Cybersäkerhet Bas</title>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --amber:#FFA300;--black:#101820;--white:#fff;--page:#F8F9FA;
-  --border:#E8E9EC;--muted:#6B6C74;--faint:#F2F3F5;
-  --green:#1B6B3F;--red:#C03535;--blue:#2A5A8C;
-  --shadow-sm:0 1px 3px rgba(0,0,0,.07);--r:8px;
-}
+:root{--amber:#FFA300;--black:#101820;--white:#fff;--page:#F8F9FA;--border:#E8E9EC;--muted:#6B6C74;--faint:#F2F3F5;--green:#1B6B3F;--red:#C03535;--blue:#2A5A8C;--shadow-sm:0 1px 3px rgba(0,0,0,.07);--r:8px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{font-family:"Open Sans",system-ui,sans-serif;background:var(--page);color:var(--black);line-height:1.6;-webkit-font-smoothing:antialiased;}
 button{font-family:inherit;cursor:pointer;border:none;background:none;}
 button:disabled{opacity:.38;cursor:not-allowed;}
-
 .site-header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
 .site-header::after{content:"";display:block;height:3px;background:var(--amber);}
 .hdr-inner{max-width:960px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;}
 .hdr-logo{height:56px;width:auto;}
 .hdr-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;}
-
 .shell{max-width:860px;margin:0 auto;padding:40px 24px 80px;}
 .card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);padding:28px;margin-bottom:14px;box-shadow:var(--shadow-sm);}
-
 .page-intro{text-align:center;padding:0 0 28px;}
 .chip{display:inline-block;background:var(--amber);color:var(--black);font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:16px;}
 .page-intro h1{font-size:28px;font-weight:800;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px;}
 .page-intro p{font-size:15px;color:var(--muted);max-width:500px;margin:0 auto;}
-
-/* SSF DOWNLOAD BOX */
-.ssf-download-box{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:var(--r);padding:18px 22px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:var(--shadow-sm);}
-.ssf-download-text{}
-.ssf-download-title{font-size:14px;font-weight:800;color:var(--black);margin-bottom:4px;}
-.ssf-download-body{font-size:12px;color:var(--muted);line-height:1.6;max-width:440px;}
-.ssf-download-btn{display:inline-flex;align-items:center;gap:7px;background:var(--amber);color:var(--black);padding:10px 18px;font-size:12px;font-weight:800;border-radius:4px;white-space:nowrap;font-family:inherit;text-decoration:none;transition:background .12s;flex-shrink:0;}
-.ssf-download-btn:hover{background:#E89300;}
-
-/* INFO BOX – startsida */
 .info-box{background:#F0F7FF;border:1.5px solid #C8DCF0;border-radius:var(--r);padding:22px 24px;margin-bottom:20px;}
 .info-box-title{font-size:14px;font-weight:800;color:var(--black);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
 .info-box-body{font-size:13px;color:#1a3a5c;line-height:1.7;margin-bottom:14px;}
@@ -53,27 +34,26 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .steps-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#1a3a5c;margin-bottom:7px;line-height:1.5;}
 .step-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--amber);color:var(--black);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px;}
 .info-note{font-size:12px;color:#4a6080;border-top:1px solid #C8DCF0;padding-top:10px;margin-top:10px;line-height:1.6;}
-
+.ssf-download-box{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:var(--r);padding:18px 22px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:var(--shadow-sm);}
+.ssf-download-title{font-size:14px;font-weight:800;color:var(--black);margin-bottom:4px;}
+.ssf-download-body{font-size:12px;color:var(--muted);line-height:1.6;max-width:440px;}
+.ssf-download-btn{display:inline-flex;align-items:center;gap:7px;background:var(--amber);color:var(--black);padding:10px 18px;font-size:12px;font-weight:800;border-radius:4px;white-space:nowrap;font-family:inherit;text-decoration:none;transition:background .12s;flex-shrink:0;}
+.ssf-download-btn:hover{background:#E89300;}
 .field-label{font-size:13px;font-weight:700;color:var(--black);margin-bottom:8px;}
-.req-star{color:var(--red);font-size:16px;line-height:1;}
 .text-input{width:100%;padding:12px 15px;font-size:15px;font-weight:600;font-family:inherit;border:1.5px solid var(--border);border-radius:6px;outline:none;transition:border-color .15s,box-shadow .15s;}
 .text-input:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(255,163,0,.14);}
-
 .privacy-note{display:flex;align-items:flex-start;gap:10px;background:#EEF4FB;border:1px solid #C8DCF0;border-radius:6px;padding:12px 14px;margin-top:14px;}
 .privacy-note p{font-size:12px;color:var(--blue);font-weight:500;line-height:1.55;}
-
 .disc-check-wrap{display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--faint);border:1.5px solid var(--border);border-radius:6px;margin-top:14px;cursor:pointer;transition:border-color .12s;}
 .disc-check-wrap:hover{border-color:var(--amber);}
 .disc-checkbox{width:22px;height:22px;flex-shrink:0;margin-top:1px;border:1.5px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;transition:all .12s;background:var(--white);}
 .disc-checked{background:var(--amber)!important;border-color:var(--amber)!important;color:var(--black)!important;}
 .disc-check-text{font-size:12px;color:var(--black);line-height:1.6;}
 .disc-check-text strong{display:block;font-size:13px;font-weight:800;margin-bottom:4px;}
-
 .stat-row{display:flex;gap:10px;margin-top:18px;}
 .stat{flex:1;background:var(--faint);border-radius:6px;padding:12px 14px;text-align:center;}
 .stat-n{font-size:18px;font-weight:800;}
 .stat-l{font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;}
-
 .btn-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;}
 .btn{padding:11px 24px;font-size:13px;font-weight:700;border-radius:4px;cursor:pointer;font-family:inherit;transition:all .12s;border:2px solid transparent;}
 .btn-primary{background:var(--amber);color:var(--black);border-color:var(--amber);}
@@ -82,17 +62,13 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .btn-secondary:hover:not(:disabled){background:var(--faint);}
 .btn-ghost{font-size:13px;font-weight:600;color:var(--muted);background:none;border:none;cursor:pointer;font-family:inherit;}
 .btn-ghost:hover:not(:disabled){color:var(--black);}
-
 .progress-bar{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:14px 20px;margin-bottom:12px;position:sticky;top:72px;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.06);}
 .progress-top{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;}
 .progress-label{font-weight:700;}
 .progress-count{color:var(--muted);}
 .progress-track{height:4px;background:var(--faint);border-radius:2px;overflow:hidden;}
 .progress-fill{height:100%;background:var(--amber);border-radius:2px;transition:width .3s ease;}
-
-/* NAV HELP */
 .nav-help{font-size:11px;color:var(--muted);background:var(--faint);padding:6px 12px;border-radius:4px;margin-bottom:10px;text-align:center;}
-
 .section-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
 .section-tab{padding:5px 12px;background:var(--white);border:1.5px solid var(--border);border-radius:20px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .1s;display:flex;align-items:center;gap:5px;}
 .section-tab.active{background:var(--black);color:var(--white);border-color:var(--black);}
@@ -100,12 +76,9 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .tab-dot{width:5px;height:5px;border-radius:50%;background:var(--border);}
 .section-tab.active .tab-dot{background:var(--amber);}
 .section-tab.done .tab-dot{background:var(--green);}
-
-/* ANSWER LEGEND */
 .ans-legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;padding:9px 14px;background:var(--faint);border-radius:6px;}
 .legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);font-weight:600;}
 .legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
-
 .q-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:10px;}
 .q-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;}
 .q-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--faint);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--muted);margin-top:1px;}
@@ -119,8 +92,6 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .ans-amber{background:var(--amber)!important;color:var(--black)!important;border-color:var(--amber)!important;}
 .ans-red{background:var(--red)!important;color:#fff!important;border-color:var(--red)!important;}
 .ans-blue{background:var(--blue)!important;color:#fff!important;border-color:var(--blue)!important;}
-
-/* RAPPORT */
 .report-banner{border-radius:var(--r);padding:24px 28px;margin-bottom:14px;background:var(--black);color:var(--white);border-left:5px solid var(--amber);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;}
 .banner-label{font-size:10px;color:var(--amber);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;}
 .banner-company{font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:4px;}
@@ -129,32 +100,24 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .banner-score-label{font-size:10px;color:#8A8B91;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;}
 .banner-score{font-size:52px;font-weight:800;line-height:1;letter-spacing:-2px;}
 .banner-score em{color:var(--amber);font-style:normal;}
-.banner-readiness{margin-top:6px;}
-
-/* READINESS BADGES */
-.readiness-badge{display:inline-block;padding:4px 12px;border-radius:3px;font-size:13px;font-weight:800;letter-spacing:.3px;}
+.readiness-badge{display:inline-block;padding:4px 12px;border-radius:3px;font-size:13px;font-weight:800;}
 .r-nara{background:#E8F5EE;color:var(--green);}
 .r-bit{background:#FFF3DC;color:#7A4800;}
 .r-lang{background:#FAEAEA;color:var(--red);}
 .r-na{background:var(--faint);color:var(--muted);}
-
 .kpi-row{display:flex;background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:14px;overflow:hidden;}
 .kpi-cell{flex:1;padding:16px 20px;border-right:1px solid var(--faint);}
 .kpi-cell:last-child{border-right:none;}
 .kpi-label{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:700;margin-bottom:5px;}
 .kpi-value{font-size:15px;font-weight:700;line-height:1.3;}
-
-/* RAPPORT INFO-RUTA */
 .report-info-box{background:#EEF4FB;border:1.5px solid #C8DCF0;border-radius:var(--r);padding:18px 22px;margin-bottom:14px;}
-.report-info-box h4{font-size:13px;font-weight:800;color:var(--blue);margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.report-info-box h4{font-size:13px;font-weight:800;color:var(--blue);margin-bottom:8px;}
 .report-info-box p{font-size:12px;color:#1a3a5c;line-height:1.65;margin-bottom:6px;}
 .report-info-steps{list-style:none;padding:0;margin:6px 0 0;}
 .report-info-steps li{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#1a3a5c;margin-bottom:5px;line-height:1.5;}
-
 .cert-section{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px;overflow:hidden;}
 .cert-head{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-left:4px solid var(--amber);background:#FFFBF0;}
 .cert-head h3{font-size:15px;font-weight:800;margin-bottom:2px;}
-.cert-head-reg{font-size:11px;color:var(--muted);}
 .cert-head-score{font-size:28px;font-weight:800;letter-spacing:-1px;}
 .cert-body{padding:20px;}
 .spider-wrap{display:flex;justify-content:center;margin-bottom:6px;}
@@ -165,11 +128,7 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .bar-fill{height:100%;border-radius:3px;}
 .bar-pct{width:38px;text-align:right;font-size:12px;font-weight:700;}
 .bar-section{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--faint);}
-
-/* BEDÖMNING FÖRKLARING */
 .readiness-explain{background:var(--faint);border-radius:6px;padding:12px 16px;margin-bottom:16px;font-size:12px;color:var(--muted);line-height:1.65;}
-.readiness-explain strong{color:var(--black);font-weight:700;}
-
 .gap-section h4{font-size:13px;font-weight:800;margin-bottom:12px;}
 .gap-row{display:flex;align-items:flex-start;gap:10px;padding:11px 0;border-top:1px solid var(--faint);}
 .gap-row:first-of-type{border-top:none;padding-top:0;}
@@ -181,33 +140,26 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .gap-title{font-weight:700;font-size:13px;margin-bottom:2px;}
 .gap-meta{font-size:11px;color:var(--muted);}
 .gap-none{text-align:center;padding:12px;font-size:13px;font-weight:700;color:var(--green);}
-
-/* NÄSTA STEG */
+.summary-box{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;margin-bottom:14px;border-left:4px solid var(--amber);}
+.summary-box-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--amber);margin-bottom:8px;}
+.summary-box-text{font-size:14px;line-height:1.75;color:var(--black);}
 .next-steps{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:14px;overflow:hidden;}
 .next-steps-head{padding:14px 20px;background:#FFFBF0;border-left:4px solid var(--amber);}
 .next-steps-head h3{font-size:15px;font-weight:800;}
 .next-step-item{display:flex;align-items:flex-start;gap:13px;padding:14px 20px;border-top:1px solid var(--faint);}
-.next-step-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
 .next-step-body{flex:1;}
 .next-step-title{font-size:13px;font-weight:800;margin-bottom:3px;display:flex;align-items:center;gap:8px;}
 .next-step-text{font-size:12px;color:var(--muted);line-height:1.65;}
 .pri-hog{display:inline-block;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border-radius:2px;background:#FAEAEA;color:var(--red);}
 .pri-medel{display:inline-block;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border-radius:2px;background:#FFF3DC;color:#7A4800;}
-
-.summary-box{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;margin-bottom:14px;border-left:4px solid var(--amber);}
-.summary-box-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--amber);margin-bottom:8px;}
-.summary-box-text{font-size:14px;line-height:1.75;color:var(--black);}
-
 .disclaimer{font-size:11px;color:var(--muted);line-height:1.7;margin-top:20px;padding:14px 16px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);border-left:3px solid var(--amber);}
 .disclaimer strong{display:block;font-size:10px;color:var(--black);text-transform:uppercase;letter-spacing:.8px;font-weight:800;margin-bottom:6px;}
-
 .cta-block{margin-top:20px;padding:24px 28px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .cta-block h3{font-size:18px;font-weight:800;margin-bottom:4px;}
 .cta-block p{font-size:13px;color:var(--muted);}
 .cta-link{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--black);padding:13px 24px;font-size:13px;font-weight:800;border-radius:4px;white-space:nowrap;border:2px solid var(--amber);font-family:inherit;transition:all .12s;text-decoration:none;}
 .cta-link:hover{background:#E89300;border-color:#E89300;}
 .print-url{display:none;font-size:10px;color:var(--muted);margin-top:6px;word-break:break-all;}
-
 .gate-wrap{min-height:100vh;background:var(--page);display:flex;align-items:center;justify-content:center;padding:32px 16px;}
 .gate-box{background:var(--white);border-radius:var(--r);border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.08);padding:40px 36px;max-width:480px;width:100%;}
 .gate-logo{height:52px;width:auto;margin-bottom:24px;}
@@ -231,25 +183,21 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 .gate-success-icon{width:52px;height:52px;border-radius:50%;background:var(--amber);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:22px;}
 .gate-success h2{font-size:20px;font-weight:800;margin-bottom:8px;}
 .gate-success p{font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;}
-
-.validation-box{margin-top:14px;padding:14px 16px;background:#FEF3E2;border:1px solid #FFD580;border-radius:6px;}
-.validation-title{font-size:13px;font-weight:800;margin-bottom:8px;}
-.validation-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#7A4800;margin-bottom:4px;}
+.val-box{margin-top:14px;padding:14px 16px;background:#FEF3E2;border:1px solid #FFD580;border-radius:6px;}
+.val-title{font-size:13px;font-weight:800;margin-bottom:8px;}
+.val-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#7A4800;margin-bottom:4px;}
 .v-num{width:20px;height:20px;border-radius:50%;background:var(--amber);color:var(--black);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-
 .modal-overlay{position:fixed;inset:0;background:rgba(16,24,32,.55);display:flex;align-items:center;justify-content:center;z-index:1000;padding:24px;}
 .modal-box{background:var(--white);border-radius:var(--r);padding:32px;max-width:420px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,.18);}
 .modal-icon{font-size:28px;margin-bottom:14px;}
 .modal-box h3{font-size:18px;font-weight:800;margin-bottom:8px;}
 .modal-box p{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.6;}
 .modal-btns{display:flex;gap:10px;justify-content:flex-end;}
-
 .print-header{display:none;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:14px;border-bottom:3px solid var(--black);}
 .print-header-logo{height:64px;width:auto;display:block;}
 .print-header-right{text-align:right;}
 .print-header-title{font-size:15px;font-weight:800;color:var(--black);display:block;margin-bottom:3px;}
 .print-header-sub{font-size:11px;color:var(--muted);}
-
 @page{size:A4 portrait;margin:14mm 18mm;}
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
@@ -258,7 +206,7 @@ button:disabled{opacity:.38;cursor:not-allowed;}
   .shell{padding:0!important;margin:0!important;max-width:100%!important;}
   .print-header{display:flex!important;}
   .print-url{display:block!important;}
-  .cert-section,.kpi-row,.summary-box,.cta-block,.report-banner,.next-steps{break-inside:avoid;page-break-inside:avoid;}
+  .cert-section,.kpi-row,.summary-box,.cta-block,.next-steps{break-inside:avoid;page-break-inside:avoid;}
   .gap-row,.next-step-item{break-inside:avoid;}
 }
 @media(max-width:640px){
@@ -277,664 +225,1278 @@ button:disabled{opacity:.38;cursor:not-allowed;}
 </head>
 <body>
 <div id="root"></div>
-<script type="text/babel">
-const {useState,useEffect}=React;
-
-const LOGO="data:image/png;base64,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";
-
-const CERT_URL="https://www.sbsc.se/certifikat/ssf-1101-cybersakerhet-bas/";
-
-// Viktning: 3=tungt (veckor–månader), 2=medel (dagar–veckor), 1=lätt (default)
-const WEIGHTS={
-  // TUNGT (3) — Utbildning
-  q46_1:3,
-  // TUNGT (3) — Leverantörsavtal
-  q44_1:3,q44_2:3,q44_3:3,
-  // TUNGT (3) — MFA + behörigheter
-  q45_3:3,
-  // TUNGT (3) — Säkerhetskopiering
-  q41_2:3,
-  // MEDEL (2) — Lösenord & kryptering
-  q41_1:2,
-  // MEDEL (2) — Säkerhetsuppdateringar
-  q42_2:2,
-  // MEDEL (2) — Brandvägg & nätverk
-  q43_1:2,q43_4:2,
-  // MEDEL (2) — Behörighetskontroll
-  q45_1:2,q45_2:2,
+<script type="text/javascript">
+var React = window.React;
+var ReactDOM = window.ReactDOM;
+const {
+  useState,
+  useEffect
+} = React;
+const LOGO = "data:image/png;base64,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";
+const CERT_URL = "https://www.sbsc.se/certifikat/ssf-1101-cybersakerhet-bas/";
+const SSF_URL = "https://www.stoldskyddsforeningen.se/butik/foretag/ssf-normer/cybersakerhet/ssf-1101-utg-2-ssf-cybersakerhet-basniva-grundlaggande-it-sakerhet/";
+const ANSWERS = [{
+  key: "uppfyllt",
+  label: "Uppfyllt",
+  score: 1.0,
+  cls: "ans-green"
+}, {
+  key: "pagar",
+  label: "Pågår",
+  score: 0.5,
+  cls: "ans-amber"
+}, {
+  key: "ej",
+  label: "Ej påbörjat",
+  score: 0.0,
+  cls: "ans-red"
+}, {
+  key: "vet_ej",
+  label: "Vet ej",
+  score: null,
+  cls: "ans-blue"
+}];
+const SECTIONS = [{
+  id: "s41",
+  name: "Datorer & mobila enheter",
+  ref: "SSF 1101 §4.1",
+  questions: [{
+    id: "q41_1",
+    ref: "§4.1.1",
+    text: "Har organisationen dokumenterade krav på starka lösenord (minst 12 tecken), säkerställt att standardlösenord är bytta på alla konton och enheter, och aktiverat kryptering av lagringsutrymme där det är möjligt?"
+  }, {
+    id: "q41_2",
+    ref: "§4.1.2",
+    text: "Säkerhetskopieras er information enligt ett dokumenterat beslut, med minst en kopia som enbart administratörer har tillgång till – och kontrolleras kopiorna regelbundet med stickprov?"
+  }, {
+    id: "q41_3",
+    ref: "§4.1.3",
+    text: "Är antivirusprogram installerat på alla datorer, uppdateras automatiskt och är konfigurerat för att skanna filer vid åtkomst och varna vid skadliga webbplatser?"
+  }, {
+    id: "q41_4",
+    ref: "§4.1.4–4.1.5",
+    text: "Har organisationen fattat beslut om huruvida privat bruk av organisationens resurser och privat utrustning är tillåtet – och gäller samma säkerhetskrav för privat utrustning som för organisationens övriga utrustning?"
+  }]
+}, {
+  id: "s42",
+  name: "Mjukvaror & applikationer",
+  ref: "SSF 1101 §4.2",
+  questions: [{
+    id: "q42_1",
+    ref: "§4.2.1",
+    text: "Är all mjukvara som används i organisationen licensierad och hämtad från betrodda källor – och avinstalleras program som inte längre används?"
+  }, {
+    id: "q42_2",
+    ref: "§4.2.2",
+    text: "Installeras säkerhetsuppdateringar automatiskt för operativsystem, applikationer och nätverksenheter – och är program eller enheter som inte längre uppdateras borttagna eller isolerade?"
+  }, {
+    id: "q42_3",
+    ref: "§4.2.3",
+    text: "Är automatisk programstart begränsad till beslutade applikationer och är automatisk uppspelning avstängt för filer från USB-minnen och externa lagringsmedier?"
+  }]
+}, {
+  id: "s43",
+  name: "Nätverk",
+  ref: "SSF 1101 §4.3",
+  questions: [{
+    id: "q43_1",
+    ref: "§4.3.1",
+    text: "Finns en eller flera nätverksenheter med brandväggsfunktionalitet installerade mellan organisationens interna nätverk och internet – och är standardlösenord bytta, öppna portar beslutade och onödiga brandväggsregler borttagna?"
+  }, {
+    id: "q43_2",
+    ref: "§4.3.1",
+    text: "Är brandväggens administrativa gränssnitt otillgängligt från internet, är enheter utan behov av internetåtkomst blockerade – och är samtliga trådlösa nätverk krypterade med minst WPA2-PSK AES?"
+  }, {
+    id: "q43_3",
+    ref: "§4.3.2",
+    text: "Är gästnätverket avskilt från organisationens interna nätverk?"
+  }, {
+    id: "q43_4",
+    ref: "§4.3.3",
+    text: "Skyddas trafiken med VPN vid användning av offentliga nätverk, är e-postkommunikation krypterad med TLS – och är organisationens domännamn skyddat med DNSSEC?"
+  }]
+}, {
+  id: "s44",
+  name: "IT-tjänster & leverantörer",
+  ref: "SSF 1101 §4.4",
+  questions: [{
+    id: "q44_1",
+    ref: "§4.4",
+    text: "Har organisationen identifierat vilka IT-leverantörer som är kritiska för verksamheten och säkerställt att dessa har grundläggande cybersäkerhet – via egendeklaration, certifikat eller motsvarande?"
+  }, {
+    id: "q44_2",
+    ref: "§4.4.1",
+    text: "Finns ett juridiskt bindande avtal med varje kritisk IT-leverantör som normalt täcker servicenivå, incidenthantering, säkerhetskopiering, kryptering och ansvar vid avtalets upphörande?"
+  }, {
+    id: "q44_3",
+    ref: "§4.4.2",
+    text: "Intygar leverantörer som behandlar personuppgifter att de uppfyller GDPR – och finns personuppgiftsbiträdesavtal (DPA) på plats där det krävs?"
+  }]
+}, {
+  id: "s45",
+  name: "Behörigheter",
+  ref: "SSF 1101 §4.5",
+  questions: [{
+    id: "q45_1",
+    ref: "§4.5.1",
+    text: "Skapas användarkonton efter beslut, är administratörsbehörighet begränsad till de som utför administrativa uppgifter, är varje konto kopplat till en namngiven medarbetare – och tas konton bort när de inte längre behövs?"
+  }, {
+    id: "q45_2",
+    ref: "§4.5.2",
+    text: "Har medarbetare enbart åtkomst till de system och den information som deras arbetsuppgifter kräver – och är delade lagringsytor konfigurerade därefter?"
+  }, {
+    id: "q45_3",
+    ref: "§4.5.3",
+    text: "Autentiseras användare med starka lösenord och MFA där det är möjligt, byts lösenord enligt beslutade intervall för administrativa konton – och byts lösenord omedelbart om det misstänks ha blivit känt för obehörig?"
+  }]
+}, {
+  id: "s46",
+  name: "Utbildning i cybersäkerhet",
+  ref: "SSF 1101 §4.6",
+  questions: [{
+    id: "q46_1",
+    ref: "§4.6",
+    text: "Har samtliga medarbetare genomfört grundläggande utbildning i cybersäkerhet som täcker hot, risker och säkert beteende – inklusive lösenordshantering, säkerhetskopiering, molntjänster, e-post, sociala medier, skadlig kod, distansarbete, incidenthantering och hantering av mobila enheter?"
+  }]
+}];
+const TOTAL_Q = SECTIONS.reduce((n, s) => n + s.questions.length, 0);
+const WEIGHTS = {
+  q46_1: 3,
+  q44_1: 3,
+  q44_2: 3,
+  q44_3: 3,
+  q45_3: 3,
+  q41_2: 3,
+  q41_1: 2,
+  q42_2: 2,
+  q43_1: 2,
+  q43_4: 2,
+  q45_1: 2,
+  q45_2: 2
 };
-
-const ANSWERS=[
-  {key:"uppfyllt",label:"Uppfyllt",   score:1.0,cls:"ans-green"},
-  {key:"pagar",   label:"Pågår",      score:0.5,cls:"ans-amber"},
-  {key:"ej",      label:"Ej påbörjat",score:0.0,cls:"ans-red"},
-  {key:"vet_ej",  label:"Vet ej",     score:null,cls:"ans-blue"},
-];
-
-const SECTIONS=[
-  {id:"s41",name:"Datorer & mobila enheter",ref:"SSF 1101 §4.1",questions:[
-    {id:"q41_1",ref:"§4.1.1",text:"Har organisationen dokumenterade krav på starka lösenord (minst 12 tecken), säkerställt att standardlösenord är bytta på alla konton och enheter, och aktiverat kryptering av lagringsutrymme där det är möjligt?"},
-    {id:"q41_2",ref:"§4.1.2",text:"Säkerhetskopieras er information enligt ett dokumenterat beslut, med minst en kopia som enbart administratörer har tillgång till – och kontrolleras kopiorna regelbundet med stickprov?"},
-    {id:"q41_3",ref:"§4.1.3",text:"Är antivirusprogram installerat på alla datorer, uppdateras automatiskt och är konfigurerat för att skanna filer vid åtkomst och varna vid skadliga webbplatser?"},
-    {id:"q41_4",ref:"§4.1.4–4.1.5",text:"Har organisationen fattat beslut om huruvida privat bruk av organisationens resurser och privat utrustning är tillåtet – och gäller samma säkerhetskrav för privat utrustning som för organisationens övriga utrustning?"},
-  ]},
-  {id:"s42",name:"Mjukvaror & applikationer",ref:"SSF 1101 §4.2",questions:[
-    {id:"q42_1",ref:"§4.2.1",text:"Är all mjukvara som används i organisationen licensierad och hämtad från betrodda källor – och avinstalleras program som inte längre används?"},
-    {id:"q42_2",ref:"§4.2.2",text:"Installeras säkerhetsuppdateringar automatiskt för operativsystem, applikationer och nätverksenheter – och är program eller enheter som inte längre uppdateras borttagna eller isolerade?"},
-    {id:"q42_3",ref:"§4.2.3",text:"Är automatisk programstart begränsad till beslutade applikationer och är automatisk uppspelning avstängt för filer från USB-minnen och externa lagringsmedier?"},
-  ]},
-  {id:"s43",name:"Nätverk",ref:"SSF 1101 §4.3",questions:[
-    {id:"q43_1",ref:"§4.3.1",text:"Finns en eller flera nätverksenheter med brandväggsfunktionalitet installerade mellan organisationens interna nätverk och internet – och är standardlösenord bytta, öppna portar beslutade och onödiga brandväggsregler borttagna?"},
-    {id:"q43_2",ref:"§4.3.1",text:"Är brandväggens administrativa gränssnitt otillgängligt från internet, är enheter utan behov av internetåtkomst blockerade – och är samtliga trådlösa nätverk krypterade med minst WPA2-PSK AES?"},
-    {id:"q43_3",ref:"§4.3.2",text:"Är gästnätverket avskilt från organisationens interna nätverk?"},
-    {id:"q43_4",ref:"§4.3.3",text:"Skyddas trafiken med VPN vid användning av offentliga nätverk, är e-postkommunikation krypterad med TLS – och är organisationens domännamn skyddat med DNSSEC?"},
-  ]},
-  {id:"s44",name:"IT-tjänster & leverantörer",ref:"SSF 1101 §4.4",questions:[
-    {id:"q44_1",ref:"§4.4",text:"Har organisationen identifierat vilka IT-leverantörer som är kritiska för verksamheten och säkerställt att dessa har grundläggande cybersäkerhet – via egendeklaration, certifikat eller motsvarande?"},
-    {id:"q44_2",ref:"§4.4.1",text:"Finns ett juridiskt bindande avtal med varje kritisk IT-leverantör som normalt täcker servicenivå, incidenthantering, säkerhetskopiering, kryptering och ansvar vid avtalets upphörande?"},
-    {id:"q44_3",ref:"§4.4.2",text:"Intygar leverantörer som behandlar personuppgifter att de uppfyller GDPR – och finns personuppgiftsbiträdesavtal (DPA) på plats där det krävs?"},
-  ]},
-  {id:"s45",name:"Behörigheter",ref:"SSF 1101 §4.5",questions:[
-    {id:"q45_1",ref:"§4.5.1",text:"Skapas användarkonton efter beslut, är administratörsbehörighet begränsad till de som utför administrativa uppgifter, är varje konto kopplat till en namngiven medarbetare – och tas konton bort när de inte längre behövs?"},
-    {id:"q45_2",ref:"§4.5.2",text:"Har medarbetare enbart åtkomst till de system och den information som deras arbetsuppgifter kräver – och är delade lagringsytor konfigurerade därefter?"},
-    {id:"q45_3",ref:"§4.5.3",text:"Autentiseras användare med starka lösenord och MFA där det är möjligt, byts lösenord enligt beslutade intervall för administrativa konton – och byts lösenord omedelbart om det misstänks ha blivit känt för obehörig?"},
-  ]},
-  {id:"s46",name:"Utbildning i cybersäkerhet",ref:"SSF 1101 §4.6",questions:[
-    {id:"q46_1",ref:"§4.6",text:"Har samtliga medarbetare genomfört grundläggande utbildning i cybersäkerhet som täcker hot, risker och säkert beteende – inklusive lösenordshantering, säkerhetskopiering, molntjänster, e-post, sociala medier, skadlig kod, distansarbete, incidenthantering och hantering av mobila enheter?"},
-  ]},
-];
-
-const TOTAL_Q=SECTIONS.reduce((n,s)=>n+s.questions.length,0);
-
-// Viktad poängberäkning per avsnitt
-const secPct=(sec,ans)=>{
-  let s=0,maxS=0;
-  sec.questions.forEach(q=>{
-    const a=ans[q.id];if(!a||a==="vet_ej")return;
-    const d=ANSWERS.find(x=>x.key===a);
-    const w=WEIGHTS[q.id]||1;
-    if(d&&d.score!==null){s+=d.score*w;maxS+=w;}
+const secPct = (sec, ans) => {
+  let s = 0,
+    maxS = 0;
+  sec.questions.forEach(q => {
+    const a = ans[q.id];
+    if (!a || a === "vet_ej") return;
+    const d = ANSWERS.find(x => x.key === a);
+    const w = WEIGHTS[q.id] || 1;
+    if (d && d.score !== null) {
+      s += d.score * w;
+      maxS += w;
+    }
   });
-  return{pct:maxS>0?Math.round(s/maxS*100):null,done:sec.questions.filter(q=>ans[q.id]).length,total:sec.questions.length};
+  return {
+    pct: maxS > 0 ? Math.round(s / maxS * 100) : null,
+    done: sec.questions.filter(q => ans[q.id]).length,
+    total: sec.questions.length
+  };
 };
-
-// Viktad totalsumma
-const allPct=(ans)=>{
-  let s=0,maxS=0;
-  SECTIONS.forEach(sec=>sec.questions.forEach(q=>{
-    const a=ans[q.id];if(!a||a==="vet_ej")return;
-    const d=ANSWERS.find(x=>x.key===a);
-    const w=WEIGHTS[q.id]||1;
-    if(d&&d.score!==null){s+=d.score*w;maxS+=w;}
+const allPct = ans => {
+  let s = 0,
+    maxS = 0;
+  SECTIONS.forEach(sec => sec.questions.forEach(q => {
+    const a = ans[q.id];
+    if (!a || a === "vet_ej") return;
+    const d = ANSWERS.find(x => x.key === a);
+    const w = WEIGHTS[q.id] || 1;
+    if (d && d.score !== null) {
+      s += d.score * w;
+      maxS += w;
+    }
   }));
-  return maxS?Math.round(s/maxS*100):null;
+  return maxS ? Math.round(s / maxS * 100) : null;
 };
-
-const barColor=p=>p===null?"#E8E9EC":p>=75?"#1B6B3F":p>=45?"#FFA300":"#C03535";
-
-const readiness=p=>{
-  if(p===null)return"Otillräckligt underlag";
-  if(p>=75)return"Nära";
-  if(p>=45)return"En bit på väg";
-  return"Långt kvar";
+const barColor = p => p === null ? "#E8E9EC" : p >= 75 ? "#1B6B3F" : p >= 45 ? "#FFA300" : "#C03535";
+const readiness = p => {
+  if (p === null) return "Otillräckligt underlag";
+  if (p >= 75) return "Nära";
+  if (p >= 45) return "En bit på väg";
+  return "Långt kvar";
 };
-
-const readinessCls=p=>{
-  if(p===null)return"r-na";
-  if(p>=75)return"r-nara";
-  if(p>=45)return"r-bit";
-  return"r-lang";
+const readinessCls = p => {
+  if (p === null) return "r-na";
+  if (p >= 75) return "r-nara";
+  if (p >= 45) return "r-bit";
+  return "r-lang";
 };
-
-const today=()=>new Date().toLocaleDateString("sv-SE",{day:"numeric",month:"long",year:"numeric"});
-
-// Generera prioriterade nästa steg baserat på svar
-const getNextSteps=(answers)=>{
-  const steps=[];
-  const hasGap=ids=>ids.some(id=>answers[id]==="ej"||answers[id]==="pagar");
-  if(hasGap(["q46_1"]))steps.push({priority:"hög",title:"Genomför cybersäkerhetsutbildning för all personal",text:"Utbildning av samtliga medarbetare är ett av de mest tidskrävande kraven. Utbildningen ska täcka lösenord, säkerhetskopiering, e-post, skadlig kod, distansarbete och incidenthantering. Börja planera och genomföra detta tidigt i processen."});
-  if(hasGap(["q44_1","q44_2","q44_3"]))steps.push({priority:"hög",title:"Identifiera kritiska IT-leverantörer och upprätta avtal",text:"Kartlägg vilka leverantörer som är kritiska för er verksamhet och säkerställ deras cybersäkerhet. Upprätta juridiskt bindande avtal och, där GDPR kräver det, personuppgiftsbiträdesavtal (DPA). Förhandling och undertecknande tar ofta tid."});
-  if(hasGap(["q45_3"]))steps.push({priority:"hög",title:"Aktivera multifaktorsautentisering (MFA) och säkerställ lösenordsrutiner",text:"MFA ska aktiveras på alla system där det är tekniskt möjligt – prioritera e-post, administrativa konton och VPN. Säkerställ också att lösenord byts enligt beslutade intervall och omedelbart vid misstanke om att de blivit kända för obehöriga."});
-  if(hasGap(["q41_2"]))steps.push({priority:"hög",title:"Säkerställ säkerhetskopieringsrutin",text:"Se till att information säkerhetskopieras enligt ett dokumenterat beslut, att minst en kopia enbart är åtkomlig för administratörer, och att kopiorna kontrolleras regelbundet med stickprov."});
-  if(hasGap(["q41_1"]))steps.push({priority:"medel",title:"Dokumentera lösenordspolicy och byt standardlösenord",text:"Upprätta ett beslut om lösenordskrav (min. 12 tecken, inga ordlisteord, ingen återanvändning). Säkerställ att alla standardlösenord är bytta på datorer, mobila enheter och nätverksutrustning – och aktivera kryptering där det är möjligt."});
-  if(hasGap(["q43_4"]))steps.push({priority:"medel",title:"Säkerställ trafikskydd: VPN, e-postkryptering och DNSSEC",text:"Skydda trafiken med VPN vid användning av offentliga nätverk, säkerställ att e-post krypteras med TLS och konfigurera DNSSEC för organisationens domän. DNSSEC kräver ofta extern hjälp."});
-  if(hasGap(["q42_2"]))steps.push({priority:"medel",title:"Säkerställ rutin för säkerhetsuppdateringar",text:"Automatiska säkerhetsuppdateringar ska vara aktiverade för operativsystem, applikationer och nätverksenheter. Enheter eller program som inte längre uppdateras ska tas bort eller isoleras."});
+const today = () => new Date().toLocaleDateString("sv-SE", {
+  day: "numeric",
+  month: "long",
+  year: "numeric"
+});
+const getNextSteps = answers => {
+  const steps = [];
+  const hasGap = ids => ids.some(id => answers[id] === "ej" || answers[id] === "pagar");
+  if (hasGap(["q46_1"])) steps.push({
+    priority: "hög",
+    title: "Genomför cybersäkerhetsutbildning för all personal",
+    text: "Utbildning av samtliga medarbetare är ett av de mest tidskrävande kraven. Utbildningen ska täcka lösenord, säkerhetskopiering, e-post, skadlig kod, distansarbete och incidenthantering. Börja planera och genomföra detta tidigt i processen."
+  });
+  if (hasGap(["q44_1", "q44_2", "q44_3"])) steps.push({
+    priority: "hög",
+    title: "Identifiera kritiska IT-leverantörer och upprätta avtal",
+    text: "Kartlägg vilka leverantörer som är kritiska för er verksamhet och säkerställ deras cybersäkerhet. Upprätta juridiskt bindande avtal och, där GDPR kräver det, personuppgiftsbiträdesavtal (DPA)."
+  });
+  if (hasGap(["q45_3"])) steps.push({
+    priority: "hög",
+    title: "Aktivera MFA och säkerställ lösenordsrutiner",
+    text: "MFA ska aktiveras på alla system där det är tekniskt möjligt – prioritera e-post, administrativa konton och VPN. Säkerställ att lösenord byts enligt beslutade intervall."
+  });
+  if (hasGap(["q41_2"])) steps.push({
+    priority: "hög",
+    title: "Säkerställ säkerhetskopieringsrutin",
+    text: "Information ska säkerhetskopieras enligt ett dokumenterat beslut, med minst en kopia enbart åtkomlig för administratörer, och kopiorna ska kontrolleras regelbundet med stickprov."
+  });
+  if (hasGap(["q41_1"])) steps.push({
+    priority: "medel",
+    title: "Dokumentera lösenordspolicy och byt standardlösenord",
+    text: "Upprätta ett beslut om lösenordskrav (min. 12 tecken, inga ordlisteord, ingen återanvändning) och säkerställ att alla standardlösenord är bytta och kryptering aktiverad."
+  });
+  if (hasGap(["q43_4"])) steps.push({
+    priority: "medel",
+    title: "Säkerställ trafikskydd: VPN, TLS och DNSSEC",
+    text: "Skydda trafiken med VPN vid offentliga nätverk, säkerställ att e-post krypteras med TLS och konfigurera DNSSEC för er domän – kräver ofta extern hjälp."
+  });
+  if (hasGap(["q42_2"])) steps.push({
+    priority: "medel",
+    title: "Säkerställ rutin för säkerhetsuppdateringar",
+    text: "Automatiska säkerhetsuppdateringar ska vara aktiverade för operativsystem, applikationer och nätverksenheter. Enheter som inte längre uppdateras ska tas bort eller isoleras."
+  });
   return steps;
 };
-
-function Spider({sections,answers,size=220}){
-  const [tooltip,setTooltip]=useState(null);
-  const cx=size/2,cy=size/2,R=size*0.30,n=sections.length;
-  if(n<3)return null;
-  const ang=i=>(i*2*Math.PI/n)-Math.PI/2;
-  const pt=(i,r)=>({x:cx+r*Math.cos(ang(i)),y:cy+r*Math.sin(ang(i))});
-  const vals=sections.map((s,i)=>{const{pct}=secPct(s,answers);return{name:s.name,v:pct!=null?pct/100:0,i,pct};});
-  const dpts=vals.map(({v,i})=>{const p=pt(i,v*R);return p.x+","+p.y;}).join(" ");
-  const lR=R*1.42;
-  return(
-    <svg width={size} height={size} viewBox={"0 0 "+size+" "+size} style={{overflow:"visible"}}>
-      {[.25,.5,.75,1].map((lv,j)=>{
-        const ps=sections.map((_,i)=>{const p=pt(i,lv*R);return p.x+","+p.y;}).join(" ");
-        return <polygon key={j} points={ps} fill="none" stroke="#E8E9EC" strokeWidth={j===3?1.5:1}/>;
-      })}
-      {vals.map(({i})=>{const e=pt(i,R);return<line key={i} x1={cx} y1={cy} x2={e.x} y2={e.y} stroke="#E8E9EC" strokeWidth="1"/>;})};
-      <polygon points={dpts} fill="#FFA300" fillOpacity=".16" stroke="#FFA300" strokeWidth="2" strokeLinejoin="round"/>
-      {vals.map(({v,i,name,pct})=>{
-        const p=pt(i,v*R);
-        return(
-          <g key={i} onMouseEnter={()=>setTooltip({x:p.x,y:p.y,name,pct})} onMouseLeave={()=>setTooltip(null)} style={{cursor:"pointer"}}>
-            <circle cx={p.x} cy={p.y} r="12" fill="transparent"/>
-            <circle cx={p.x} cy={p.y} r="4.5" fill="#FFA300" stroke="#fff" strokeWidth="2"/>
-          </g>
-        );
-      })}
-      {vals.map(({name,i})=>{
-        const lp=pt(i,lR),cv=Math.cos(ang(i));
-        const anchor=cv>.15?"start":cv<-.15?"end":"middle";
-        const words=name.split(" ");
-        const line1=words.slice(0,Math.ceil(words.length/2)).join(" ");
-        const line2=words.slice(Math.ceil(words.length/2)).join(" ");
-        return(
-          <text key={i} x={lp.x} y={lp.y} textAnchor={anchor} dominantBaseline="middle" fontFamily="Open Sans,sans-serif">
-            <tspan x={lp.x} dy={line2?"-0.6em":0} fontSize="9" fontWeight="700" fill="#4A4B52">{line1}</tspan>
-            {line2&&<tspan x={lp.x} dy="1.2em" fontSize="9" fontWeight="700" fill="#4A4B52">{line2}</tspan>}
-          </text>
-        );
-      })}
-      {[25,50,75].map((v,i)=>{const lp=pt(0,v/100*R);return<text key={i} x={lp.x+3} y={lp.y-2} fontSize="7" fill="#C0C0C0" fontFamily="Open Sans,sans-serif">{v}%</text>;})}
-      {tooltip&&(
-        <g>
-          <rect x={tooltip.x-58} y={tooltip.y-38} width="116" height="32" rx="4" fill="#101820" opacity=".93"/>
-          <text x={tooltip.x} y={tooltip.y-26} textAnchor="middle" fontSize="10" fontWeight="700" fill="white" fontFamily="Open Sans,sans-serif">{tooltip.name.length>18?tooltip.name.slice(0,16)+"…":tooltip.name}</text>
-          <text x={tooltip.x} y={tooltip.y-13} textAnchor="middle" fontSize="11" fontWeight="800" fill="#FFA300" fontFamily="Open Sans,sans-serif">{tooltip.pct!==null?tooltip.pct+"%":"Vet ej"}</text>
-        </g>
-      )}
-    </svg>
-  );
+function Spider({
+  sections,
+  answers,
+  size = 220
+}) {
+  const [tooltip, setTooltip] = useState(null);
+  const cx = size / 2,
+    cy = size / 2,
+    R = size * 0.30,
+    n = sections.length;
+  if (n < 3) return null;
+  const ang = i => i * 2 * Math.PI / n - Math.PI / 2;
+  const pt = (i, r) => ({
+    x: cx + r * Math.cos(ang(i)),
+    y: cy + r * Math.sin(ang(i))
+  });
+  const vals = sections.map((s, i) => {
+    const {
+      pct
+    } = secPct(s, answers);
+    return {
+      name: s.name,
+      v: pct != null ? pct / 100 : 0,
+      i,
+      pct
+    };
+  });
+  const dpts = vals.map(({
+    v,
+    i
+  }) => {
+    const p = pt(i, v * R);
+    return p.x + "," + p.y;
+  }).join(" ");
+  const lR = R * 1.42;
+  return /*#__PURE__*/React.createElement("svg", {
+    width: size,
+    height: size,
+    viewBox: "0 0 " + size + " " + size,
+    style: {
+      overflow: "visible"
+    }
+  }, [.25, .5, .75, 1].map((lv, j) => {
+    const ps = sections.map((_, i) => {
+      const p = pt(i, lv * R);
+      return p.x + "," + p.y;
+    }).join(" ");
+    return /*#__PURE__*/React.createElement("polygon", {
+      key: j,
+      points: ps,
+      fill: "none",
+      stroke: "#E8E9EC",
+      strokeWidth: j === 3 ? 1.5 : 1
+    });
+  }), ";", vals.map(({
+    i
+  }) => {
+    const e = pt(i, R);
+    return /*#__PURE__*/React.createElement("line", {
+      key: i,
+      x1: cx,
+      y1: cy,
+      x2: e.x,
+      y2: e.y,
+      stroke: "#E8E9EC",
+      strokeWidth: "1"
+    });
+  }), ";", /*#__PURE__*/React.createElement("polygon", {
+    points: dpts,
+    fill: "#FFA300",
+    fillOpacity: ".16",
+    stroke: "#FFA300",
+    strokeWidth: "2",
+    strokeLinejoin: "round"
+  }), vals.map(({
+    v,
+    i,
+    name,
+    pct
+  }) => {
+    const p = pt(i, v * R);
+    return /*#__PURE__*/React.createElement("g", {
+      key: i,
+      onMouseEnter: () => setTooltip({
+        x: p.x,
+        y: p.y,
+        name,
+        pct
+      }),
+      onMouseLeave: () => setTooltip(null),
+      style: {
+        cursor: "pointer"
+      }
+    }, /*#__PURE__*/React.createElement("circle", {
+      cx: p.x,
+      cy: p.y,
+      r: "12",
+      fill: "transparent"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: p.x,
+      cy: p.y,
+      r: "4.5",
+      fill: "#FFA300",
+      stroke: "#fff",
+      strokeWidth: "2"
+    }));
+  }), vals.map(({
+    name,
+    i
+  }) => {
+    const lp = pt(i, lR),
+      cv = Math.cos(ang(i));
+    const anchor = cv > .15 ? "start" : cv < -.15 ? "end" : "middle";
+    const words = name.split(" ");
+    const l1 = words.slice(0, Math.ceil(words.length / 2)).join(" ");
+    const l2 = words.slice(Math.ceil(words.length / 2)).join(" ");
+    return /*#__PURE__*/React.createElement("text", {
+      key: i,
+      x: lp.x,
+      y: lp.y,
+      textAnchor: anchor,
+      dominantBaseline: "middle",
+      fontFamily: "Open Sans,sans-serif"
+    }, /*#__PURE__*/React.createElement("tspan", {
+      x: lp.x,
+      dy: l2 ? "-0.6em" : 0,
+      fontSize: "9",
+      fontWeight: "700",
+      fill: "#4A4B52"
+    }, l1), l2 && /*#__PURE__*/React.createElement("tspan", {
+      x: lp.x,
+      dy: "1.2em",
+      fontSize: "9",
+      fontWeight: "700",
+      fill: "#4A4B52"
+    }, l2));
+  }), [25, 50, 75].map((v, i) => {
+    const lp = pt(0, v / 100 * R);
+    return /*#__PURE__*/React.createElement("text", {
+      key: i,
+      x: lp.x + 3,
+      y: lp.y - 2,
+      fontSize: "7",
+      fill: "#C0C0C0",
+      fontFamily: "Open Sans,sans-serif"
+    }, v, "%");
+  }), tooltip && /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("rect", {
+    x: tooltip.x - 58,
+    y: tooltip.y - 38,
+    width: "116",
+    height: "32",
+    rx: "4",
+    fill: "#101820",
+    opacity: ".93"
+  }), /*#__PURE__*/React.createElement("text", {
+    x: tooltip.x,
+    y: tooltip.y - 26,
+    textAnchor: "middle",
+    fontSize: "10",
+    fontWeight: "700",
+    fill: "white",
+    fontFamily: "Open Sans,sans-serif"
+  }, tooltip.name.length > 18 ? tooltip.name.slice(0, 16) + "..." : tooltip.name), /*#__PURE__*/React.createElement("text", {
+    x: tooltip.x,
+    y: tooltip.y - 13,
+    textAnchor: "middle",
+    fontSize: "11",
+    fontWeight: "800",
+    fill: "#FFA300",
+    fontFamily: "Open Sans,sans-serif"
+  }, tooltip.pct !== null ? tooltip.pct + "%" : "Vet ej")));
 }
-
-function GatePage({onSuccess}){
-  const [sent,setSent]=useState(false);
-  const [loading,setLoading]=useState(false);
-  const [error,setError]=useState("");
-  const [name,setName]=useState("");
-  const [company,setCompany]=useState("");
-  const [email,setEmail]=useState("");
-
-  const handleSubmit=async(e)=>{
+function GatePage({
+  onSuccess
+}) {
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const handleSubmit = async e => {
     e.preventDefault();
-    setLoading(true);setError("");
-    try{
-      const res=await fetch("https://api.web3forms.com/submit",{
-        method:"POST",
-        headers:{"Content-Type":"application/json","Accept":"application/json"},
-        body:JSON.stringify({
-          access_key:"4ff231c7-8ece-4e89-9a4c-6996ff3a147b",
-          subject:"SSF 1101 Cybersäkerhet – "+company,
-          from_name:"SBSC SSF 1101 Beredskapsverktyg",
-          namn:name,foretag:company,epost:email,
-          certifiering:"SSF 1101 Cybersäkerhet Basnivå",
-          kalla:"SBSC SSF 1101 Verktyg"
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          access_key: "4ff231c7-8ece-4e89-9a4c-6996ff3a147b",
+          subject: "Cybersäkerhet Bas – " + company,
+          from_name: "SBSC GAP-analys",
+          namn: name,
+          foretag: company,
+          epost: email
         })
       });
-      if(res.ok)setSent(true);
-      else setError("Något gick fel vid inskick. Försök igen eller kontakta kund@sbsc.se.");
-    }catch(err){setError("Kunde inte ansluta. Kontrollera din internetanslutning och försök igen.");}
+      if (res.ok) setSent(true);else setError("Något gick fel. Försök igen eller kontakta kund@sbsc.se.");
+    } catch (err) {
+      setError("Kontrollera din internetanslutning och försök igen.");
+    }
     setLoading(false);
   };
-
-  return(
-    <div className="gate-wrap">
-      <div className="gate-box">
-        <img src={LOGO} alt="SBSC" className="gate-logo"/>
-        {!sent?(
-          <>
-            <h1 className="gate-title">Är er organisation redo för certifiering av Cybersäkerhet Bas?</h1>
-            <p className="gate-sub">Fyll i era kontaktuppgifter för att få tillgång till vår kostnadsfria GAP-analys inför certifiering av Cybersäkerhet Bas.</p>
-            <div className="gate-facts">
-              <div className="gate-fact"><div className="gate-fact-n">{TOTAL_Q}</div><div className="gate-fact-l">krav</div></div>
-              <div className="gate-fact"><div className="gate-fact-n">~5 min</div><div className="gate-fact-l">tid</div></div>
-              <div className="gate-fact"><div className="gate-fact-n">0%</div><div className="gate-fact-l">data lagras</div></div>
-            </div>
-            <form className="gate-form" onSubmit={handleSubmit}>
-              <div className="gate-field">
-                <label className="gate-label">Ditt namn *</label>
-                <input className="gate-input" type="text" required placeholder="För- och efternamn" value={name} onChange={e=>setName(e.target.value)}/>
-              </div>
-              <div className="gate-field">
-                <label className="gate-label">Organisationens namn *</label>
-                <input className="gate-input" type="text" required placeholder="T.ex. Andersson AB" value={company} onChange={e=>setCompany(e.target.value)}/>
-              </div>
-              <div className="gate-field">
-                <label className="gate-label">E-postadress *</label>
-                <input className="gate-input" type="email" required placeholder="namn@foretag.se" value={email} onChange={e=>setEmail(e.target.value)}/>
-              </div>
-              {error&&<div className="gate-error">{error}</div>}
-              <button className="gate-btn" type="submit" disabled={loading}>{loading?"Skickar…":"Starta kartläggningen →"}</button>
-              <p className="gate-privacy">SBSC behandlar dina uppgifter enligt GDPR. Uppgifterna används enbart för uppföljning av din intresseanmälan. Självskattningens svar lagras aldrig – de stannar i din webbläsare.</p>
-            </form>
-          </>
-        ):(
-          <div className="gate-success">
-            <div className="gate-success-icon">✓</div>
-            <h2>Tack, {name.split(" ")[0]}!</h2>
-            <p>Vi har mottagit dina uppgifter. Starta kartläggningen nedan.</p>
-            <button className="gate-btn" style={{display:"inline-block",width:"auto",padding:"13px 32px"}} onClick={()=>onSuccess(company)}>Starta kartläggningen →</button>
-          </div>
-        )}
-      </div>
-    </div>
-  );
+  return /*#__PURE__*/React.createElement("div", {
+    className: "gate-wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gate-box"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: LOGO,
+    alt: "SBSC",
+    className: "gate-logo"
+  }), !sent ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", {
+    className: "gate-title"
+  }, "Är er organisation redo för certifiering av Cybersäkerhet Bas?"), /*#__PURE__*/React.createElement("p", {
+    className: "gate-sub"
+  }, "Fyll i era kontaktuppgifter för att starta den kostnadsfria GAP-analysen."), /*#__PURE__*/React.createElement("div", {
+    className: "gate-facts"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gate-fact"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gate-fact-n"
+  }, TOTAL_Q), /*#__PURE__*/React.createElement("div", {
+    className: "gate-fact-l"
+  }, "frågor")), /*#__PURE__*/React.createElement("div", {
+    className: "gate-fact"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gate-fact-n"
+  }, "~5 min"), /*#__PURE__*/React.createElement("div", {
+    className: "gate-fact-l"
+  }, "tid")), /*#__PURE__*/React.createElement("div", {
+    className: "gate-fact"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gate-fact-n"
+  }, "0%"), /*#__PURE__*/React.createElement("div", {
+    className: "gate-fact-l"
+  }, "lagras"))), /*#__PURE__*/React.createElement("form", {
+    className: "gate-form",
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gate-field"
+  }, /*#__PURE__*/React.createElement("label", {
+    className: "gate-label"
+  }, "Ditt namn *"), /*#__PURE__*/React.createElement("input", {
+    className: "gate-input",
+    type: "text",
+    required: true,
+    placeholder: "För- och efternamn",
+    value: name,
+    onChange: e => setName(e.target.value)
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "gate-field"
+  }, /*#__PURE__*/React.createElement("label", {
+    className: "gate-label"
+  }, "Organisationens namn *"), /*#__PURE__*/React.createElement("input", {
+    className: "gate-input",
+    type: "text",
+    required: true,
+    placeholder: "T.ex. Andersson AB",
+    value: company,
+    onChange: e => setCompany(e.target.value)
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "gate-field"
+  }, /*#__PURE__*/React.createElement("label", {
+    className: "gate-label"
+  }, "E-postadress *"), /*#__PURE__*/React.createElement("input", {
+    className: "gate-input",
+    type: "email",
+    required: true,
+    placeholder: "namn@foretag.se",
+    value: email,
+    onChange: e => setEmail(e.target.value)
+  })), error && /*#__PURE__*/React.createElement("div", {
+    className: "gate-error"
+  }, error), /*#__PURE__*/React.createElement("button", {
+    className: "gate-btn",
+    type: "submit",
+    disabled: loading
+  }, loading ? "Skickar..." : "Starta GAP-analysen →"), /*#__PURE__*/React.createElement("p", {
+    className: "gate-privacy"
+  }, "SBSC behandlar dina uppgifter enligt GDPR. Svaren lagras aldrig – de stannar i din webbläsare."))) : /*#__PURE__*/React.createElement("div", {
+    className: "gate-success"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gate-success-icon"
+  }, "✓"), /*#__PURE__*/React.createElement("h2", null, "Tack, ", name.split(" ")[0], "!"), /*#__PURE__*/React.createElement("p", null, "Vi har mottagit dina uppgifter. Starta GAP-analysen nedan."), /*#__PURE__*/React.createElement("button", {
+    className: "gate-btn",
+    style: {
+      display: "inline-block",
+      width: "auto",
+      padding: "13px 32px"
+    },
+    onClick: () => onSuccess(company)
+  }, "Starta GAP-analysen →"))));
 }
-
-function QCard({q,index,answers,answer,secName}){
-  const val=answers[q.id];
-  return(
-    <div className="q-card">
-      <div className="q-header">
-        <div className={"q-num"+(val?" answered":"")}>{val?"✓":index+1}</div>
-        <div style={{flex:1}}>
-          <div className="q-text">{q.text}</div>
-          <div className="q-ref">{secName} · {q.ref}</div>
-        </div>
-      </div>
-      <div className="ans-grid">
-        {ANSWERS.map(a=>(
-          <button key={a.key} className={"ans-btn"+(val===a.key?" "+a.cls:"")} onClick={()=>answer(q.id,a.key)}>{a.label}</button>
-        ))}
-      </div>
-    </div>
-  );
+function QCard({
+  q,
+  index,
+  answers,
+  answer,
+  secName
+}) {
+  const val = answers[q.id];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "q-card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "q-header"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "q-num" + (val ? " answered" : "")
+  }, val ? "✓" : index + 1), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "q-text"
+  }, q.text), /*#__PURE__*/React.createElement("div", {
+    className: "q-ref"
+  }, secName, " · ", q.ref))), /*#__PURE__*/React.createElement("div", {
+    className: "ans-grid"
+  }, ANSWERS.map(a => /*#__PURE__*/React.createElement("button", {
+    key: a.key,
+    className: "ans-btn" + (val === a.key ? " " + a.cls : ""),
+    onClick: () => answer(q.id, a.key)
+  }, a.label))));
 }
-
-function QPage({answers,answer,secIdx,setSecIdx,setView}){
-  const sec=SECTIONS[secIdx];
-  const doneQ=SECTIONS.reduce((n,s)=>n+s.questions.filter(q=>answers[q.id]).length,0);
-  const prog=Math.round(doneQ/TOTAL_Q*100);
-  const secDone=sec.questions.every(q=>answers[q.id]);
-  const isLast=secIdx===SECTIONS.length-1;
-
-  const goNext=()=>{if(!isLast){setSecIdx(secIdx+1);window.scrollTo(0,0);}else setView("results");};
-  const goPrev=()=>{if(secIdx>0){setSecIdx(secIdx-1);window.scrollTo(0,0);}};
-
-  return(
-    <>
-      <div className="progress-bar no-print">
-        <div className="progress-top">
-          <span className="progress-label">{sec.name}</span>
-          <span className="progress-count">{doneQ}/{TOTAL_Q} svar · {prog}%</span>
-        </div>
-        <div className="progress-track"><div className="progress-fill" style={{width:prog+"%"}}/></div>
-      </div>
-      <div className="nav-help no-print">Du kan hoppa fritt mellan avsnitt med hjälp av flikarna nedan – dina svar sparas automatiskt.</div>
-      <div className="section-tabs no-print">
-        {SECTIONS.map((s,i)=>{
-          const{done,total}=secPct(s,answers);
-          const isAct=i===secIdx,isDone=done===total;
-          return(
-            <button key={s.id} className={"section-tab"+(isAct?" active":"")+(isDone&&!isAct?" done":"")} onClick={()=>{setSecIdx(i);window.scrollTo(0,0);}}>
-              <span className="tab-dot"/>{s.name}
-            </button>
-          );
-        })}
-      </div>
-      <div style={{marginBottom:16}}>
-        <div style={{fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:"1px",color:"var(--muted)",marginBottom:4}}>{sec.ref}</div>
-        <h2 style={{fontSize:20,fontWeight:800,marginBottom:6}}>{sec.name}</h2>
-        <p style={{fontSize:13,color:"var(--muted)"}}>Ange hur er organisation uppfyller varje krav i SSF 1101.</p>
-      </div>
-      <div className="ans-legend no-print">
-        <div className="legend-item"><div className="legend-dot" style={{background:"var(--green)"}}/><span>Uppfyllt</span></div>
-        <div className="legend-item"><div className="legend-dot" style={{background:"var(--amber)"}}/><span>Pågår – påbörjat men ej klart</span></div>
-        <div className="legend-item"><div className="legend-dot" style={{background:"var(--red)"}}/><span>Ej påbörjat</span></div>
-        <div className="legend-item"><div className="legend-dot" style={{background:"var(--blue)"}}/><span>Vet ej – räknas ej i poängen</span></div>
-      </div>
-      {sec.questions.map((q,i)=><QCard key={q.id} q={q} index={i} answers={answers} answer={answer} secName={sec.name}/>)}
-      <div className="btn-row no-print">
-        <button className="btn-ghost" onClick={goPrev} disabled={secIdx===0}>← Föregående</button>
-        <button className="btn btn-primary" onClick={goNext} disabled={!secDone}>{isLast?"Visa GAP-analys →":"Nästa avsnitt →"}</button>
-      </div>
-      {!secDone&&<p style={{textAlign:"right",fontSize:11,color:"var(--muted)",marginTop:8}}>Besvara alla frågor för att gå vidare.</p>}
-    </>
-  );
+function QPage({
+  answers,
+  answer,
+  secIdx,
+  setSecIdx,
+  setView
+}) {
+  const sec = SECTIONS[secIdx];
+  const doneQ = SECTIONS.reduce((n, s) => n + s.questions.filter(q => answers[q.id]).length, 0);
+  const prog = Math.round(doneQ / TOTAL_Q * 100);
+  const secDone = sec.questions.every(q => answers[q.id]);
+  const isLast = secIdx === SECTIONS.length - 1;
+  const goNext = () => {
+    if (!isLast) {
+      setSecIdx(secIdx + 1);
+      window.scrollTo(0, 0);
+    } else setView("results");
+  };
+  const goPrev = () => {
+    if (secIdx > 0) {
+      setSecIdx(secIdx - 1);
+      window.scrollTo(0, 0);
+    }
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "progress-bar no-print"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "progress-top"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "progress-label"
+  }, sec.name), /*#__PURE__*/React.createElement("span", {
+    className: "progress-count"
+  }, doneQ, "/", TOTAL_Q, " svar · ", prog, "%")), /*#__PURE__*/React.createElement("div", {
+    className: "progress-track"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "progress-fill",
+    style: {
+      width: prog + "%"
+    }
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "nav-help no-print"
+  }, "Du kan hoppa fritt mellan avsnitt med flikarna nedan – dina svar sparas automatiskt."), /*#__PURE__*/React.createElement("div", {
+    className: "section-tabs no-print"
+  }, SECTIONS.map((s, i) => {
+    const {
+      done,
+      total
+    } = secPct(s, answers);
+    const act = i === secIdx,
+      dn = done === total;
+    return /*#__PURE__*/React.createElement("button", {
+      key: s.id,
+      className: "section-tab" + (act ? " active" : "") + (dn && !act ? " done" : ""),
+      onClick: () => {
+        setSecIdx(i);
+        window.scrollTo(0, 0);
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "tab-dot"
+    }), s.name);
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      fontWeight: 800,
+      textTransform: "uppercase",
+      letterSpacing: "1px",
+      color: "var(--muted)",
+      marginBottom: 4
+    }
+  }, sec.ref), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 20,
+      fontWeight: 800,
+      marginBottom: 6
+    }
+  }, sec.name), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 13,
+      color: "var(--muted)"
+    }
+  }, "Ange hur er organisation uppfyller varje krav i SSF 1101.")), /*#__PURE__*/React.createElement("div", {
+    className: "ans-legend no-print"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "legend-item"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "legend-dot",
+    style: {
+      background: "var(--green)"
+    }
+  }), /*#__PURE__*/React.createElement("span", null, "Uppfyllt")), /*#__PURE__*/React.createElement("div", {
+    className: "legend-item"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "legend-dot",
+    style: {
+      background: "var(--amber)"
+    }
+  }), /*#__PURE__*/React.createElement("span", null, "Pågår – påbörjat men ej klart")), /*#__PURE__*/React.createElement("div", {
+    className: "legend-item"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "legend-dot",
+    style: {
+      background: "var(--red)"
+    }
+  }), /*#__PURE__*/React.createElement("span", null, "Ej påbörjat")), /*#__PURE__*/React.createElement("div", {
+    className: "legend-item"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "legend-dot",
+    style: {
+      background: "var(--blue)"
+    }
+  }), /*#__PURE__*/React.createElement("span", null, "Vet ej – räknas ej i poängen"))), sec.questions.map((q, i) => /*#__PURE__*/React.createElement(QCard, {
+    key: q.id,
+    q: q,
+    index: i,
+    answers: answers,
+    answer: answer,
+    secName: sec.name
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "btn-row no-print"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn-ghost",
+    onClick: goPrev,
+    disabled: secIdx === 0
+  }, "← Föregående"), /*#__PURE__*/React.createElement("button", {
+    className: "btn btn-primary",
+    onClick: goNext,
+    disabled: !secDone
+  }, isLast ? "Visa GAP-analys →" : "Nästa avsnitt →")), !secDone && /*#__PURE__*/React.createElement("p", {
+    style: {
+      textAlign: "right",
+      fontSize: 11,
+      color: "var(--muted)",
+      marginTop: 8
+    }
+  }, "Besvara alla frågor för att gå vidare."));
 }
-
-function ReportPage({answers,company,restart,back}){
-  const overall=allPct(answers);
-  const hiG=SECTIONS.reduce((n,s)=>n+s.questions.filter(q=>answers[q.id]==="ej").length,0);
-  const miG=SECTIONS.reduce((n,s)=>n+s.questions.filter(q=>answers[q.id]==="pagar").length,0);
-  const vetEjG=SECTIONS.reduce((n,s)=>n+s.questions.filter(q=>answers[q.id]==="vet_ej").length,0);
-  const ds=today();
-  const steps=getNextSteps(answers);
-
-  useEffect(()=>{
-    document.title=(company||"Er organisation")+" – SSF 1101 GAP-analys";
-    return()=>{document.title="SBSC – Cybersäkerhet Bas";};
-  },[company]);
-
-  const gaps=[];
-  SECTIONS.forEach(sec=>sec.questions.forEach(q=>{
-    const a=answers[q.id];
-    if(a==="ej")gaps.push({pri:"hi",lbl:"Ej påbörjat",cls:"badge-hi",sec:sec.name,ref:q.ref,text:q.text});
-    else if(a==="pagar")gaps.push({pri:"mi",lbl:"Pågår",cls:"badge-mi",sec:sec.name,ref:q.ref,text:q.text});
-    else if(a==="vet_ej")gaps.push({pri:"uk",lbl:"Vet ej",cls:"badge-uk",sec:sec.name,ref:q.ref,text:q.text});
+function ReportPage({
+  answers,
+  company,
+  restart,
+  back
+}) {
+  const overall = allPct(answers);
+  const hiG = SECTIONS.reduce((n, s) => n + s.questions.filter(q => answers[q.id] === "ej").length, 0);
+  const miG = SECTIONS.reduce((n, s) => n + s.questions.filter(q => answers[q.id] === "pagar").length, 0);
+  const vetEjG = SECTIONS.reduce((n, s) => n + s.questions.filter(q => answers[q.id] === "vet_ej").length, 0);
+  const ds = today();
+  const steps = getNextSteps(answers);
+  const gaps = [];
+  SECTIONS.forEach(sec => sec.questions.forEach(q => {
+    const a = answers[q.id];
+    if (a === "ej") gaps.push({
+      pri: "hi",
+      lbl: "Ej påbörjat",
+      cls: "badge-hi",
+      sec: sec.name,
+      ref: q.ref,
+      text: q.text
+    });else if (a === "pagar") gaps.push({
+      pri: "mi",
+      lbl: "Pågår",
+      cls: "badge-mi",
+      sec: sec.name,
+      ref: q.ref,
+      text: q.text
+    });else if (a === "vet_ej") gaps.push({
+      pri: "uk",
+      lbl: "Vet ej",
+      cls: "badge-uk",
+      sec: sec.name,
+      ref: q.ref,
+      text: q.text
+    });
   }));
-  gaps.sort((a,b)=>({hi:0,mi:1,uk:2}[a.pri]-{hi:0,mi:1,uk:2}[b.pri]));
-
-  const nm=company||"Er organisation";
-  const rl=readiness(overall);
-  const summary=(()=>{
-    if(overall===null)return nm+" – GAP-analysen ger en övergripande bild av beredskapen. Flera frågor besvarades med \"Vet ej\" – dessa behöver utredas internt för en fullständig bild.";
-    if(overall>=75)return nm+" är Nära certifieringsnivå med en viktad uppfyllnadsgrad på "+overall+"%. Fokusera på de kvarstående åtgärdspunkterna och ta kontakt med SBSC för att inleda certifieringsprocessen. Kom ihåg att certifiering kräver "+ ( hiG+miG)+" kvarstående åtgärdspunkterna och ta kontakt med SBSC för att inleda certifieringsprocessen.";
-    if(overall>=45)return nm+" är en bit på väg med "+overall+"% viktad uppfyllnadsgrad. Kartläggningen identifierar "+hiG+" krav som ännu inte påbörjats och "+miG+" som pågår. Med ett strukturerat åtgärdsarbete – med fokus på utbildning och leverantörsstyrning – är certifiering möjlig.";
-    return nm+" har Långt kvar till certifieringsnivå med "+overall+"% viktad uppfyllnadsgrad. GAP-analysen identifierar "+hiG+" opåbörjade frågor. Det är ett bra läge att starta det strukturerade arbetet utifrån prioriteringarna i nästa steg nedan.";
+  gaps.sort((a, b) => ({
+    hi: 0,
+    mi: 1,
+    uk: 2
+  })[a.pri] - {
+    hi: 0,
+    mi: 1,
+    uk: 2
+  }[b.pri]);
+  const nm = company || "Er organisation";
+  const rl = readiness(overall);
+  const summary = (() => {
+    if (overall === null) return nm + " – GAP-analysen ger en övergripande bild av beredskapen mot Cybersäkerhet Bas. Flera frågor besvarades med \"Vet ej\" – dessa behöver utredas internt för en fullständig bild.";
+    if (overall >= 75) return nm + " är Nära certifieringsnivå med en viktad uppfyllnadsgrad på " + overall + "%. Fokusera på kvarstående åtgärdspunkter och ta kontakt med SBSC för att inleda certifieringsprocessen.";
+    if (overall >= 45) return nm + " är En bit på väg med " + overall + "% viktad uppfyllnadsgrad. " + hiG + " frågor är ännu inte påbörjat och " + miG + " pågår. Med strukturerat arbete – fokus på utbildning och leverantörsstyrning – är certifiering möjlig.";
+    return nm + " har Långt kvar till certifieringsnivå med " + overall + "% viktad uppfyllnadsgrad. " + hiG + " frågor är ej påbörjat. Det är ett bra läge att starta det strukturerade arbetet utifrån prioriteringarna nedan.";
   })();
-
-  return(
-    <>
-      <div className="print-header">
-        <img src={LOGO} alt="SBSC" className="print-header-logo"/>
-        <div className="print-header-right">
-          <span className="print-header-title">SSF 1101 Cybersäkerhet Basnivå – GAP-analys</span>
-          <span className="print-header-sub">{ds} · SBSC ackrediterat av SWEDAC (nr 1631)</span>
-        </div>
-      </div>
-
-      <div className="report-banner">
-        <div>
-          <div className="banner-label">SSF 1101 Cybersäkerhet Basnivå · SBSC</div>
-          <div className="banner-company">{company||"Er organisation"}</div>
-          <div className="banner-meta">
-            <span>📅 {ds}</span>
-            <span>{TOTAL_Q} frågor · 6 avsnitt</span>
-          </div>
-        </div>
-        <div className="banner-score-wrap">
-          <div className="banner-score-label">Viktad uppfyllnadsgrad</div>
-          <div className="banner-score">{overall!=null?<>{overall}<em>%</em></>:"—"}</div>
-          <div className="banner-readiness">
-            <span className={"readiness-badge "+readinessCls(overall)}>{rl}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="kpi-row">
-        <div className="kpi-cell"><div className="kpi-label">Bedömning</div><div className="kpi-value"><span className={"readiness-badge "+readinessCls(overall)}>{rl}</span></div></div>
-        <div className="kpi-cell"><div className="kpi-label">Krav att åtgärda</div><div className="kpi-value">{hiG} ej påbörjat · {miG} pågår</div></div>
-        <div className="kpi-cell"><div className="kpi-label">Vet ej (utreds internt)</div><div className="kpi-value">{vetEjG} krav</div></div>
-      </div>
-
-      {vetEjG>=3&&(
-        <div style={{display:"flex",alignItems:"flex-start",gap:10,padding:"12px 16px",marginBottom:14,background:"#FEF9EC",border:"1.5px solid #FFD580",borderRadius:6,fontSize:13}}>
-          <span style={{flexShrink:0,color:"#8A5500",marginTop:1}}>⚠</span>
-          <div><strong style={{display:"block",marginBottom:3,color:"#7A4800"}}>{vetEjG} krav besvarades med "Vet ej"</strong><span style={{color:"#8A5500"}}>Dessa exkluderas från poängen och behöver utredas internt – resultatet kan vara missvisande.</span></div>
-        </div>
-      )}
-
-      <div className="summary-box">
-        <div className="summary-box-label">Samlad bedömning</div>
-        <div className="summary-box-text">{summary}</div>
-      </div>
-
-      {/* Certifieringsinfo i rapporten */}
-      <div className="report-info-box">
-        <h4>ℹ️ Bra resultat = inte certifierad</h4>
-        <p>En hög uppfyllnadsgrad i den här GAP-analysen innebär inte att er organisation är certifierad eller nästan certifierad. Certifiering kräver sex steg:</p>
-        <ol className="report-info-steps">
-          <li><span className="step-num">1</span><span>Ansökan hos SBSC</span></li>
-          <li><span className="step-num">2</span><span>Ifyllnad av SBSC:s utförligare digitala egendeklaration</span></li>
-          <li><span className="step-num">3</span><span>Inlämning av bevis på att kraven i SSF 1101 uppfylls</span></li>
-          <li><span className="step-num">4</span><span>Teknisk granskning av sakkunnig revisor</span></li>
-          <li><span className="step-num">5</span><span>Svar på eventuella avvikelser</span></li>
-          <li><span className="step-num">6</span><span>Utfärdande av certifikat</span></li>
-        </ol>
-      </div>
-
-      {/* Spindelnät + staplar */}
-      <div className="cert-section">
-        <div className="cert-head">
-          <div><h3>SSF 1101 Cybersäkerhet Basnivå</h3></div>
-          <div className="cert-head-score">{overall!=null?overall+"%":"—"}</div>
-        </div>
-        <div className="cert-body">
-          <div className="spider-wrap"><Spider sections={SECTIONS} answers={answers}/></div>
-          <div className="spider-caption">Viktad täckningsgrad per avsnitt</div>
-          <div className="readiness-explain">
-            <strong>Om bedömningen: </strong>Resultatet "Nära / En bit på väg / Långt kvar" baseras inte enbart på hur många krav som är uppfyllda – utan också på hur arbetsintensiva de kvarvarande kraven bedöms vara. Krav inom utbildning, leverantörsstyrning och MFA väger tyngre än tekniska punktinställningar, eftersom de tar längre tid att genomföra i praktiken.
-          </div>
-          <div className="bar-section">
-            {SECTIONS.map(s=>{const{pct}=secPct(s,answers);return(
-              <div className="bar-row" key={s.id}>
-                <div className="bar-label">{s.name}</div>
-                <div className="bar-track"><div className="bar-fill" style={{width:(pct||0)+"%",background:barColor(pct)}}/></div>
-                <div className="bar-pct">{pct!=null?pct+"%":"—"}</div>
-              </div>
-            );})}
-          </div>
-          <div className="gap-section">
-            {gaps.length>0?(
-              <>
-                <h4>Identifierade gap – {gaps.length} krav att hantera</h4>
-                {gaps.map((g,i)=>(
-                  <div className="gap-row" key={i}>
-                    <span className={"gap-badge "+g.cls}>{g.lbl}</span>
-                    <div className="gap-body">
-                      <div className="gap-title">{g.text}</div>
-                      <div className="gap-meta">{g.sec} · {g.ref}</div>
-                    </div>
-                  </div>
-                ))}
-              </>
-            ):(
-              <div className="gap-none">✓ Inga identifierade gap – samtliga krav är uppfyllda</div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Nästa steg */}
-      {steps.length>0&&(
-        <div className="next-steps">
-          <div className="next-steps-head">
-            <h3>Rekommenderade nästa steg</h3>
-          </div>
-          {steps.map((st,i)=>(
-            <div className="next-step-item" key={i}>
-                            <div className="next-step-body">
-                <div className="next-step-title">
-                  {st.title}
-                  <span className={st.priority==="hög"?"pri-hog":"pri-medel"}>{st.priority} prioritet</span>
-                </div>
-                <div className="next-step-text">{st.text}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-      {steps.length===0&&gaps.length===0&&(
-        <div className="next-steps">
-          <div className="next-steps-head"><h3>Rekommenderade nästa steg</h3></div>
-          <div className="next-step-item">
-                        <div className="next-step-body">
-              <div className="next-step-title">Ansök om certifiering hos SBSC</div>
-              <div className="next-step-text">Er GAP-analys visar att samtliga krav är uppfyllda. Nästa steg är att ansöka om certifiering hos SBSC, fylla i den utförligare egendeklarationen och lämna in bevis på att kraven uppfylls.</div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <div className="disclaimer">
-        <strong>Viktig information</strong>
-        Resultaten speglar hur ni tolkar och besvarar frågorna och kan avvika från en faktisk certifieringsbedömning. Certifikat utfärdas då samtliga krav är verifierade av SBSC. Giltighetstid är längst 3 år. SBSC är ackrediterat av SWEDAC (nr 1631).
-      </div>
-
-      <div className="cta-block">
-        <div>
-          <h3>Ansök om certifiering av Cybersäkerhet Bas</h3>
-          <p>Läs mer om certifieringsprocessen och ansök direkt på SBSC:s webbplats.</p>
-        </div>
-        <div style={{textAlign:"center"}}>
-          <a className="cta-link" href={CERT_URL} target="_blank" rel="noopener noreferrer">
-            Ansök om certifiering
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <div className="print-url">{CERT_URL}</div>
-        </div>
-      </div>
-
-      <div className="btn-row no-print" style={{marginTop:20}}>
-        <button className="btn-ghost" onClick={back}>← Tillbaka</button>
-        <div style={{display:"flex",gap:10}}>
-          <button className="btn btn-secondary" onClick={()=>window.print()}>🖨 Skriv ut / PDF</button>
-          <button className="btn btn-secondary" onClick={restart}>Börja om</button>
-        </div>
-      </div>
-    </>
-  );
+  useEffect(() => {
+    document.title = (company || "Er organisation") + " – Cybersäkerhet Bas GAP-analys";
+    return () => {
+      document.title = "SBSC – Cybersäkerhet Bas";
+    };
+  }, [company]);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "print-header"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: LOGO,
+    alt: "SBSC",
+    className: "print-header-logo"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "print-header-right"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "print-header-title"
+  }, "Cybersäkerhet Bas – GAP-analys"), /*#__PURE__*/React.createElement("span", {
+    className: "print-header-sub"
+  }, ds, " · SBSC ackrediterat av SWEDAC (nr 1631)"))), /*#__PURE__*/React.createElement("div", {
+    className: "report-banner"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "banner-label"
+  }, "SSF 1101 Cybersäkerhet Bas · SBSC"), /*#__PURE__*/React.createElement("div", {
+    className: "banner-company"
+  }, company || "Er organisation"), /*#__PURE__*/React.createElement("div", {
+    className: "banner-meta"
+  }, /*#__PURE__*/React.createElement("span", null, "📅 ", ds), /*#__PURE__*/React.createElement("span", null, TOTAL_Q, " frågor · 6 avsnitt"))), /*#__PURE__*/React.createElement("div", {
+    className: "banner-score-wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "banner-score-label"
+  }, "Viktad uppfyllnadsgrad"), /*#__PURE__*/React.createElement("div", {
+    className: "banner-score"
+  }, overall != null ? /*#__PURE__*/React.createElement(React.Fragment, null, overall, /*#__PURE__*/React.createElement("em", null, "%")) : "–"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "readiness-badge " + readinessCls(overall)
+  }, rl)))), /*#__PURE__*/React.createElement("div", {
+    className: "kpi-row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kpi-cell"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kpi-label"
+  }, "Bedömning"), /*#__PURE__*/React.createElement("div", {
+    className: "kpi-value"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "readiness-badge " + readinessCls(overall)
+  }, rl))), /*#__PURE__*/React.createElement("div", {
+    className: "kpi-cell"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kpi-label"
+  }, "Frågor att åtgärda"), /*#__PURE__*/React.createElement("div", {
+    className: "kpi-value"
+  }, hiG, " ej påbörjat · ", miG, " pågår")), /*#__PURE__*/React.createElement("div", {
+    className: "kpi-cell"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kpi-label"
+  }, "Vet ej (utreds internt)"), /*#__PURE__*/React.createElement("div", {
+    className: "kpi-value"
+  }, vetEjG, " frågor"))), vetEjG >= 3 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "flex-start",
+      gap: 10,
+      padding: "12px 16px",
+      marginBottom: 14,
+      background: "#FEF9EC",
+      border: "1.5px solid #FFD580",
+      borderRadius: 6,
+      fontSize: 13
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      flexShrink: 0,
+      color: "#8A5500",
+      marginTop: 1
+    }
+  }, "⚠"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      display: "block",
+      marginBottom: 3,
+      color: "#7A4800"
+    }
+  }, vetEjG, " frågor besvarades med \"Vet ej\""), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "#8A5500"
+    }
+  }, "Dessa exkluderas från poängen och behöver utredas internt."))), /*#__PURE__*/React.createElement("div", {
+    className: "summary-box"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "summary-box-label"
+  }, "Samlad bedömning"), /*#__PURE__*/React.createElement("div", {
+    className: "summary-box-text"
+  }, summary)), /*#__PURE__*/React.createElement("div", {
+    className: "report-info-box"
+  }, /*#__PURE__*/React.createElement("h4", null, "ℹ️ Bra resultat = inte certifierad"), /*#__PURE__*/React.createElement("p", null, "En hög uppfyllnadsgrad innebär inte att er organisation är certifierad. Certifiering kräver sex steg:"), /*#__PURE__*/React.createElement("ol", {
+    className: "report-info-steps"
+  }, ["Ansökan hos SBSC", "Ifyllnad av SBSC:s utförligare digitala egendeklaration", "Inlämning av bevis på att kraven uppfylls", "Teknisk granskning av sakkunnig revisor", "Svar på eventuella avvikelser", "Utfärdande av certifikat"].map((s, i) => /*#__PURE__*/React.createElement("li", {
+    key: i
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "step-num"
+  }, i + 1), /*#__PURE__*/React.createElement("span", null, s))))), /*#__PURE__*/React.createElement("div", {
+    className: "cert-section"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "cert-head"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "SSF 1101 Cybersäkerhet Bas")), /*#__PURE__*/React.createElement("div", {
+    className: "cert-head-score"
+  }, overall != null ? overall + "%" : "–")), /*#__PURE__*/React.createElement("div", {
+    className: "cert-body"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "spider-wrap"
+  }, /*#__PURE__*/React.createElement(Spider, {
+    sections: SECTIONS,
+    answers: answers
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "spider-caption"
+  }, "Viktad täckningsgrad per avsnitt"), /*#__PURE__*/React.createElement("div", {
+    className: "readiness-explain"
+  }, /*#__PURE__*/React.createElement("strong", null, "Om bedömningen: "), "Resultatet \"Nära / En bit på väg / Långt kvar\" baseras inte enbart på hur många frågor som är uppfyllda – utan också på hur arbetsintensiva de kvarvarande frågorna bedöms vara. Frågor om utbildning, leverantörsstyrning och MFA väger tyngre än tekniska punktinställningar."), /*#__PURE__*/React.createElement("div", {
+    className: "bar-section"
+  }, SECTIONS.map(s => {
+    const {
+      pct
+    } = secPct(s, answers);
+    return /*#__PURE__*/React.createElement("div", {
+      className: "bar-row",
+      key: s.id
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "bar-label"
+    }, s.name), /*#__PURE__*/React.createElement("div", {
+      className: "bar-track"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "bar-fill",
+      style: {
+        width: (pct || 0) + "%",
+        background: barColor(pct)
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "bar-pct"
+    }, pct != null ? pct + "%" : "–"));
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "gap-section"
+  }, gaps.length > 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h4", null, "Identifierade gap – ", gaps.length, " frågor att hantera"), gaps.map((g, i) => /*#__PURE__*/React.createElement("div", {
+    className: "gap-row",
+    key: i
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "gap-badge " + g.cls
+  }, g.lbl), /*#__PURE__*/React.createElement("div", {
+    className: "gap-body"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gap-title"
+  }, g.text), /*#__PURE__*/React.createElement("div", {
+    className: "gap-meta"
+  }, g.sec, " · ", g.ref))))) : /*#__PURE__*/React.createElement("div", {
+    className: "gap-none"
+  }, "✓ Inga identifierade gap – samtliga frågor uppfyllda")))), steps.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "next-steps"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "next-steps-head"
+  }, /*#__PURE__*/React.createElement("h3", null, "Rekommenderade nästa steg")), steps.map((st, i) => /*#__PURE__*/React.createElement("div", {
+    className: "next-step-item",
+    key: i
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "next-step-body"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "next-step-title"
+  }, st.title, /*#__PURE__*/React.createElement("span", {
+    className: st.priority === "hög" ? "pri-hog" : "pri-medel"
+  }, st.priority, " prioritet")), /*#__PURE__*/React.createElement("div", {
+    className: "next-step-text"
+  }, st.text))))), steps.length === 0 && gaps.length === 0 && /*#__PURE__*/React.createElement("div", {
+    className: "next-steps"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "next-steps-head"
+  }, /*#__PURE__*/React.createElement("h3", null, "Rekommenderade nästa steg")), /*#__PURE__*/React.createElement("div", {
+    className: "next-step-item"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "next-step-body"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "next-step-title"
+  }, "Ansök om certifiering hos SBSC"), /*#__PURE__*/React.createElement("div", {
+    className: "next-step-text"
+  }, "Er GAP-analys visar att samtliga frågor är uppfyllda. Nästa steg är att ansöka om certifiering hos SBSC, fylla i den utförligare egendeklarationen och lämna in bevis på att kraven uppfylls.")))), /*#__PURE__*/React.createElement("div", {
+    className: "disclaimer"
+  }, /*#__PURE__*/React.createElement("strong", null, "Viktig information"), "Resultaten speglar hur ni tolkar och besvarar frågorna och kan avvika från en faktisk certifieringsbedömning. Certifikat utfärdas då samtliga krav är verifierade av SBSC. Giltighetstid är längst 3 år. SBSC är ackrediterat av SWEDAC (nr 1631)."), /*#__PURE__*/React.createElement("div", {
+    className: "cta-block"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Ansök om certifiering av Cybersäkerhet Bas"), /*#__PURE__*/React.createElement("p", null, "Läs mer om certifieringsprocessen och ansök direkt på SBSC:s webbplats.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "cta-link",
+    href: CERT_URL,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "Ansök om certifiering ", /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("line", {
+    x1: "5",
+    y1: "12",
+    x2: "19",
+    y2: "12"
+  }), /*#__PURE__*/React.createElement("polyline", {
+    points: "12 5 19 12 12 19"
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "print-url"
+  }, CERT_URL))), /*#__PURE__*/React.createElement("div", {
+    className: "btn-row no-print",
+    style: {
+      marginTop: 20
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn-ghost",
+    onClick: back
+  }, "← Tillbaka"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn btn-secondary",
+    onClick: () => window.print()
+  }, "🖨 Skriv ut / PDF"), /*#__PURE__*/React.createElement("button", {
+    className: "btn btn-secondary",
+    onClick: restart
+  }, "Börja om"))));
 }
-
-function StartPage({company,setCompany,agreed,setAgreed,attempted,goStart}){
-  const missingName=!company.trim();
-  const missingAgreed=!agreed;
-  const hasError=attempted&&(missingName||missingAgreed);
-
-  return(
-    <>
-      <div className="page-intro">
-        <div className="chip">Cybersäkerhet Bas</div>
-        <h1>Kartlägg er beredskap inför certifiering</h1>
-        <p>Svara på {TOTAL_Q} frågor fördelade på 6 avsnitt och få en GAP-analys som visar var er organisation står inför certifiering.</p>
-      </div>
-
-      {/* INFORMATIONSRUTA */}
-      <div className="info-box">
-        <div className="info-box-title">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A5A8C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          Vad är det här verktyget?
-        </div>
-        <div className="info-box-body">
-          Det här är ett <strong>förberedelseverktyg</strong> som hjälper er att bedöma hur redo organisationen är för certifiering mot SSF 1101 Cybersäkerhet BAS. Ni svarar på {TOTAL_Q} krav och får en GAP-analys med bedömningen <strong>Nära</strong>, <strong>En bit på väg</strong> eller <strong>Långt kvar</strong>. Bedömningen väger in hur arbetsintensiva kvarvarande krav är – utbildning av all personal och leverantörsavtal väger tyngre än tekniska punktinställningar.
-        </div>
-        <div className="info-warn-head">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A3800" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Viktigt: En bra GAP-analys innebär inte att ni är certifierade
-        </div>
-        <ul className="steps-list">
-          <li><span className="step-num">1</span><span>Ansökan hos SBSC</span></li>
-          <li><span className="step-num">2</span><span>Ifyllnad av SBSC:s utförligare digitala egendeklaration (tillgänglig efter ansökan)</span></li>
-          <li><span className="step-num">3</span><span>Inlämning av bevis på att kraven i SSF 1101 uppfylls</span></li>
-          <li><span className="step-num">4</span><span>Teknisk granskning av sakkunnig revisor</span></li>
-          <li><span className="step-num">5</span><span>Svar på eventuella avvikelser</span></li>
-          <li><span className="step-num">6</span><span>Utfärdande av certifikat</span></li>
-        </ul>
-        <div className="info-note">Det här verktyget ersätter inte de sex stegen ovan – det ger er en bild av var ni befinner er och vad som återstår att göra.</div>
-
-      </div>
-
-      {/* SSF DOWNLOAD BOX */}
-      <div className="ssf-download-box">
-        <div className="ssf-download-text">
-          <div className="ssf-download-title">Läs standarden innan du börjar</div>
-          <div className="ssf-download-body">SSF 1101 är kostnadsfri att ladda ner. Vi rekommenderar att du läser den för att bättre förstå vad certifieringen kräver.</div>
-        </div>
-        <a className="ssf-download-btn" href="https://www.stoldskyddsforeningen.se/butik/foretag/ssf-normer/cybersakerhet/ssf-1101-utg-2-ssf-cybersakerhet-basniva-grundlaggande-it-sakerhet/" target="_blank" rel="noopener noreferrer">
-          Ladda ner SSF 1101 kostnadsfritt
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
-      </div>
-
-      <div className="card">
-        <div className="field-label">Organisationens namn <span className="req-star">*</span></div>
-        <input className="text-input" type="text" placeholder="T.ex. Andersson AB" value={company} onChange={e=>setCompany(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")goStart();}}/>
-        <div className="privacy-note">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <p>Ingen data sparas. Alla svar stannar i din webbläsare och raderas när du stänger sidan.</p>
-        </div>
-        <div className="disc-check-wrap" onClick={()=>setAgreed(a=>!a)}>
-          <div className={"disc-checkbox"+(agreed?" disc-checked":"")}>{agreed?"✓":""}</div>
-          <div className="disc-check-text">
-            <strong>Jag förstår att detta är en GAP-analys – inte ett certifieringsbesked</strong>
-            Resultaten är ett stöd för förbättringsarbete och ersätter inte SBSC:s certifieringsprocess.
-          </div>
-        </div>
-        {hasError&&(
-          <div className="validation-box">
-            <div className="validation-title">Följande måste fyllas i:</div>
-            {missingName&&<div className="validation-item"><span className="v-num">1</span>Ange organisationens namn</div>}
-            {missingAgreed&&<div className="validation-item"><span className="v-num">{missingName?"2":"1"}</span>Bekräfta att du förstår hur GAP-analysen ska användas</div>}
-          </div>
-        )}
-        <div className="stat-row">
-          <div className="stat"><div className="stat-n">{TOTAL_Q}</div><div className="stat-l">frågor</div></div>
-          <div className="stat"><div className="stat-n">6</div><div className="stat-l">avsnitt</div></div>
-          <div className="stat"><div className="stat-n">~5 min</div><div className="stat-l">beräknad tid</div></div>
-        </div>
-        <div className="btn-row">
-          <span style={{fontSize:12,color:"var(--muted)"}}>Baserat på SSF 1101 utgåva 2, oktober 2023.</span>
-          <button className="btn btn-primary" onClick={goStart}>Starta →</button>
-        </div>
-      </div>
-    </>
-  );
+function StartPage({
+  company,
+  setCompany,
+  agreed,
+  setAgreed,
+  attempted,
+  goStart
+}) {
+  const missingName = !company.trim();
+  const missingAgreed = !agreed;
+  const hasError = attempted && (missingName || missingAgreed);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "page-intro"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "chip"
+  }, "Cybersäkerhet Bas"), /*#__PURE__*/React.createElement("h1", null, "Kartlägg er beredskap inför certifiering"), /*#__PURE__*/React.createElement("p", null, "Svara på ", TOTAL_Q, " frågor fördelade på 6 avsnitt och få en GAP-analys som visar var er organisation står.")), /*#__PURE__*/React.createElement("div", {
+    className: "info-box"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "info-box-title"
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#2A5A8C",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "10"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "12",
+    y1: "8",
+    x2: "12",
+    y2: "12"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "12",
+    y1: "16",
+    x2: "12.01",
+    y2: "16"
+  })), "Vad är det här verktyget?"), /*#__PURE__*/React.createElement("div", {
+    className: "info-box-body"
+  }, "Det här är ett ", /*#__PURE__*/React.createElement("strong", null, "förberedelseverktyg"), " som hjälper er att bedöma hur redo organisationen är för certifiering mot SSF 1101 Cybersäkerhet Bas. Ni får en GAP-analys med bedömningen ", /*#__PURE__*/React.createElement("strong", null, "Nära"), ", ", /*#__PURE__*/React.createElement("strong", null, "En bit på väg"), " eller ", /*#__PURE__*/React.createElement("strong", null, "Långt kvar"), ". Bedömningen väger in hur arbetsintensiva kvarvarande krav är – utbildning av all personal och leverantörsavtal väger tyngre än tekniska punktinställningar."), /*#__PURE__*/React.createElement("div", {
+    className: "info-warn-head"
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#7A3800",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "12",
+    y1: "9",
+    x2: "12",
+    y2: "13"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "12",
+    y1: "17",
+    x2: "12.01",
+    y2: "17"
+  })), "En bra GAP-analys innebär inte att ni är certifierade"), /*#__PURE__*/React.createElement("ul", {
+    className: "steps-list"
+  }, ["Ansökan hos SBSC", "Ifyllnad av SBSC:s utförligare digitala egendeklaration (tillgänglig efter ansökan)", "Inlämning av bevis på att kraven i SSF 1101 uppfylls", "Teknisk granskning av sakkunnig revisor", "Svar på eventuella avvikelser", "Utfärdande av certifikat"].map((s, i) => /*#__PURE__*/React.createElement("li", {
+    key: i
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "step-num"
+  }, i + 1), /*#__PURE__*/React.createElement("span", null, s)))), /*#__PURE__*/React.createElement("div", {
+    className: "info-note"
+  }, "Det här verktyget ersätter inte de sex stegen ovan – det ger er en bild av var ni befinner er och vad som återstår att göra.")), /*#__PURE__*/React.createElement("div", {
+    className: "ssf-download-box"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "ssf-download-title"
+  }, "Läs standarden innan du börjar"), /*#__PURE__*/React.createElement("div", {
+    className: "ssf-download-body"
+  }, "SSF 1101 är kostnadsfri att ladda ner. Vi rekommenderar att du läser den för att bättre förstå vad certifieringen kräver.")), /*#__PURE__*/React.createElement("a", {
+    className: "ssf-download-btn",
+    href: SSF_URL,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "Ladda ner SSF 1101 kostnadsfritt ", /*#__PURE__*/React.createElement("svg", {
+    width: "13",
+    height: "13",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+  }), /*#__PURE__*/React.createElement("polyline", {
+    points: "7 10 12 15 17 10"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "12",
+    y1: "15",
+    x2: "12",
+    y2: "3"
+  })))), /*#__PURE__*/React.createElement("div", {
+    className: "card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "field-label"
+  }, "Organisationens namn ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--red)"
+    }
+  }, "*")), /*#__PURE__*/React.createElement("input", {
+    className: "text-input",
+    type: "text",
+    placeholder: "T.ex. Andersson AB",
+    value: company,
+    onChange: e => setCompany(e.target.value),
+    onKeyDown: e => {
+      if (e.key === "Enter") goStart();
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "privacy-note"
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+  })), /*#__PURE__*/React.createElement("p", null, "Ingen data sparas. Alla svar stannar i din webbläsare och raderas när du stänger sidan.")), /*#__PURE__*/React.createElement("div", {
+    className: "disc-check-wrap",
+    onClick: () => setAgreed(a => !a)
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "disc-checkbox" + (agreed ? " disc-checked" : "")
+  }, agreed ? "✓" : ""), /*#__PURE__*/React.createElement("div", {
+    className: "disc-check-text"
+  }, /*#__PURE__*/React.createElement("strong", null, "Jag förstår att detta är en GAP-analys – inte ett certifieringsbesked"), "Resultaten är ett stöd för förbättringsarbete och ersätter inte SBSC:s certifieringsprocess.")), hasError && /*#__PURE__*/React.createElement("div", {
+    className: "val-box"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "val-title"
+  }, "Följande måste fyllas i:"), missingName && /*#__PURE__*/React.createElement("div", {
+    className: "val-item"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "v-num"
+  }, "1"), "Ange organisationens namn"), missingAgreed && /*#__PURE__*/React.createElement("div", {
+    className: "val-item"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "v-num"
+  }, missingName ? "2" : "1"), "Bekräfta att du förstår hur GAP-analysen ska användas")), /*#__PURE__*/React.createElement("div", {
+    className: "stat-row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "stat"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "stat-n"
+  }, TOTAL_Q), /*#__PURE__*/React.createElement("div", {
+    className: "stat-l"
+  }, "frågor")), /*#__PURE__*/React.createElement("div", {
+    className: "stat"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "stat-n"
+  }, "6"), /*#__PURE__*/React.createElement("div", {
+    className: "stat-l"
+  }, "avsnitt")), /*#__PURE__*/React.createElement("div", {
+    className: "stat"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "stat-n"
+  }, "~5 min"), /*#__PURE__*/React.createElement("div", {
+    className: "stat-l"
+  }, "beräknad tid"))), /*#__PURE__*/React.createElement("div", {
+    className: "btn-row"
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      color: "var(--muted)"
+    }
+  }, "Baserat på SSF 1101 utgåva 2, oktober 2023."), /*#__PURE__*/React.createElement("button", {
+    className: "btn btn-primary",
+    onClick: goStart
+  }, "Starta →"))));
 }
-
-function App(){
-  const [gateCleared,setGateCleared]=useState(false);
-  const [view,setView]=useState("start");
-  const [answers,setAnswers]=useState({});
-  const [secIdx,setSecIdx]=useState(0);
-  const [company,setCompany]=useState("");
-  const [agreed,setAgreed]=useState(false);
-  const [attempted,setAttempted]=useState(false);
-  const [showRestart,setShowRestart]=useState(false);
-
-  const answer=(qid,val)=>setAnswers(p=>({...p,[qid]:val}));
-
-  const goStart=()=>{
+function App() {
+  const [gateCleared, setGateCleared] = useState(false);
+  const [view, setView] = useState("start");
+  const [answers, setAnswers] = useState({});
+  const [secIdx, setSecIdx] = useState(0);
+  const [company, setCompany] = useState("");
+  const [agreed, setAgreed] = useState(false);
+  const [attempted, setAttempted] = useState(false);
+  const [showRestart, setShowRestart] = useState(false);
+  const answer = (qid, val) => setAnswers(p => ({
+    ...p,
+    [qid]: val
+  }));
+  const goStart = () => {
     setAttempted(true);
-    if(!company.trim()||!agreed)return;
-    setSecIdx(0);setView("questions");window.scrollTo(0,0);
+    if (!company.trim() || !agreed) return;
+    setSecIdx(0);
+    setView("questions");
+    window.scrollTo(0, 0);
   };
-
-  const restart=()=>setShowRestart(true);
-  const confirmRestart=()=>{
-    setAnswers({});setSecIdx(0);setCompany("");setAgreed(false);
-    setAttempted(false);setShowRestart(false);setView("start");window.scrollTo(0,0);
+  const confirmRestart = () => {
+    setAnswers({});
+    setSecIdx(0);
+    setCompany("");
+    setAgreed(false);
+    setAttempted(false);
+    setShowRestart(false);
+    setView("start");
+    window.scrollTo(0, 0);
   };
-
-  if(!gateCleared)return<GatePage onSuccess={(co)=>{setCompany(co);setGateCleared(true);window.scrollTo(0,0);}}/>;
-
-  return(
-    <>
-      <header className="site-header no-print">
-        <div className="hdr-inner">
-          <img src={LOGO} alt="SBSC" className="hdr-logo"/>
-          <span className="hdr-label">Cybersäkerhet Bas</span>
-        </div>
-      </header>
-      <main className="shell">
-        {view==="start"&&<StartPage company={company} setCompany={setCompany} agreed={agreed} setAgreed={setAgreed} attempted={attempted} goStart={goStart}/>}
-        {view==="questions"&&<QPage answers={answers} answer={answer} secIdx={secIdx} setSecIdx={setSecIdx} setView={setView}/>}
-        {view==="results"&&<ReportPage answers={answers} company={company} restart={restart} back={()=>{setView("questions");window.scrollTo(0,0);}}/>}
-        {showRestart&&(
-          <div className="modal-overlay" onClick={()=>setShowRestart(false)}>
-            <div className="modal-box" onClick={e=>e.stopPropagation()}>
-              <div className="modal-icon">⚠️</div>
-              <h3>Börja om från början?</h3>
-              <p>Alla svar raderas permanent. Detta kan inte ångras.</p>
-              <div className="modal-btns">
-                <button className="btn btn-secondary" onClick={()=>setShowRestart(false)}>Avbryt</button>
-                <button className="btn btn-primary" onClick={confirmRestart}>Ja, börja om</button>
-              </div>
-            </div>
-          </div>
-        )}
-      </main>
-    </>
-  );
+  if (!gateCleared) return /*#__PURE__*/React.createElement(GatePage, {
+    onSuccess: co => {
+      setCompany(co);
+      setGateCleared(true);
+      window.scrollTo(0, 0);
+    }
+  });
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
+    className: "site-header no-print"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "hdr-inner"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: LOGO,
+    alt: "SBSC",
+    className: "hdr-logo"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "hdr-label"
+  }, "Cybersäkerhet Bas"))), /*#__PURE__*/React.createElement("main", {
+    className: "shell"
+  }, view === "start" && /*#__PURE__*/React.createElement(StartPage, {
+    company: company,
+    setCompany: setCompany,
+    agreed: agreed,
+    setAgreed: setAgreed,
+    attempted: attempted,
+    goStart: goStart
+  }), view === "questions" && /*#__PURE__*/React.createElement(QPage, {
+    answers: answers,
+    answer: answer,
+    secIdx: secIdx,
+    setSecIdx: setSecIdx,
+    setView: setView
+  }), view === "results" && /*#__PURE__*/React.createElement(ReportPage, {
+    answers: answers,
+    company: company,
+    restart: () => setShowRestart(true),
+    back: () => {
+      setView("questions");
+      window.scrollTo(0, 0);
+    }
+  }), showRestart && /*#__PURE__*/React.createElement("div", {
+    className: "modal-overlay",
+    onClick: () => setShowRestart(false)
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "modal-box",
+    onClick: e => e.stopPropagation()
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "modal-icon"
+  }, "⚠️"), /*#__PURE__*/React.createElement("h3", null, "Börja om från början?"), /*#__PURE__*/React.createElement("p", null, "Alla svar raderas permanent. Detta kan inte ångras."), /*#__PURE__*/React.createElement("div", {
+    className: "modal-btns"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "btn btn-secondary",
+    onClick: () => setShowRestart(false)
+  }, "Avbryt"), /*#__PURE__*/React.createElement("button", {
+    className: "btn btn-primary",
+    onClick: confirmRestart
+  }, "Ja, börja om"))))));
 }
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
 </script>
 </body>
 </html>

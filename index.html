@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="GAP-analys inför certifiering av Cybersäkerhet Bas. 18 frågor, ca 5 minuter.">
-<title>SBSC — Cybersäkerhet Bas</title>
+<meta name="description" content="Självskattning inför certifiering av Cybersäkerhet BAS. 18 frågor, ca 5 minuter.">
+<title>SBSC — Cybersäkerhet BAS</title>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -411,9 +411,9 @@ const allPct = ans => {
 const barColor = p => p === null ? "#E8E9EC" : p >= 75 ? "#1B6B3F" : p >= 45 ? "#FFA300" : "#C03535";
 const readiness = p => {
   if (p === null) return "Otillräckligt underlag";
-  if (p >= 75) return "Nära";
-  if (p >= 45) return "En bit på väg";
-  return "Långt kvar";
+  if (p >= 75) return "Hög beredskap";
+  if (p >= 45) return "På god väg";
+  return "Fler åtgärder behövs";
 };
 const readinessCls = p => {
   if (p === null) return "r-na";
@@ -660,8 +660,8 @@ function GatePage({
         },
         body: JSON.stringify({
           access_key: "4ff231c7-8ece-4e89-9a4c-6996ff3a147b",
-          subject: "Cybersäkerhet Bas – " + company,
-          from_name: "SBSC GAP-analys",
+          subject: "Cybersäkerhet BAS – " + company,
+          from_name: "SBSC Självskattning",
           namn: name,
           foretag: company,
           epost: email
@@ -683,9 +683,9 @@ function GatePage({
     className: "gate-logo"
   }), !sent ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", {
     className: "gate-title"
-  }, "Är er organisation redo för certifiering av Cybersäkerhet Bas?"), /*#__PURE__*/React.createElement("p", {
+  }, "Är er organisation redo för certifiering av Cybersäkerhet BAS?"), /*#__PURE__*/React.createElement("p", {
     className: "gate-sub"
-  }, "Fyll i era kontaktuppgifter för att starta den kostnadsfria GAP-analysen."), /*#__PURE__*/React.createElement("div", {
+  }, "Fyll i era kontaktuppgifter för att starta den kostnadsfria självskattningen."), /*#__PURE__*/React.createElement("div", {
     className: "gate-facts"
   }, /*#__PURE__*/React.createElement("div", {
     className: "gate-fact"
@@ -747,13 +747,13 @@ function GatePage({
     className: "gate-btn",
     type: "submit",
     disabled: loading
-  }, loading ? "Skickar..." : "Starta GAP-analysen →"), /*#__PURE__*/React.createElement("p", {
+  }, loading ? "Skickar..." : "Starta självskattningen →"), /*#__PURE__*/React.createElement("p", {
     className: "gate-privacy"
   }, "SBSC behandlar dina uppgifter enligt GDPR. Svaren lagras aldrig – de stannar i din webbläsare."))) : /*#__PURE__*/React.createElement("div", {
     className: "gate-success"
   }, /*#__PURE__*/React.createElement("div", {
     className: "gate-success-icon"
-  }, "✓"), /*#__PURE__*/React.createElement("h2", null, "Tack, ", name.split(" ")[0], "!"), /*#__PURE__*/React.createElement("p", null, "Vi har mottagit dina uppgifter. Starta GAP-analysen nedan."), /*#__PURE__*/React.createElement("button", {
+  }, "✓"), /*#__PURE__*/React.createElement("h2", null, "Tack, ", name.split(" ")[0], "!"), /*#__PURE__*/React.createElement("p", null, "Vi har mottagit dina uppgifter. Starta självskattningen nedan."), /*#__PURE__*/React.createElement("button", {
     className: "gate-btn",
     style: {
       display: "inline-block",
@@ -761,7 +761,7 @@ function GatePage({
       padding: "13px 32px"
     },
     onClick: () => onSuccess(company)
-  }, "Starta GAP-analysen →"))));
+  }, "Starta självskattningen →"))));
 }
 function QCard({
   q,
@@ -924,7 +924,7 @@ function QPage({
     className: "btn btn-primary",
     onClick: goNext,
     disabled: !secDone
-  }, isLast ? "Visa GAP-analys →" : "Nästa avsnitt →")), !secDone && /*#__PURE__*/React.createElement("p", {
+  }, isLast ? "Visa resultat →" : "Nästa avsnitt →")), !secDone && /*#__PURE__*/React.createElement("p", {
     style: {
       textAlign: "right",
       fontSize: 11,
@@ -983,15 +983,15 @@ function ReportPage({
   const nm = company || "Er organisation";
   const rl = readiness(overall);
   const summary = (() => {
-    if (overall === null) return nm + " – GAP-analysen ger en övergripande bild av beredskapen mot Cybersäkerhet Bas. Flera frågor besvarades med \"Vet ej\" – dessa behöver utredas internt för en fullständig bild.";
-    if (overall >= 75) return nm + " är Nära certifieringsnivå med en viktad uppfyllnadsgrad på " + overall + "%. Fokusera på kvarstående åtgärdspunkter och ta kontakt med SBSC för att inleda certifieringsprocessen.";
-    if (overall >= 45) return nm + " är En bit på väg med " + overall + "% viktad uppfyllnadsgrad. " + hiG + " frågor är ännu inte påbörjat och " + miG + " pågår. Med strukturerat arbete – fokus på utbildning och leverantörsstyrning – är certifiering möjlig.";
-    return nm + " har Långt kvar till certifieringsnivå med " + overall + "% viktad uppfyllnadsgrad. " + hiG + " frågor är ej påbörjat. Det är ett bra läge att starta det strukturerade arbetet utifrån prioriteringarna nedan.";
+    if (overall === null) return nm + " – självskattningen ger en övergripande bild av beredskapen mot Cybersäkerhet BAS. Flera frågor besvarades med \"Vet ej\" – dessa behöver utredas internt för en fullständig bild.";
+    if (overall >= 75) return nm + " har hög beredskap inför certifiering, med en viktad uppfyllnadsgrad på " + overall + "%. Fokusera på kvarstående åtgärdspunkter och ta kontakt med SBSC för att inleda certifieringsprocessen.";
+    if (overall >= 45) return nm + " är på god väg, med " + overall + "% viktad uppfyllnadsgrad. " + hiG + " krav är ännu inte påbörjade och " + miG + " pågår. Med strukturerat arbete – fokus på utbildning och leverantörsstyrning – är certifiering möjlig.";
+    return nm + " behöver fler åtgärder inför certifiering, med " + overall + "% viktad uppfyllnadsgrad. " + hiG + " krav är ej påbörjade. Det är ett bra läge att starta det strukturerade arbetet utifrån prioriteringarna nedan.";
   })();
   useEffect(() => {
-    document.title = (company || "Er organisation") + " – Cybersäkerhet Bas GAP-analys";
+    document.title = (company || "Er organisation") + " – Cybersäkerhet BAS Självskattning";
     return () => {
-      document.title = "SBSC – Cybersäkerhet Bas";
+      document.title = "SBSC – Cybersäkerhet BAS";
     };
   }, [company]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
@@ -1004,13 +1004,13 @@ function ReportPage({
     className: "print-header-right"
   }, /*#__PURE__*/React.createElement("span", {
     className: "print-header-title"
-  }, "Cybersäkerhet Bas – GAP-analys"), /*#__PURE__*/React.createElement("span", {
+  }, "Cybersäkerhet BAS – Självskattning"), /*#__PURE__*/React.createElement("span", {
     className: "print-header-sub"
   }, ds, " · SBSC ackrediterat av SWEDAC (nr 1631)"))), /*#__PURE__*/React.createElement("div", {
     className: "report-banner"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "banner-label"
-  }, "SSF 1101 Cybersäkerhet Bas · SBSC"), /*#__PURE__*/React.createElement("div", {
+  }, "SSF 1101 Cybersäkerhet BAS · SBSC"), /*#__PURE__*/React.createElement("div", {
     className: "banner-company"
   }, company || "Er organisation"), /*#__PURE__*/React.createElement("div", {
     className: "banner-meta"
@@ -1094,7 +1094,7 @@ function ReportPage({
     className: "cert-section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "cert-head"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "SSF 1101 Cybersäkerhet Bas")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "SSF 1101 Cybersäkerhet BAS")), /*#__PURE__*/React.createElement("div", {
     className: "cert-head-score"
   }, overall != null ? overall + "%" : "–")), /*#__PURE__*/React.createElement("div", {
     className: "cert-body"
@@ -1105,9 +1105,9 @@ function ReportPage({
     answers: answers
   })), /*#__PURE__*/React.createElement("div", {
     className: "spider-caption"
-  }, "Viktad täckningsgrad per avsnitt"), /*#__PURE__*/React.createElement("div", {
+  }, "Uppfyllnadsgrad per avsnitt"), /*#__PURE__*/React.createElement("div", {
     className: "readiness-explain"
-  }, /*#__PURE__*/React.createElement("strong", null, "Om bedömningen: "), "Resultatet \"Nära / En bit på väg / Långt kvar\" baseras inte enbart på hur många frågor som är uppfyllda – utan också på hur arbetsintensiva de kvarvarande frågorna bedöms vara. Frågor om utbildning, leverantörsstyrning och MFA väger tyngre än tekniska punktinställningar."), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("strong", null, "Om bedömningen: "), "Resultatet \"Hög beredskap / På god väg / Fler åtgärder behövs\" baseras inte enbart på hur många krav som är uppfyllda. Bedömningen tar också hänsyn till hur omfattande de kvarvarande åtgärderna är. Exempelvis väger krav som rör utbildning, leverantörsstyrning och multifaktorautentisering (MFA) tyngre än enskilda tekniska inställningar."), /*#__PURE__*/React.createElement("div", {
     className: "bar-section"
   }, SECTIONS.map(s => {
     const {
@@ -1171,11 +1171,11 @@ function ReportPage({
     className: "next-step-title"
   }, "Ansök om certifiering hos SBSC"), /*#__PURE__*/React.createElement("div", {
     className: "next-step-text"
-  }, "Er GAP-analys visar att samtliga frågor är uppfyllda. Nästa steg är att ansöka om certifiering hos SBSC, fylla i den utförligare egendeklarationen och lämna in bevis på att kraven uppfylls.")))), /*#__PURE__*/React.createElement("div", {
+  }, "Er självskattning visar att samtliga krav är uppfyllda. Nästa steg är att ansöka om certifiering hos SBSC, fylla i den utförligare egendeklarationen och lämna in underlag som visar hur kraven uppfylls.")))), /*#__PURE__*/React.createElement("div", {
     className: "disclaimer"
   }, /*#__PURE__*/React.createElement("strong", null, "Viktig information"), "Resultaten speglar hur ni tolkar och besvarar frågorna och kan avvika från en faktisk certifieringsbedömning. Certifikat utfärdas då samtliga krav är verifierade av SBSC. Giltighetstid är längst 3 år. SBSC är ackrediterat av SWEDAC (nr 1631)."), /*#__PURE__*/React.createElement("div", {
     className: "cta-block"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Ansök om certifiering av Cybersäkerhet Bas"), /*#__PURE__*/React.createElement("p", null, "Läs mer om certifieringsprocessen och ansök direkt på SBSC:s webbplats.")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Ansök om certifiering av Cybersäkerhet BAS"), /*#__PURE__*/React.createElement("p", null, "Läs mer om certifieringsprocessen och ansök direkt på SBSC:s webbplats.")), /*#__PURE__*/React.createElement("div", {
     style: {
       textAlign: "center"
     }
@@ -1238,7 +1238,7 @@ function StartPage({
     className: "page-intro"
   }, /*#__PURE__*/React.createElement("div", {
     className: "chip"
-  }, "Cybersäkerhet Bas"), /*#__PURE__*/React.createElement("h1", null, "Kartlägg er beredskap inför certifiering"), /*#__PURE__*/React.createElement("p", null, "Svara på ", TOTAL_Q, " frågor fördelade på 6 avsnitt och få en GAP-analys som visar var er organisation står.")), /*#__PURE__*/React.createElement("div", {
+  }, "Cybersäkerhet BAS"), /*#__PURE__*/React.createElement("h1", null, "Kartlägg er beredskap inför certifiering"), /*#__PURE__*/React.createElement("p", null, "Svara på ", TOTAL_Q, " frågor fördelade på 6 avsnitt och få en självskattning som visar var er organisation står.")), /*#__PURE__*/React.createElement("div", {
     className: "info-box"
   }, /*#__PURE__*/React.createElement("div", {
     className: "info-box-title"
@@ -1265,9 +1265,9 @@ function StartPage({
     y1: "16",
     x2: "12.01",
     y2: "16"
-  })), "Vad är det här verktyget?"), /*#__PURE__*/React.createElement("div", {
+  })), "Vad är en självskattning?"), /*#__PURE__*/React.createElement("div", {
     className: "info-box-body"
-  }, "Det här är ett ", /*#__PURE__*/React.createElement("strong", null, "förberedelseverktyg"), " som hjälper er att bedöma hur redo organisationen är för certifiering mot SSF 1101 Cybersäkerhet Bas. Ni får en GAP-analys med bedömningen ", /*#__PURE__*/React.createElement("strong", null, "Nära"), ", ", /*#__PURE__*/React.createElement("strong", null, "En bit på väg"), " eller ", /*#__PURE__*/React.createElement("strong", null, "Långt kvar"), ". Bedömningen väger in hur arbetsintensiva kvarvarande krav är – utbildning av all personal och leverantörsavtal väger tyngre än tekniska punktinställningar."), /*#__PURE__*/React.createElement("div", {
+  }, "Den här självskattningen hjälper er att få en bild av organisationens beredskap inför certifiering enligt SSF 1101 Cybersäkerhet BAS. När ni har besvarat frågorna får ni en samlad bedömning: ", /*#__PURE__*/React.createElement("strong", null, "Hög beredskap"), ", ", /*#__PURE__*/React.createElement("strong", null, "På god väg"), " eller ", /*#__PURE__*/React.createElement("strong", null, "Fler åtgärder behövs"), ". Bedömningen tar hänsyn till både vilka krav som återstår och hur omfattande de är att uppfylla. Exempelvis väger utbildning av all personal och leverantörsavtal tyngre än enskilda tekniska inställningar."), /*#__PURE__*/React.createElement("div", {
     className: "info-warn-head"
   }, /*#__PURE__*/React.createElement("svg", {
     width: "14",
@@ -1290,21 +1290,26 @@ function StartPage({
     y1: "17",
     x2: "12.01",
     y2: "17"
-  })), "En bra GAP-analys innebär inte att ni är certifierade"), /*#__PURE__*/React.createElement("ul", {
+  })), "Självskattningen är inte en certifiering"), /*#__PURE__*/React.createElement("div", {
+    className: "info-box-body",
+    style: {
+      marginBottom: 10
+    }
+  }, "Självskattningen ger en indikation på hur väl förberedd organisationen är inför certifiering enligt SSF 1101 Cybersäkerhet BAS. För att bli certifierad behöver ni därefter gå igenom SBSC:s ordinarie certifieringsprocess:"), /*#__PURE__*/React.createElement("ul", {
     className: "steps-list"
-  }, ["Ansökan hos SBSC", "Ifyllnad av SBSC:s utförligare digitala egendeklaration (tillgänglig efter ansökan)", "Inlämning av bevis på att kraven i SSF 1101 uppfylls", "Teknisk granskning av sakkunnig revisor", "Svar på eventuella avvikelser", "Utfärdande av certifikat"].map((s, i) => /*#__PURE__*/React.createElement("li", {
+  }, ["Ansökan om certifiering hos SBSC", "Ifyllnad av SBSC:s utförligare digitala egendeklaration, som blir tillgänglig efter ansökan", "Inlämning av underlag som visar hur kraven i SSF 1101 uppfylls", "Teknisk granskning av sakkunnig revisor", "Hantering av eventuella avvikelser", "Utfärdande av certifikat"].map((s, i) => /*#__PURE__*/React.createElement("li", {
     key: i
   }, /*#__PURE__*/React.createElement("span", {
     className: "step-num"
   }, i + 1), /*#__PURE__*/React.createElement("span", null, s)))), /*#__PURE__*/React.createElement("div", {
     className: "info-note"
-  }, "Det här verktyget ersätter inte de sex stegen ovan – det ger er en bild av var ni befinner er och vad som återstår att göra.")), /*#__PURE__*/React.createElement("div", {
+  }, "Självskattningen ersätter inte dessa steg. Den hjälper er att få en bild av organisationens nuvarande beredskap och vilka områden som kan behöva åtgärdas innan ni ansöker om certifiering.")), /*#__PURE__*/React.createElement("div", {
     className: "ssf-download-box"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "ssf-download-title"
-  }, "Läs standarden innan du börjar"), /*#__PURE__*/React.createElement("div", {
+  }, "Läs normen innan ni börjar"), /*#__PURE__*/React.createElement("div", {
     className: "ssf-download-body"
-  }, "SSF 1101 är kostnadsfri att ladda ner. Vi rekommenderar att du läser den för att bättre förstå vad certifieringen kräver.")), /*#__PURE__*/React.createElement("a", {
+  }, "SSF 1101 är kostnadsfri att ladda ner. Vi rekommenderar att ni läser normen innan ni gör självskattningen för att få en bättre förståelse för kraven och vad som krävs för certifiering.")), /*#__PURE__*/React.createElement("a", {
     className: "ssf-download-btn",
     href: SSF_URL,
     target: "_blank",
@@ -1364,7 +1369,7 @@ function StartPage({
     className: "disc-checkbox" + (agreed ? " disc-checked" : "")
   }, agreed ? "✓" : ""), /*#__PURE__*/React.createElement("div", {
     className: "disc-check-text"
-  }, /*#__PURE__*/React.createElement("strong", null, "Jag förstår att detta är en GAP-analys – inte ett certifieringsbesked"), "Resultaten är ett stöd för förbättringsarbete och ersätter inte SBSC:s certifieringsprocess.")), hasError && /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("strong", null, "Jag förstår att detta är en självskattning – inte ett certifieringsbesked"), "Resultatet ger en vägledande bild av organisationens beredskap inför certifiering och ersätter inte SBSC:s certifieringsprocess.")), hasError && /*#__PURE__*/React.createElement("div", {
     className: "val-box"
   }, /*#__PURE__*/React.createElement("div", {
     className: "val-title"
@@ -1376,7 +1381,7 @@ function StartPage({
     className: "val-item"
   }, /*#__PURE__*/React.createElement("span", {
     className: "v-num"
-  }, missingName ? "2" : "1"), "Bekräfta att du förstår hur GAP-analysen ska användas")), /*#__PURE__*/React.createElement("div", {
+  }, missingName ? "2" : "1"), "Bekräfta att du förstår hur självskattningen ska användas")), /*#__PURE__*/React.createElement("div", {
     className: "stat-row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "stat"
@@ -1455,7 +1460,7 @@ function App() {
     className: "hdr-logo"
   }), /*#__PURE__*/React.createElement("span", {
     className: "hdr-label"
-  }, "Cybersäkerhet Bas"))), /*#__PURE__*/React.createElement("main", {
+  }, "Cybersäkerhet BAS"))), /*#__PURE__*/React.createElement("main", {
     className: "shell"
   }, view === "start" && /*#__PURE__*/React.createElement(StartPage, {
     company: company,
